@@ -1,0 +1,54 @@
+{% load i18n %}
+<table class="tabledisplay">
+    <tbody><tr><th>{% trans 'Vraag' %}</th><th>{% trans 'Antwoord' %}</th></tr>
+
+    <tr><td colspan="2"><h5><i>Algemeen</i></h5></td></tr>
+    <tr><td>{% trans 'Beoordeling algemene gezondheid' %}</td><td>{{ questionnaire.get_health_general_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Beoordeling algemene gezondheid in vergelijking met vorig jaar' %}</td><td>{{ questionnaire.get_health_changes_display|default:"-" }}</td></tr>
+
+
+    <tr><td colspan="2"><h5><i>Inspanningen</i></h5></td></tr>
+    <tr><td>{% trans 'Forse inspanning zoals hardlopen, zware voorwerpen tillen, inspannend sporten' %}</td><td>{{ questionnaire.get_high_effort_impact_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Matige inspanning zoals het verplaatsen van een tafel, stofzuigen, fietsen' %}</td><td>{{ questionnaire.get_poor_effort_impact_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Tillen of boodschappen doen' %}</td><td>{{ questionnaire.get_carrying_impact_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Een paar trappen lopen' %}</td><td>{{ questionnaire.get_walking_stairs_impact_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Een trap lopen' %}</td><td>{{ questionnaire.get_walking_one_stair_impact_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Buigen, knielen of bukken' %}</td><td>{{ questionnaire.get_bent_over_impact_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Meer dan een kilometer lopen' %}</td><td>{{ questionnaire.get_walk_km_impact_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Een halve kilometer lopen' %}</td><td>{{ questionnaire.get_walk_halfkm_impact_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Honderd meter lopen' %}</td><td>{{ questionnaire.get_walk_tenthkm_impact_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Wassen of aankleden' %}</td><td>{{ questionnaire.get_wash_cloth_impact_display|default:"-" }}</td></tr>
+    <tr><td colspan="2"><h5><i>Fysieke problemen</i></h5></td></tr>
+    <tr><td>{% trans 'Minder tijd kunnen besteden aan werk of andere bezigheden' %}</td><td>{{ questionnaire.get_work_less_problem_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Minder bereikt dan u zou willen' %}</td><td>{{ questionnaire.get_achieve_problem_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Beperkt in het soort werk of het soort bezigheden' %}</td><td>{{ questionnaire.get_work_limitation_problem_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Moeite met het werk of andere bezigheden' %}</td><td>{{ questionnaire.get_work_effort_problem_display|default:"-" }}</td></tr>
+    <tr><td colspan="2"><h5><i>Emotionele problemen</i></h5></td></tr>
+    <tr><td>{% trans 'Minder tijd kunnen besteden aan werk of andere bezigheden' %}</td><td>{{ questionnaire.get_work_less_emotional_problem_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Minder bereikt dan u zou willen' %}</td><td>{{ questionnaire.get_achieve_problem_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Het werk of andere bezigheden niet zo zorgvuldig gedaan als u gewend bent' %}</td><td>{{ questionnaire.get_accurate_emotional_problem_display|default:"-" }}</td></tr>    
+    <tr><td colspan="2"><h5><i>Sociale en pijn impact</i></h5></td></tr>
+    <tr><td>{% trans 'Heeft u lichamelijke of hebben uw emotionele problemen u de afgelopen 4 weken belemmerd in uw normale sociale bezigheden met gezin, vrienden, buren of anderen' %}</td><td>{{ questionnaire.get_social_impact_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Hoeveel pijn had u de afgelopen 4 weken' %}</td><td>{{ questionnaire.get_pain_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Heeft pijn u in de afgelopen 4 weken belemmerd bij uw normale werkzaamheden' %}</td><td>{{ questionnaire.get_pain_impact_display|default:"-" }}</td></tr>    
+    <tr><td colspan="2"><h5><i>Gevoel</i></h5></td></tr>
+    <tr><td>{% trans 'Voelde u zich levenslustig' %}</td><td>{{ questionnaire.get_cheerful_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Voelde u zich zenuwachtig' %}</td><td>{{ questionnaire.get_nervious_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Zat u zo in de put dat niets u kon opvrolijken' %}</td><td>{{ questionnaire.get_blues_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Voelde u zich kalm en rustig' %}</td><td>{{ questionnaire.get_calm_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Voelde u zich energiek' %}</td><td>{{ questionnaire.get_energetic_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Voelde u zich neerslachtig en somber' %}</td><td>{{ questionnaire.get_depressed_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Voelde u zich uitgeblust' %}</td><td>{{ questionnaire.get_burnout_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Voelde u zich gelukkig' %}</td><td>{{ questionnaire.get_happiness_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Voelde u zich moe' %}</td><td>{{ questionnaire.get_tired_score_display|default:"-" }}</td></tr>    
+    <tr><td colspan="2"><h5><i>Sociaal</i></h5></td></tr>
+    <tr><td>{% trans 'Hoe vaak uw lichamelijke gezondheid of uw emotionele problemen gedurende de afgelopen 4 weken uw sociale activiteiten (bijv. bezoek vrienden, familie) belemmerd' %}</td><td>{{ questionnaire.get_social_visit_impact_display|default:"-" }}</td></tr>    
+    <tr><td colspan="2"><h5><i>Relativatie</i></h5></td></tr>
+    <tr><td>{% trans 'Ik lijk gemakkelijker ziek te worden dan andere mensen' %}</td><td>{{ questionnaire.get_easier_ill_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Ik ben net zo gezond als andere mensen die ik ken' %}</td><td>{{ questionnaire.get_even_healthy_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Ik verwacht dat mijn gezondheid achteruit zal gaan' %}</td><td>{{ questionnaire.get_health_drop_score_display|default:"-" }}</td></tr>    
+    <tr><td>{% trans 'Mijn gezondheid is uitstekend' %}</td><td>{{ questionnaire.get_health_drop_score_display|default:"-" }}</td></tr>    
+</tbody></table>
+
+
+

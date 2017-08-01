@@ -1,0 +1,29 @@
+{% load i18n %}
+
+<table class="tabledisplay">
+    <tbody><tr><th>{% trans 'Vraag' %}</th><th>{% trans 'Antwoord' %}</th></tr>
+
+    <tr><td colspan="2"><h5><i>Activiteit</i></h5></td></tr>
+
+    <tr><td>{% trans 'Hoe actief is de artritis geweest de afgelopen 6 maanden?' %}</td><td>{{ questionnaire.get_activity_six_month_score_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Hoe actief is de artritis vandaag in termen van gewrichtsgevoeligheid en zwelling?' %}</td><td>{{ questionnaire.get_activity_today_score_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Hoeveel artritis pijn ervaart u vandaag?' %}</td><td>{{ questionnaire.get_pain_today_score_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Hoe lang voelde u stijfheid van de gewrichten vandaag?' %}</td><td>{{ questionnaire.get_stiffness_today_score_display|default:"-" }}</td></tr>
+</tbody></table>
+<table class="tabledisplay painscores">
+    <tbody><tr><td colspan="2"><h5><i>Pijn scores</i></h5></td></tr>
+    <tr><td></td><td>{% trans 'Pijn links' %}</td><td>{% trans 'Pijn rechts' %}</td></tr>
+    
+    <tr><td>{% trans 'Schouder' %}</td><td>{{ questionnaire.get_left_shoulder_pain_score_display|default:"-" }}</td><td>{{ questionnaire.get_right_shoulder_pain_score_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Elleboog' %}</td><td>{{ questionnaire.get_left_elbow_pain_score_display|default:"-" }}</td><td>{{ questionnaire.get_right_elbow_pain_score_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Pols' %}</td><td>{{ questionnaire.get_left_wrist_pain_score_display|default:"-" }}</td><td>{{ questionnaire.get_right_wrist_pain_score_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Vingers' %}</td><td>{{ questionnaire.get_left_vingers_pain_score_display|default:"-" }}</td><td>{{ questionnaire.get_right_vingers_pain_score_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Heup' %}</td><td>{{ questionnaire.get_left_hip_pain_score_display|default:"-" }}</td><td>{{ questionnaire.get_right_hip_pain_score_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Knie' %}</td><td>{{ questionnaire.get_left_knee_pain_score_display|default:"-" }}</td><td>{{ questionnaire.get_right_knee_pain_score_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Enkel' %}</td><td>{{ questionnaire.get_left_ankle_pain_score_display|default:"-" }}</td><td>{{ questionnaire.get_right_ankle_pain_score_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Tenen' %}</td><td>{{ questionnaire.get_left_toes_pain_score_display|default:"-" }}</td><td>{{ questionnaire.get_right_toes_pain_score_display|default:"-" }}</td></tr>
+
+
+</tbody></table>
+
+

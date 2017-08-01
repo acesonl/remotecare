@@ -1,0 +1,50 @@
+{% load i18n %}
+
+
+{% if form.errors %}
+<div class='form-error'>   
+    {% blocktrans count form.errors.items|length as counter %}Corrigeer de fout hieronder alstublieft.{% plural %}Corrigeer de fouten hieronder alstublieft.{% endblocktrans %}
+</div>
+{% endif %}
+{% if form.non_field_errors %}
+<div class='error'>
+    {% for error in form.non_field_errors %}
+        <p>{{ error }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+
+
+{% if form.fieldsets %}
+    <div class='patient_image' id='patient_image' >
+
+
+    {% for name, fields in form.fieldsets %}  
+        {% if 'patient_image_right' in name %}
+            {% include 'fieldset.html' %}
+        {% endif %}
+    {% endfor %}
+    
+
+    {% for name, fields in form.fieldsets %}  
+        {% if 'patient_image_left' in name %}
+            {% include 'fieldset.html' %}
+        {% endif %}
+    {% endfor %}
+    </div>
+{% else %}
+
+
+
+    {{form.fields }}
+    {% with form.fields as fields %}
+    {% with '' as name %}
+        
+        {% include 'fieldset.html' %}
+    {% endwith %}
+    {% endwith %}
+{% endif %}
+<div style='display: none;'>{{ form.media }}</div>
+{% csrf_token %}

@@ -1,0 +1,30 @@
+{% extends 'patient/patient_context.html' %}
+{% load i18n customfilters %}
+
+{% block section_title %}
+    <h2 class="title"><span class="icoKwaliteitBlue"></span> {% trans 'Controles' %}</h2>     
+{% endblock %}
+{% block section_content %}                      
+    <div class="scrollbar_container questionnaire_answers canvas1">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport patinf">	
+	        <div class="content overview">	
+                <table class="table zebra lesser">
+                  <tr class="action">
+                    <th scope="col">{% trans 'Ingevuld op' %}</th>
+                    <th scope="col">{% trans 'Afspraak geregeld' %}</th>
+                    <th scope="col">{% trans 'Bloed geprikt' %}</th>
+                  </tr>
+                  {% for controle in controles %}
+                  <tr>
+                    <td>{{ controle.finished_on|date:SHORT_DATE_FORMAT  }}</td>
+                    <td>{{ controle.appointment_arranged|default:"-" }}</td>
+                    <td>{{ controle.blood_taken|default:"-" }}</td> 
+                  </tr>
+                  {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

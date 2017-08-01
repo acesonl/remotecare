@@ -1,0 +1,32 @@
+{% extends 'patient/patient_context.html' %}
+{% load i18n customfilters %}
+
+{% block section_title %}
+    <h2 class="title"><span class="icoKwaliteitBlue"></span> {% trans 'Afspraken' %}</h2>     
+{% endblock %}
+{% block section_content %}                      
+<div class="scrollbar_container questionnaire_answers canvas1">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport patinf">	
+	        <div class="content overview">	
+                <table class="table zebra lesser">
+                  <tr class="action">
+                    <th scope="col">{% trans 'Afspraak datum en tijd' %}</th>
+                    <th scope="col">{% trans 'Behandelaar' %}</th>
+                    <th scope="col">{% trans 'Ingevuld op' %}</th>
+                    <th scope="col">{% trans 'Ingevuld door' %}</th>
+                  </tr>
+                  {% for appointment in appointments %}
+                  <tr>
+                    <td>{{ appointment.get_day }} {{ appointment.appointment_date|date:SHORT_DATE_FORMAT }} {{ appointment.appointment_hour }}:{{ appointment.appointment_minute }}</td> 
+                    <td>{{ appointment.appointment_healthprofessional.user.professional_name }}</td>
+                    <td>{{ appointment.created_on|date:SHORT_DATE_FORMAT  }}</td>
+                    <td>{{ appointment.created_by.user.professional_name }}</td>
+                  </tr>
+                  {% endfor %}
+                </table>     
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

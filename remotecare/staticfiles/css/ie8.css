@@ -1,0 +1,42 @@
+/* IE 8 fixes */
+
+
+
+@font-face{
+       font-family: "AvenirLTStd-Light";
+       src: url("../fonts/AvenirLTStd-Light.eot");
+       src: url("../fonts/AvenirLTStd-Light.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/AvenirLTStd-Light.woff") format("woff"),
+       url("../fonts/AvenirLTStd-Light.ttf") format("truetype"),
+       url("../fonts/AvenirLTStd-Light.svg#webfontwziKDzLz") format("svg");
+       font-weight:normal;
+       font-style:normal;
+}
+
+body {
+    font-family: "AvenirLTStd-Light"
+}
+
+
+.canvas1, .subject
+{
+    font-family: Arial;
+}
+
+.viewport.msg
+{
+    padding-bottom:20px;
+}
+
+.underline { font-family: Arial;}
+
+.listNavigation .title i
+{
+    margin-left:12px;
+}
+
+body * {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(Opacity=100);
+zoom: 1;
+}		
+

@@ -1,0 +1,27 @@
+{% extends 'report/report_context.html' %}
+{% load i18n customfilters %}
+{% load staticfiles %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <script type='text/javascript' src='{% static "js/ckeditor/ckeditor.js" %}'></script>
+{% endblock %}
+
+{% block title %}
+ <h2 class="title"><span class="icoKwaliteitBlue"></span> {% trans 'Bericht naar patiënt' %}</h2>
+{% endblock %}
+
+
+{% block contents %}
+    <p>{% trans 'Het onderstaande bericht is automatisch gegenereerd.' %}
+       {% trans 'U kunt dit bericht handmatig aanpassen.' %}</p>
+
+    <form id="reportaddform" class='reportform'  action='.' method='post'>
+    {% include 'questionnaire/forms/reportform.html' %}
+
+    <div class='submitbuttons'>
+        <a href='{% url "message_view" questionnaire_request.patient.health_person_id|get_random_session_key:request questionnaire_request.id %}' class='button'>{% trans 'Annuleren' %}</a>
+        <input type='submit' class='button' value="{% trans 'Bericht opslaan' %}">
+    </div>
+    </form>
+{% endblock %}

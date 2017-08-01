@@ -1,0 +1,146 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@
+FORM
+@@@@@@@@@@@@@@@@@@@@@@
+
+    about                create forms with these form element classes
+
+*/
+
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    form
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+        /*+ setup
+        ..........................................................................*/
+
+            input[type="text"], input[type="email"], input[type="password"], textarea, .formSelect{position:relative; vertical-align:middle; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+            textarea{padding:10px 10px; width:100%;}
+            /* select{-webkit-appearance:none; background:none; cursor:pointer; } */
+            input[type="checkbox"], input[type="radio"]{margin-right:5px;}
+
+            /*size*/
+            input[type="text"], input[type="email"],input[type="password"] {padding:0px 10px; line-height:30px; height:32px; }
+
+        /*+ style
+        ..........................................................................*/
+
+            /*border*/
+            input[type="text"], input[type="email"], input[type="password"],  textarea, .formSelect{border:1px solid rgba(0,0,0,0.17); border-bottom:1px solid rgba(0,0,0,0.3); border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px; }
+
+            /*shadow*/
+            input[type="text"], input[type="email"], input[type="password"], textarea{}
+            /*
+background-color:#b4dcff; -moz-box-shadow:inset 0px 0px 15px 0px rgba(0,0,0,0.3); -webkit-box-shadow:inset 0px 0px 15px 0px rgba(0,0,0,0.3); box-shadow:inset 0px 0px 15px 0px rgba(0,0,0,0.3);
+
+            textarea{background-color:#e8e8e8; } */
+
+            /*animation*/
+            input[type="text"], input[type="email"], input[type="password"], textarea, .formSelect, select{-webkit-transition:0.4s ease 0s; -moz-transition:0.4s ease 0s; -o-transition:0.4s ease 0s; -ms-transition:0.4s ease 0s; transition:0.4s ease 0s;}
+
+            fieldset { border:none; margin: 0; padding: 0; }
+            fieldset.current_status .help_text  { margin-bottom:8px; font-size:13px; display:block;}
+
+            .patient_image_right {float: left;}
+            .patient_image_left {float: right;}
+
+            .defaultform .field {float: left; }
+            .defaultform .label {float: left; }
+            .defaultform .label {width:260px; text-align:left; font-size:12pt; background-color:white; color:black; line-height:20pt;}
+            .defaultform .field {padding-left:20px;  line-height:20pt;}
+            .defaultform fieldset > div {clear:both;}
+
+            .form-error {color:red; font-weight:bold;}
+            .field > .error {color:red; }
+            .defaultform input{width:250px;}
+            .defaultform .errormessage {clear:both; padding-left:290px; color:red;}
+            .defaultform input[type="submit"] {width:auto; border:none;}
+            .defaultform .submitbuttons {float:right; padding-top:20px;}
+
+            .defaultform .photo_location input {width:auto; }
+            .defaultform .photo_location input[type="checkbox"] {margin-left:30px; }
+
+            .defaultform .photo_location .label {float:none;}
+            .defaultform .photo_location .field {float:none;}
+            .defaultform .message {padding-top:10px;}
+            .defaultform .message_error {color:red;}
+            .defaultform .field ul input {width:auto;}
+
+            .scoredisplay {padding-top:20px;}
+            .reportform .submitbuttons {float:right; padding-top:20px;}
+            .reportform input[type="submit"] { border:none;}
+
+            .reportform .mandatory {font-weight:bold;}
+            .reportform .subject_field {width:610px; margin-bottom:10px;}
+
+            .loginform .field {padding-left:0px;}
+            .loginform .field {float: none;}
+            .loginform .submitbuttons {position:absolute; bottom:10px; width:350px;}
+            .loginform .submitbuttons .button {float:right;}
+            .loginform .submitbuttons .left {float:none;}
+            .loginform .submitbuttons a {line-height:32px; vertical-align:center;}
+            .loginform .form-error {color:white; font-weight:bold;}
+            .loginform .field > .error {color:white; font-weight:bold;}
+
+            .questionnairecontent {min-height:300px;}
+            .appointmentform .label {font-size:14px; width:120px;}
+
+            .message {padding-top:15px;}
+            .help_text {display:inline; font-size: 16px;}
+
+
+            .searchmessageform {float:right;}
+            .searchmessageform input[type="text"] {width:150px; font-size:14px; }
+            .searchmessageform input[type="submit"] { font-size:14px; }
+
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    effects
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+        /*+ states
+        ..........................................................................*/
+
+            /*focus ____________*/
+
+                /*border*/
+                input[type="text"]:focus, input[type="email"]:focus,
+                textarea:focus, input[type="password"]:focus,
+                .formAttachedVertical input[type="text"]:focus,
+                .formAttachedVertical input[type="text"]:first-child:focus,
+                .formSelect.active
+                {background-color:#fff; outline:none; z-index:100; border:1px solid rgba(0,194,235,0.4); border-top:1px solid rgba(0,194,235,0.8); }
+
+                /*shadow*/
+                input[type="text"]:focus, input[type="email"]:focus,
+                textarea:focus, input[type="password"]:focus,
+                .formAttachedVertical input[type="text"]:focus,
+                .formAttachedVertical input[type="text"]:first-child:focus,
+                .formSelect.active
+                {-moz-box-shadow:inset 0px 100px 20px -100px rgba(0,210,255,0.3), 0px 0px 5px rgba(0,210,255,0.5) !important; -webkit-box-shadow:inset 0px 100px 20px -100px rgba(0,210,255,0.3), 0px 0px 5px rgba(0,210,255,0.5) !important; box-shadow:inset 0px 100px 20px -100px rgba(0,210,255,0.3), 0px 0px 5px rgba(0,210,255,0.5) !important;}
+
+                /*placeholder*/
+                input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder{color:rgba(0,0,0,0.8);}
+                input:focus:-moz-placeholder, textarea:focus:-moz-placeholder{color:rgba(0,0,0,0.8);}
+                input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder{color:rgba(0,0,0,0.8);}
+
+            /*hover ____________*/
+
+                /*placeholder*/
+                input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder{color:rgba(0,0,0,0.8);}
+                input:hover:-moz-placeholder, textarea:hover:-moz-placeholder{color:rgba(0,0,0,0.8);}
+                input:hover:-ms-input-placeholder, textarea:hover:-ms-input-placeholder{color:rgba(0,0,0,0.8);}
+
+                /*formSelect*/
+                .formSelect:hover select{color:#d2d2d2;}
+                .formSelect:hover select option{color:black;}
+
+
+.date_field .ui-datepicker-trigger
+{
+    border:0;
+    outline: 0;
+    border-color:white;
+    background: url(../../images/calendar-icon.png) no-repeat;
+    width:20px;
+    height:20px;
+}

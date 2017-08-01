@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content_wrapper %}
+<div class="frameSection login boxLogin">
+    
+    	<div class="loginTitle">{% trans 'Remote Care' %}</div>
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abbb">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<div>
+        	<!--left-->
+
+            <ul class="listNavigation">
+                    <li {% if step == 'controle' %}class="active"{% endif %}>
+                    
+                        
+                        <div class="box large">
+                        
+                            <h4 class="title"><span class="icoPassword"></span> {% trans 'Controle' %}</h4>
+                        
+                        </div>
+                        
+                        
+                    </li>
+                    <li {% if step == 'password' %}class="active"{% endif %}>
+                    
+                       
+                        <div class="box large">
+                        
+                            <h4 class="title"><span class="icoSMS"></span> {% trans 'Wachtwoord' %}</h4>
+                        
+                        </div>
+                        
+                        
+                    </li>
+                </ul>
+        	<!--left-->
+            </div>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade7 large">
+                
+                	<div class="optionbar"><a class="underline" href="{% url "about_security" %}"><em>{% trans 'Over beveiliging' %}</em></a></div>
+                
+                    <h2 class="title"><span class="icoLock"></span> {% trans 'Nieuw wachtwoord' %}</h2>
+                    {% if step != 'password' %}
+                    <p class='information'>{% trans 'Vul hieronder uw e-mail adres en geboortedatum in.' %}</p>
+                    {% endif %}
+					<form class='loginform' action='.?key={{key}}' method='post'>
+                       {% include 'login_form.html' %}
+                       <div class="submitbuttons"><button type='submit' value='email' class="button white"><i class="icoLockOpen"></i> {% if step != 'password' %}{% trans 'Controleer gegevens' %}{% else %}{% trans 'Verander wachtwoord' %}{% endif %}</button></div>
+                    </form>
+                    
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+
+{% endblock %}

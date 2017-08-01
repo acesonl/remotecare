@@ -1,0 +1,24 @@
+{% extends 'patient/patient_context.html' %}
+{% load i18n customfilters %}
+
+{% block section_title %}
+    <h2 class="title"><span class="rc_ico37"></span> {% trans 'Diagnose & Controle frequentie' %}<a href="{% url "patient_edit_freq_control" patient.health_person_id|get_random_session_key:request %}" class='button change_button'>Wijzig</a> </h2> 
+    
+{% endblock %}
+{% block section_content %}                      
+
+    <table class='tableview'>
+        <tr><td colspan=2><h5>{% trans 'Diagnose & Behandelaar' %}</h5></td></tr>
+        <tr><td>{% trans 'Diagnose' %}</td><td>{{ patient.get_diagnose_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Vragenlijsten' %}</td><td>{{ questionnaire_list|join:", "|default:"-" }}</td></tr>
+
+        <tr><td>{% trans 'Hoofd behandelaar' %}</td><td>{{ patient.current_practitioner.user.professional_name|default:"-" }}</td></tr>
+
+        <tr><td colspan=2><h5>{% trans 'Controle frequentie' %}</h5></td></tr>
+        <tr><td>{% trans 'Frequentie reguliere controle' %}</td><td>{{ patient.display_regular_control_frequency|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Frequentie bloedprikken' %}</td><td>{{ patient.display_blood_sample_frequency|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Volgt altijd een polikliniekbezoek' %}</td><td>{{ patient.get_always_clinic_visit_display|default:"-" }}</td></tr>
+
+
+    </table>                 
+{% endblock %}

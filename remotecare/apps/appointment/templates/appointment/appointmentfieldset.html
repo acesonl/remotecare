@@ -1,0 +1,43 @@
+
+{% load i18n customfilters %}
+
+<fieldset{% if name %} class='hi-light {{ name|lower|slugify  }}'{% endif %}>
+{% for field in fields %}
+        {% if field.name == 'appointment_minute'  %}
+
+        {{ field }}</div>
+        {% if field.errors %}
+            <div class='errormessage'>{% for error in field.errors %}{{ error }}{% endfor %}</div>
+        {% endif %}
+        </div>
+        {% elif field.name == 'appointment_hour'  %}
+        <div>
+
+        <div class='label'>
+            {% if field.field.required %}<span>*</span>{% endif %}{{ field.label_tag }}
+        </div>
+        {% if field.help_text %}
+            <div class='help_text'>{{ field.help_text }}</div>
+        {% endif %}
+        <div class='field{% if field.errors %} error{% endif %}'>{{ field }}
+
+
+        {% else %}
+        <div>
+
+        <div class='label'>
+            {% if field.field.required %}<span>*</span>{% endif %}{{ field.label_tag }}
+        </div>
+        {% if field.help_text %}
+            <div class='help_text'>{{ field.help_text }}</div>
+        {% endif %}
+        <div class='field{% if field.errors %} error{% endif %}'>{{ field }}</div>
+        {% if field.errors %}
+            <div class='errormessage'>{% for error in field.errors %}{{ error }}{% endfor %}</div>
+        {% endif %}
+
+        </div>
+        {% endif %}
+
+{% endfor %}
+</fieldset>

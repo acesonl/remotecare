@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content_wrapper %}
+    
+        
+    <div id='login' style='width:400px'>
+        <div class='round tl'></div>
+        <div class='round tr'></div>
+        <div class='title'>
+            <h1>{% trans 'Rules' %}</h1>
+        </div>
+   
+   
+       
+        <div class='content' style='width:400px'>
+        
+            <p>{% trans 'Agree once with the user rules to gain access.' %}</p>
+                        <p>
+                                <b>1. Information</b><br/>
+                                I will treat the information in Remote care with caution.
+                        </p>
+                        <p>
+                                <b>2. Password</b><br/>
+                                I choose and store my password safely and I will never share my password with any other person.
+                        </p>
+                        <p>
+                                <b>3. Logging out and shutting down</b><br/>
+                                When I leave my computer, I will always log-off and shut down Remote care.
+                        </p>
+                        <p>
+                                <b>4. Storage of PDF files and printed information</b><br/>
+                                I will store PDF files and printed information in a safe place.
+                        </p>
+                        <p>
+                                <b>5. Medical treatment decision making</b><br/>
+                                I will not make any medical treatment decisions based on the Remote care database.
+                        </p>
+
+
+
+	    <p>
+		<br/>
+	    </p>
+	    <form action='.' method='post'>
+                {% include 'form.html' %}
+                <fieldset>
+                    <div>
+                        <div class='field'><input type='submit' value='Confirm'></div>
+                    </div>
+                </fieldset>
+            </form>           
+        </div>
+    </div>
+{% endblock %}

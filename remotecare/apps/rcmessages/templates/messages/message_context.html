@@ -1,0 +1,97 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+                {% if not rc_messages %}
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href="{% url "index" %}">
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Terug' %} </h4>                                         
+                        </div>
+                        </a>                        
+                    </li>
+                </ul>
+
+                {% endif %}
+
+                <div class="scrollbar_container scrollbar_messages">
+				        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+				        <div class="viewport">	
+				        	<div class="content overview">                
+                                <ul class="listNavigation">
+                                    {% for rc_message in rc_messages %}
+                                    <li {% if message.id|add:"0" == rc_message.id|add:"0" %}class='active'{% endif %}>                    
+                                        <a href="{% if sent_view %}{% url "sent_message_details" healthperson.health_person_id|get_random_session_key:request rc_message.id %}{% else %}{% url "message_details" patient.health_person_id|get_random_session_key:request rc_message.id %}{% endif %}">
+                                        <div class="box">   
+                                        {% if sent_view %}
+
+                                           
+                                           <h4 class="title">{{ rc_message.patient.user.full_name }} 
+                                           <small>{{ rc_message.added_on }}, {% if rc_message.related_to %}{% trans 'reactie' %}{% if not rc_message.related_to.urgent %} {% trans 'controle' %}{% else %} {% trans 'spoedafspraak' %}<i class="icoSpoed"></i>{% endif %}{% else %}{% trans 'bericht' %}{% endif %} {% if rc_message.read_on  %}{% trans ' ' %} {% endif %}   </small>  
+
+
+
+                                           </h4>  
+
+                                        {% else %}
+                                     
+                                           <h4 class="title">{% if rc_message.related_to %}{% trans 'Reactie' %}{% if not rc_message.related_to.urgent %} {% trans 'controle' %}{% else %} {% trans 'spoedafspraak' %}<i class="icoSpoed"></i>{% endif %}{% else %}{% trans 'Bericht' %}{% endif %} {% if rc_message.read_on  %}{% trans ' ' %} {% endif %}  
+                                           <small>{{ rc_message.added_on }}, {{ rc_message.sender.user.professional_name }}</small>  
+
+
+                                           </h4>                       
+                                        {% endif %}
+                                        </div>
+                                        </a>                        
+                                    </li>                  
+                                    {% endfor %}
+                                </ul>              
+                            </div>  
+                        </div>
+                    </div>
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        {% block title %} {% endblock %}
+                                      
+                	</header>
+                    
+                    <div class="content">
+                        {% block contents %} {% endblock %}
+                    </div>
+                                         
+                </div>
+              
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

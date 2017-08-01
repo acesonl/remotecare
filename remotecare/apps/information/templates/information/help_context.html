@@ -1,0 +1,72 @@
+{% extends 'base_context.html' %}
+{% load i18n %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+	<div class="frameSection">    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">                        
+                            <h4 class="title">{% trans 'Terug' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'faq' %}class='active'{% endif %}>                    
+                        <a href="{% url "information_page" 'faq' %}">
+                        <div class="box shade6">                        
+                            <h4 class="title">{% trans 'Veel gestelde vragen'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                </ul>                                            
+        	<!--left-->
+            </nav>
+        	<!--left-->            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        {% block section_title %} {% endblock %}                
+                	</header>
+
+                    <div class="scrollbar_container canvas1">
+				    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+				        <div class="viewport inf">	
+				        	<div class="content overview">
+                                {% block section_content %} {% endblock %}  
+                            </div>                     
+                        </div>
+                    </div>    
+                    
+                 
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

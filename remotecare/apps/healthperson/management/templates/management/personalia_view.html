@@ -1,0 +1,25 @@
+{% extends 'management/manager_context.html' %}
+{% load i18n customfilters %}
+
+{% block section_title %}
+    <h2 class="title"><span class="rc_ico2"></span> {% trans 'Personalia & Account' %}<a href="{% url "manager_edit_personalia" manager.health_person_id|get_random_session_key:request %}" class='button change_button'>Wijzig</a></h2> 
+{% endblock %}
+{% block section_content %}                      
+    <table class='tableview'>
+        <tr><td colspan=2><h5>{% trans 'Personalia' %}</h5></td></tr>
+        <tr><td>{% trans 'Titel' %}</td><td>{{ user.get_title_display|default:"-" }}</td></tr>
+
+        <tr><td>{% trans 'Voornaam' %}</td><td>{{ user.first_name|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Voorletters' %}</td><td>{{ user.initials|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Tussenvoegsels' %}</td><td>{{ user.prefix|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Achternaam' %}</td><td>{{ user.last_name|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Geslacht' %}</td><td>{{ user.get_gender_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Geboortedatum' %}</td><td>{{ user.date_of_birth|date:SHORT_DATE_FORMAT }}</td></tr>
+
+        <tr><td colspan=2><h5>{% trans 'Account' %}</h5></td></tr>
+        <tr><td>{% trans 'Mobiel nummer' %}</td><td>{{ user.mobile_number|default:"-" }}</td></tr>
+        <tr><td>{% trans 'E-mail' %}</td><td>{{ user.email|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Wachtwoord' %}</td><td>**********</td></tr>        
+                
+    </table>                 
+{% endblock %}

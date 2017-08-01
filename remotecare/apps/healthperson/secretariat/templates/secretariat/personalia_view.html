@@ -1,0 +1,27 @@
+{% extends 'secretariat/secretariat_context.html' %}
+{% load i18n customfilters %}
+
+{% block section_title %}
+    <h2 class="title"><span class="rc_ico2"></span> {% trans 'Personalia & Account' %}<a href="{% url "secretariat_edit_personalia" secretary.health_person_id|get_random_session_key:request %}" class='button change_button'>Wijzig</a></h2>
+{% endblock %}
+{% block section_content %}
+    <table class='tableview'>
+        <tr><td colspan=2><h5>{% trans 'Personalia' %}</h5></td></tr>
+        <tr><td>{% trans 'Titel' %}</td><td>{{ secretary.user.get_title_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Voornaam' %}</td><td>{{ secretary.user.first_name|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Voorletters' %}</td><td>{{ secretary.user.initials|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Tussenvoegsels' %}</td><td>{{ secretary.user.prefix|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Achternaam' %}</td><td>{{ secretary.user.last_name|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Geslacht' %}</td><td>{{ secretary.user.get_gender_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Geboortedatum' %}</td><td>{{ secretary.user.date_of_birth|date:SHORT_DATE_FORMAT }}</td></tr>
+
+        <tr><td colspan=2><h5>{% trans 'Account' %}</h5></td></tr>
+        <tr><td>{% trans 'Mobiel nummer' %}</td><td>{{ secretary.user.mobile_number|default:"-" }}</td></tr>
+        <tr><td>{% trans 'E-mail' %}</td><td>{{ secretary.user.email|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Wachtwoord' %}</td><td>**********</td></tr>
+
+
+        <tr><td colspan=2><h5>{% trans 'Functie' %}</h5></td></tr>
+        <tr><td>{% trans 'Specialisme' %}</td><td>{{ secretary.get_specialism_display|default:"-" }}</td></tr>
+    </table>
+{% endblock %}

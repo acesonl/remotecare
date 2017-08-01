@@ -1,0 +1,36 @@
+{% load i18n customfilters %}
+
+
+{% if form.errors %}
+<div class='form-error'>   
+    {% blocktrans count form.errors.items|length as counter %}Corrigeer de fout hieronder alstublieft.{% plural %}Corrigeer de fouten hieronder alstublieft.{% endblocktrans %}
+</div>
+{% endif %}
+{% if form.non_field_errors %}
+<div class='error'>
+    {% for error in form.non_field_errors %}
+        <p>{{ error }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+{% if form.fieldsets %}
+    {% for name, fields in form.fieldsets %}       
+        {% include 'questionnaire/forms/FinishQuestionnarreFieldset.html' %}
+    {% endfor %}
+{% else %}
+
+    {{form.fields }}
+    {% with form.fields as fields %}
+    {% with '' as name %}
+        
+        {% include 'fieldset.html' %}
+    {% endwith %}
+    {% endwith %}
+{% endif %}
+<div style='display: none;'>{{ form.media }}</div>
+{% if DEBUG %}
+    <input type='hidden' id='id_form_class' value='{{  form | moduleclassname }}'>
+    <input type='hidden' id='id_form_prefix' value='{{  form.prefix}}'>
+{% endif %}
+<input type='hidden' id='form' value='FORMCLASS'>
+{% csrf_token %}

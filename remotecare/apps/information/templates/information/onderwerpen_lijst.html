@@ -1,0 +1,63 @@
+{% extends 'information/help_context.html' %}
+{% load i18n customfilters %}
+{% load staticfiles %}
+
+{% block extra_head %}
+     {{ block.super }}
+	<script type='text/javascript' src='{% static "js/helplist.js" %}'></script>
+	<script type='text/javascript' src='{% static "js/highlight.js" %}'></script>
+
+    <script type='text/javascript'>
+    var Search = {
+        click : function(control, event) {
+            $.Event(event).preventDefault();
+
+            var term = $('#id_searchsubject').val();
+
+            if (term.length > 0)
+            {
+                $('#helplist ul li').removeClass("selected");
+
+                $('.highlight').each(function() {
+                    $(this).removeClass('highlight');
+                });
+
+                $("li:contains('" + term + "')'").each(function() {
+                    $(this).addClass("selected");
+                });
+
+                $('#helplist').highlight(term);
+
+                $('.scrollbar_container').tinyscrollbar();	
+            }
+
+        }
+    }
+    </script>
+
+{% endblock %}
+
+{% block section_title %}
+    <h2 class="title"><span class="rc_ico100"></span> {% trans 'Lijst met onderwerpen' %}
+    <form id='searchmessageform' class='defaultform searchmessageform' action='.' method='post'>
+         {% csrf_token %}
+        <input type="text" name='searchsubject' id='id_searchsubject' class="inputtext" placeholder="{% trans 'Zoek...' %}">
+        <input type='submit' onclick='Search.click(this,event);' class='button' value="{% trans 'Zoek woord' %}" />
+    </form>
+    </h2>
+{% endblock %}
+
+
+{% block section_content %}
+{% if user|checkgroup:"patients" %}
+	{% include 'information/helptext/patient_help.html' %}
+{% elif user|checkgroup:"managers" %}
+	{% include 'information/helptext/manager_help.html' %}
+{% elif user|checkgroup:"secretariat" %}
+	{% include 'information/helptext/secretariat_help.html' %}
+{% elif user|checkgroup:"healthprofessionals" %}
+	{% include 'information/helptext/healthprofessional_help.html' %}
+{% endif %}
+{% endblock %}
+
+

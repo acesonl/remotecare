@@ -1,0 +1,98 @@
+{% extends 'base_context.html' %}
+{% load i18n %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Terug' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'diagnose-en-onderzoeken' %}class='active'{% endif %}>                    
+                        <a href="{% url "information_page" 'diagnose-en-onderzoeken' %}">
+                        <div class="box shade6">                        
+                            <h4 class="title">{% trans 'Diagnose en onderzoeken'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li  {% if submenu == 'behandeling' %}class='active'{% endif %}>                    
+                        <a href="{% url "information_page" 'behandeling' %}">
+                        <div class="box shade2">                        
+                            <h4 class="title">{% trans 'Behandeling'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'onstaan-en-werking' %}class='active'{% endif %}>                    
+                        <a href="{% url "information_page" 'onstaan-en-werking' %}">
+                        <div class="box shade4">                        
+                            <h4 class="title">{% trans 'Ontstaan en werking'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'wetenschappelijk-nieuws' %}class='active'{% endif %}>                    
+                        <a href="{% url "information_page" 'wetenschappelijk-nieuws' %}">
+                        <div class="box shade7">                        
+                            <h4 class="title">{% trans 'Wetenschappelijk nieuws'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                </ul>
+                            
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        {% block section_title %} {% endblock %}                
+                	</header>
+                    
+                    <div class="scrollbar_container canvas1">
+				    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+				        <div class="viewport inf">	
+				        	<div class="content overview">
+                                {% block section_content %} {% endblock %}  
+                            </div>                     
+                        </div>
+                    </div>    
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

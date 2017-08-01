@@ -1,0 +1,29 @@
+{% extends 'healthprofessional/healthprofessional_context.html' %}
+{% load i18n customfilters %}
+
+{% block section_title %}
+    <h2 class="title"><span class="rc_ico2"></span> {% trans 'Personalia & Account' %}<a href="{% url "healthprofessional_edit_personalia" healthprofessional.health_person_id|get_random_session_key:request %}" class='button change_button'>Wijzig</a></h2>
+{% endblock %}
+{% block section_content %}
+    <table class='tableview'>
+        <tr><td colspan=2><h5>{% trans 'Personalia' %}</h5></td></tr>
+        <tr><td>{% trans 'Titel' %}</td><td>{{ healthprofessional.user.get_title_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Voornaam' %}</td><td>{{ healthprofessional.user.first_name|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Voorletters' %}</td><td>{{ healthprofessional.user.initials|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Tussenvoegsels' %}</td><td>{{ healthprofessional.user.prefix|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Achternaam' %}</td><td>{{ healthprofessional.user.last_name|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Geslacht' %}</td><td>{{ healthprofessional.user.get_gender_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Geboortedatum' %}</td><td>{{ healthprofessional.user.date_of_birth|date:SHORT_DATE_FORMAT }}</td></tr>
+
+        <tr><td colspan=2><h5>{% trans 'Account' %}</h5></td></tr>
+        <tr><td>{% trans 'Mobiel nummer' %}</td><td>{{ healthprofessional.user.mobile_number|default:"-" }}</td></tr>
+        <tr><td>{% trans 'E-mail' %}</td><td>{{ healthprofessional.user.email|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Wachtwoord' %}</td><td>**********</td></tr>
+
+
+        <tr><td colspan=2><h5>{% trans 'Functie' %}</h5></td></tr>
+        <tr><td>{% trans 'Functie' %}</td><td>{{ healthprofessional.get_function_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Specialisme' %}</td><td>{{ healthprofessional.get_specialism_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Tel.nr. contact polikliniek' %}</td><td>{{ healthprofessional.telephone|default:"-" }}</td></tr>
+    </table>
+{% endblock %}

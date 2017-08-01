@@ -1,0 +1,158 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+
+{% block content_wrapper %}
+    	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout aab_2 layoutMainColumn">
+        <!--layoutMainColumn-->
+
+        	<!--left-->
+        	<section>
+        	<!--left-->
+               
+            	<div class="layout ab">
+                	<div>
+                        <ul>
+                            <li>                            
+                                <a href="{% url "patient_search" %}">
+                                <div class="box shade6">                                
+                                    <h4 class="title">{% trans 'Patiënt zoeken' %} <i class="rc_ico14"></i></h4> 
+                                                                 
+                                </div>
+                                </a>                                
+                            </li>
+                            <li>                            
+                                <a href="{% url "patient_add" %}">
+                                <div class="box shade4">                                
+                                    <h4 class="title">{% trans 'Patiënt toevoegen' %} <i class="rc_ico12"></i></h4>                                
+                                </div>
+                                </a>                                
+                            </li>
+                            <li>                            
+                                <a href="{% url "patient_search" %}?action=edit">
+                                <div class="box shade2">                                
+                                    <h4 class="title">{% trans 'Patiënt wijzigen' %} <i class="rc_ico15"></i></h4>                                
+                                </div>
+                                </a>                                
+                            </li>
+                            <li>                            
+                                <a href="{% url "patient_search" %}?action=remove">
+                                <div class="box shade7">                                
+                                    <h4 class="title">{% trans 'Patiënt verwijderen' %} <i class="rc_ico13"></i></h4>                                
+                                </div>
+                                </a>                                
+                            </li>
+                        </ul>
+                   
+                    
+                    </div>
+                	<div>
+                       <ul>
+                            <li>                            
+                                <a href="{% url "healthprofessional_search" %}">
+                                <div class="box shade6">                                
+                                    <h4 class="title">{% trans 'Behandelaar zoeken' %} <i class="rc_ico39"></i></h4>                                
+                                </div>
+                                </a>                                
+                            </li>
+                            <li>                            
+                                <a href="{% url "healthprofessional_add" %}">
+                                <div class="box shade4">                                
+                                    <h4 class="title">{% trans 'Behandelaar toevoegen' %} <i class="rc_ico36"></i></h4>                                
+                                </div>
+                                </a>                                
+                            </li>
+                            <li>                            
+                                <a href="{% url "healthprofessional_search" %}?action=edit">
+                                <div class="box shade2">                                
+                                    <h4 class="title">{% trans 'Behandelaar wijzigen' %} <i class="rc_ico40"></i></h4>                                
+                                </div>
+                                </a>                                
+                            </li>
+                            <li>                            
+                                <a href="{% url "healthprofessional_search" %}?action=remove">
+                                <div class="box shade7">                                
+                                    <h4 class="title">{% trans 'Behandelaar verwijderen' %} <i class="rc_ico38"></i></h4>                                
+                                </div>
+                                </a>                                
+                            </li>
+                        </ul>                    
+                 
+                   
+                    </div>
+                </div>
+                
+        	<!--left-->
+            </section>
+        	<!--left-->
+            
+        	<!--right-->
+        	<aside>
+        	<!--right-->
+            
+                <ul>
+                    <li>                            
+                        <a href="{% url "secretariat_search" %}">
+                        <div class="box shade6">                                
+                            <h4 class="title">{% trans 'Medewerker zoeken' %} <i class="rc_ico25"></i></h4>                                
+                        </div>
+                        </a>                                
+                    </li>
+                    <li>                            
+                        <a href="{% url "secretariat_add" %}">
+                        <div class="box shade4">                                
+                            <h4 class="title">{% trans 'Medewerker toevoegen' %} <i class="rc_ico23"></i></h4>                                
+                        </div>
+                        </a>                                
+                    </li>
+                    <li>                            
+                        <a href="{% url "secretariat_search" %}?action=edit">
+                        <div class="box shade2">                                
+                            <h4 class="title">{% trans 'Medewerker wijzigen' %} <i class="rc_ico31"></i></h4>                                
+                        </div>
+                        </a>                                
+                    </li>
+                    <li>                            
+                        <a href="{% url "secretariat_search" %}?action=remove">
+                        <div class="box shade7">                                
+                            <h4 class="title">{% trans 'Medewerker verwijderen' %} <i class="rc_ico24"></i></h4>                                
+                        </div>
+                        </a>                                
+                    </li>
+                </ul>
+
+                <a href="{% url "manager_view_personalia" manager.health_person_id|get_random_session_key:request %}">
+                <div class="box shade6">
+                
+                	<h4 class="title">{{ user.professional_name|default:"-" }}<i class="icoProfiel"></i></h4>
+                	
+                    <div class="content">
+                    
+                    	<address>
+                        
+                            <ul class="listColumn">
+                                <li><i class="icoPhone"></i>{{ user.mobile_number|default:"-" }}</li>
+                                <li><i class="icoEmail"></i>{{ user.email|default:"-" }}</li>
+                            </ul>
+                        
+                        </address>
+                    
+                    </div>
+                
+                </div>
+                </a>
+               
+            
+        	<!--right-->
+            </aside>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>      
+{% endblock %}

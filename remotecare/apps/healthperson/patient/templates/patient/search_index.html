@@ -1,0 +1,97 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Terug' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>                  
+                </ul>
+                            
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        <h2 class="title"><span class="rc_ico99"></span> {% trans 'Zoekresultaten' %}</h2>      
+                	</header>
+                    
+                    <div class="content">
+                        {% if objects %}
+                            <table class="table zebra lesser">
+                              <tr class="action">
+                                <th scope="col">{% trans 'Bericht/Vragenlijst' %}</th>                    
+                                <th scope="col">{% trans 'Bekijken' %}</th>
+                              </tr>
+
+                            
+                            {% for object in objects %}
+                              <tr>
+                                 <td>{% if object|classname == 'RCMessage' %}{% trans 'Bericht ontvangen op ' %} {{ object.added_on }} {% else %} {{ object.model_display_name }} {% trans 'vragenlijst ingevuld op ' %} {{ object.finished_on }} {% endif %}</td>
+                                 <td>
+                                    {% if object|classname == 'RCMessage' %}
+                                       <a href="{% url "message_details" patient.health_person_id|get_random_session_key:request object.id %}?highlight={{ searchterm }}" class='button'>{% trans 'Bekijk bericht' %}</a>
+                                    {% else %}     
+                                        {% if object.model_display_name == 'Ziekteactiviteit' %}
+                                        <a href="{% url "disease_activity_overview" patient.health_person_id|get_random_session_key:request %}?qr={{object.request_step.questionnairerequest.id}}&highlight={{ searchterm }}" class='button'>{% trans 'Bekijk vragenlijst' %}</a>
+                                        {% elif object.model_display_name == 'Kwaliteit van leven' %}
+                                        <a href="{% url "quality_of_life_overview" patient.health_person_id|get_random_session_key:request %}?qr={{object.request_step.questionnairerequest.id}}&highlight={{ searchterm }}" class='button'>{% trans 'Bekijk vragenlijst' %}</a>
+                                        {% else %}
+                                        <a href="{% url "healthcare_quality_overview" patient.health_person_id|get_random_session_key:request %}?qr={{object.request_step.questionnairerequest.id}}&highlight={{ searchterm }}" class='button'>{% trans 'Bekijk vragenlijst' %}</a>
+                                        {% endif %}
+   
+                                    {% endif %}
+                                 </td>
+                              </tr>
+                  
+               
+                            {% endfor %}
+                         </table>
+                        {% else %}
+                            {% if no_search_term %}
+                            <p>{% trans 'Vul a.u.b. een zoekterm in.'  %}</p>
+                            {% else %}
+                            <p>{% trans 'Geen berichten of vragenlijsten gevonden.'  %}</p>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

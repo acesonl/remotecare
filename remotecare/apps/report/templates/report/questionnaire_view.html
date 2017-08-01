@@ -1,0 +1,28 @@
+{% extends 'report/report_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }} 
+{% endblock %}
+
+{% block title %}
+ <h2 class="title"><span class="rc_ico86"></span> {{ selected_questionnaire.display_name }}</h2>     
+{% endblock %}
+
+
+{% block contents %}
+    <div class="scrollbar_container reportscroll canvas1">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport patinf">	
+        	<div class="content overview">
+                {% if selected_questionnaire.display_template %}
+                    {% with selected_questionnaire as questionnaire %}
+                    {% include selected_questionnaire.display_template %}
+                    {% endwith %}
+                {% else %}
+                {% trans 'Voor deze vragenlijst is nog geen weergave aanwezig' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

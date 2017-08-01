@@ -1,0 +1,115 @@
+
+{% load i18n customfilters %}
+
+{% with forloop.counter|add:"0" as fieldset_counter %}
+
+
+<fieldset{% if name %} class='hi-light {{ name|lower|slugify  }}'{% endif %}>
+
+{% for field in fields %}
+
+
+        <div class='field{% if field.errors %} error{% endif %}'>
+
+            {% if field.name != 'patient_weight' and field.name != 'patient_length'  %}
+            <div class='help_text'>
+            {% if field.help_text %}
+               {{ field.help_text }}
+            {% endif %}
+            </div>
+            {% endif %}
+            <h5>
+                {{ form|get_question_nr:field }} {% if field.field.required %}<span>* </span>{% endif %}{{ field.label_tag }}
+                {% if field.field|classname == 'ModelMultipleChoiceField' %} {% trans '(meerdere mogelijkheden)' %} {% endif %}
+
+
+
+            </h5>
+
+
+
+            {% if field.field|classname == 'ModelMultipleChoiceField' %}
+                <div class='hiddeninput'>{{ field }}</div>
+                <div class='inputselector'>
+
+
+
+
+                <ul class="multiplelistselector listTagScore{% if not field.field.horizontal_render %} block{% endif%}">
+                    {% for key, value in field.field.choices %}
+                    <li class="{% if key|slugify in field.value %}active {% endif %}{% if field.field.double_column %}double_column{% endif %}{% if field.field.triple_column %}triple_column{% endif %}">
+                        <a id="{{ field.html_name }}_{{ forloop.counter0}}" value="{{ key }}" to_set="id_{{ field.html_name }}_{{forloop.counter|add:"-1"}}" class="tag" href="#"><span class="tooltip left">{{ forloop.counter }}</span>{{ value }}</a>
+                    </li>
+
+                    {% endfor %}
+               </ul>
+               </div>
+            {% else %}
+            {% if field.field.listscore_render %}
+                <div class='hiddeninput'>{{ field }}</div>
+                <div class='inputselector'>
+                <ul class="listselector listScore">
+                    {% for key, value in field.field.choices %}
+                    {% if forloop.counter > 1 %}
+                    <li {% if key == field.value|add:"0" %}class="active"{% endif %}>
+                        <a id="{{ field.html_name }}_{{ forloop.counter0 }}" value="{{ key }}" to_set="id_{{ field.html_name }}" class="label" href="#">{{ value }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                </div>
+                {% else %}
+                {% if field.field|classname == 'TypedChoiceField' %}
+                    <div class='hiddeninput'>{{ field }}</div>
+                    <div class='inputselector'>
+                    <ul class="listselector listTagScore{% if field.field.vertical_render %} block{% endif%}">
+                        {% for key, value in field.field.choices %}
+                        {% if forloop.counter > 1 %}
+
+                        <li {% if key == field.value %}class="active"{% endif %}>
+                            <a id="{{ field.html_name }}_{{ forloop.counter0 }}" value="{{ key }}" to_set="id_{{ field.html_name }}" class="tag" href="#"><span class="tooltip left">{{ forloop.counter0 }}</span>{{ value }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                   </ul>
+                   </div>
+               {% else %}
+                    {% if field.field|classname == 'ChoiceOtherField'   %}
+                    <div class='hiddeninput'>{{ field }}</div>
+                    <div class='inputselector'>
+                    <ul class="listselector listTagScore{% if field.field.vertical_render %} block{% endif%}">
+                        {% for key, value in field.field.choices %}
+                        {% if forloop.counter > 1 %}
+
+                        <li {% if key == field.value %}class="active"{% endif %}>
+                            <a id="{{ field.html_name }}_{{ forloop.counter0 }}" value="{{ key }}" to_set="id_{{ field.html_name }}_0" class="tag" href="#"><span class="tooltip left">{{ forloop.counter0 }}</span>{{ value }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    </div>
+                    {% else %}
+                    {{ field }}
+                    {% endif %}
+               {% endif %}
+               {% endif %}
+            {% endif %}
+
+
+            {% if field.name == 'patient_weight' or field.name == 'patient_length'  %}
+            <div class='help_text'>
+            {% if field.help_text %}
+               {{ field.help_text }}
+            {% endif %}
+            </div>
+            {% endif %}
+
+
+           {% if field.errors %}
+                <div class='error'>{% for error in field.errors %}{{ error }}{% endfor %}</div>
+            {% endif %}
+            <div class="hr{% if field.field.double_column or field.field.triple_column %} double_column{% endif %}"></div>
+        </div>
+{% endfor %}
+</fieldset>
+{% endwith %}

@@ -1,0 +1,104 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@
+TABLE
+@@@@@@@@@@@@@@@@@@@@@@
+
+	about				table object, use it with tabular data only
+	objects				.table{.zebra, .minimal}, .alignLeft, .alignRight, alignCenter, alignJustify, 
+
+*/
+
+	/*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	table
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+		
+		/*+ setup
+		..........................................................................*/
+
+			/*setup*/
+			.table{position:relative; width:100%; border-collapse:separate;}
+
+		/*+ head
+		..........................................................................*/
+
+			/*size*/
+			.table th{padding:10px; }
+			
+			/*style*/
+			.table th{background-color:#f6f6f6; text-align:left; }
+
+            .table th.smaller {font-size:10pt;}
+		/*+ cell
+		..........................................................................*/
+
+			/*size*/
+			.table td{padding:10px; }
+			
+			/*style*/
+			.table td{text-align:left; }
+			
+			/*border*/
+			.table td:last-child{border-right:0px; }
+		
+		/*+ alignment
+		..........................................................................*/
+
+			.table td.alignLeft, .table th.alignLeft{text-align:left;}
+			.table td.alignRight, .table th.alignRight{text-align:right;}		
+			.table td.alignCenter, .table th.alignCenter{text-align:center;}		
+			.table td.alignJustify, .table th.alignJustify{text-align:justify;}		
+
+		/*+ zebra
+		..........................................................................*/
+
+			.table.zebra tr:nth-child(odd){background-color:#c1c1c1;}
+			
+			/*minimal*/
+			.table.zebra.minimal tr:nth-child(even){background-color:#c1c1c1;}
+			.table.zebra.minimal tr:nth-child(odd){background-color:transparent;}
+
+
+
+
+		/*+ background
+		..........................................................................*/
+			
+			.table tr.alert th,
+			.table tr.action th,
+			.table tr.check th,
+			.table tr.spot th,
+			.table tr.mark th,
+			.table tr.direction th
+			{color:white;}
+			
+			/*alert (red)*/
+			.table tr.alert th, .table.minimal tr.alert th[scope="col"]{background-color:#fc5920; }
+
+			/*action (blue)*/
+			.table tr.action th, .table.minimal tr.action th[scope="col"]{background-color:#36698a; font-weight:normal; }
+			
+			/*check (green)*/
+			.table tr.check th, .table.minimal tr.check th[scope="col"]{background-color:#aee657; }
+
+			/*spot (black)*/
+			.table tr.spot th, .table.minimal tr.spot th[scope="col"]{background-color:#303030;}
+
+			/*mark (orange)*/
+			.table tr.mark th, .table.minimal tr.mark th[scope="col"]{background-color:#ffb400; }
+
+			/*direction (purple)*/
+			.table tr.direction th, .table.minimal tr.direction th[scope="col"]{background-color:#e560dd;}
+		
+		/*+ intensity
+		..........................................................................*/
+			
+			.table.heavy td, .table.heavy th{padding:20px 15px;}
+			.table.greater td, .table.greater th{padding:15px 15px;}
+			.table.base td, .table.base th{padding:10px;}
+			.table.lesser td, .table.lesser th{padding:5px 10px;}
+			.table.light td, .table.light th{padding:2px 5px;}
+
+
+            .scroll .table.lesser {padding-left:8px;}
+
+			

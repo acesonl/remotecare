@@ -1,0 +1,332 @@
+[
+    {
+        "pk": 1,
+        "model": "qol.qolpracticalproblem",
+        "fields": {
+            "name": "Zorg voor kinderen"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "qol.qolpracticalproblem",
+        "fields": {
+            "name": "Wonen/huisvesting"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "qol.qolpracticalproblem",
+        "fields": {
+            "name": "Huishouden"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "qol.qolpracticalproblem",
+        "fields": {
+            "name": "Vervoer"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "qol.qolpracticalproblem",
+        "fields": {
+            "name": "Werk/school/studie"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "qol.qolpracticalproblem",
+        "fields": {
+            "name": "Financien"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "qol.qolpracticalproblem",
+        "fields": {
+            "name": "Verzekering"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "qol.qolsocialproblem",
+        "fields": {
+            "name": "Omgang met partner"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "qol.qolsocialproblem",
+        "fields": {
+            "name": "Omgang met kinderen"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "qol.qolsocialproblem",
+        "fields": {
+            "name": "Omgang met familie/vrienden"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "qol.qolemotionalproblem",
+        "fields": {
+            "name": "Greep hebben op emoties"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "qol.qolemotionalproblem",
+        "fields": {
+            "name": "Herinneren van dingen"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "qol.qolemotionalproblem",
+        "fields": {
+            "name": "Zelfvertrouwen"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "qol.qolemotionalproblem",
+        "fields": {
+            "name": "Angsten"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "qol.qolemotionalproblem",
+        "fields": {
+            "name": "Neerslachtigheid/somberheid"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "qol.qolemotionalproblem",
+        "fields": {
+            "name": "Spanning"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "qol.qolemotionalproblem",
+        "fields": {
+            "name": "Eenzaamheid"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "qol.qolemotionalproblem",
+        "fields": {
+            "name": "Concentratie"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "qol.qolemotionalproblem",
+        "fields": {
+            "name": "Schuldgevoel"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "qol.qolemotionalproblem",
+        "fields": {
+            "name": "Controleverlies"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "qol.qolspiritualproblem",
+        "fields": {
+            "name": "Zin van het leven/levensbeschouwing"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "qol.qolspiritualproblem",
+        "fields": {
+            "name": "Vertrouwen in God/geloof"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Uiterlijk"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Veranderde urine"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Verstopping/obstipatie"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Diarree"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Eten"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Opgezwollen gevoel"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Koorts"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Mondslijmvlies"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Misselijkheid"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Droge, verstopte neus"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Pijn"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Seksualiteit"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Droge, jeukerige huid"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Slaap"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Benauwdheid"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Duizeligheid"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Praten"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Smaakvermogen"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Verandering in gewicht"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Tinteling in handen/voeten"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Wassen/aankleden"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Dagelijkse bezigheden"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Moeheid"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Conditie"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "qol.qolfysicalproblem",
+        "fields": {
+            "name": "Spierkracht"
+        }
+    }
+]
+

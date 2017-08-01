@@ -1,0 +1,32 @@
+{% load i18n %}
+<b style='font-size:14px'>Remote care - Respons Urgente Afspraak - {{ patient.get_diagnose_display }}</b>
+<br/>
+<p>
+Beste {{ patient.user.first_name }} {{ patient.user.prefix|default:"" }} {{ patient.user.last_name }},
+</p>
+<p>
+Op {{ questionnaire_request.finished_on }} heeft u een Urgente Afspraak aangevraagd, omdat het niet goed ging.
+</p>
+
+<p>
+<u><i>Reactie op vragenlijst</i></u><br/>
+Ik heb uw antwoorden bekeken. &nbsp;<b><i>--Vul reactie hier in--</i></b>
+</p>
+
+
+
+<p>
+<u><i>Afspraak</i></u><br/>
+De afspraak {% if questionnaire_request.appointment_added_on %}is{% else %}wordt{% endif %} gepland door het Secretariaat. U {% if not questionnaire_request.appointment_added_on %}krijgt hier z.s.m. bericht over.{% else %}heeft hierover bericht gekregen.{% endif %}
+</p>
+
+<p>
+Ik zie u spoedig op de polikliniek om de situatie te bespreken.<br/><br/>
+Met vriendelijke groet,<br/><br/>
+{{ healthprofessional.user.first_name }} {{ healthprofessional.user.prefix|default:"" }} {{ healthprofessional.user.last_name }}<br/>
+{{ healthprofessional.get_function_display }} {{ healthprofessional.get_specialism_display }}<br/>
+{{ healthprofessional.user.hospital }}
+</p>
+
+
+

@@ -1,0 +1,126 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>
+                    
+                        <a onclick="document.forms['healthprofessional_search_form'].submit();return false;" href="#">
+                        <div class="box">
+                        
+                            <h4 class="title"> {% trans 'Zoek medewerker'  %} </h4>
+                           
+                        </div>
+                        </a>
+                        
+                    </li>
+                    <li>
+                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">
+                        
+                            <h4 class="title"> {% trans 'Annuleren' %}</h4>
+                        
+                        </div>
+                        </a>
+                        
+                    </li>
+
+                </ul>
+                <a  class="button white alignBottomLeftAbsolute" href='{% url "index" %}'>
+                    <i class="icoBack"></i>  {% blocktrans %}Terug{% endblocktrans %}
+                </a>                
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                
+                	<header class="line">
+                    
+                        <h2 class="title"><span class="rc_ico84"></span> 
+                            {% trans 'Zoek secretariaat medewerker' %} {% if request.GET.action == 'edit' %}{% trans 'en wijzig' %}{% endif %}{% if request.GET.action == 'remove' %}{% trans 'en verwijder' %}{% endif %}  </h2>
+                
+                	</header>
+                    
+                    <div class="content">
+                         <b></b>
+                        <form id="healthprofessional_search_form" class='defaultform' action='.' method='post'>              
+                            {% include 'form.html' %}
+                            <div class='submitbuttons'>
+                                <input type='submit' class='button' value="{% trans 'Zoek secretariaat medewerker' %}">
+                            </div>
+                        </form>
+
+
+                        <div class='results'>
+                            {% if has_searched %}
+                                {% if secretariat %}
+                                    <table class="table zebra lesser">
+                                      <tr class="action">
+                                        <th scope="col">{% trans 'Achternaam' %}</th>
+                                        <th scope="col">{% trans 'Specialisme' %}</th>
+                                        <th scope="col"></th>
+                                      </tr>
+
+                                    {% for secretary in secretariat %}
+                                    
+                                      <tr>
+                                        <td>{{ secretary.user.last_name }}</td>
+                                        <td>{{ secretary.get_specialism_display|default:"-" }}</td>
+                                        <td class='buttonsrow' ><a title="{% trans 'Inzien/wijzigen' %}" href='{% url "secretariat_view_personalia" secretary.health_person_id|get_random_session_key:request %}' class='button gray ico'><i class='rc_ico74'></i></a> <a title="{% trans 'Verwijder' %}" href='{% url "secretariat_remove" secretary.health_person_id|get_random_session_key:request %}' class='button gray ico'><i class='rc_ico50'></i></a></td> 
+                                      </tr>
+                          
+                       
+                                    {% endfor %}
+                                 </table>
+                                {% else %}    
+                                {% trans 'Geen resultaten gevonden' %}
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    	
+                    
+                    </div>
+    
+                    
+                    <footer class="buttonBar">
+
+
+                    
+                    	<div class="floatRight">
+                      
+                        </div>
+                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

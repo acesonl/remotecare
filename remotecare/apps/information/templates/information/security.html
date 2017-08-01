@@ -1,0 +1,108 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">                        
+                            <h4 class="title">{% trans 'Terug' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>
+                </ul>
+                            
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        <h2 class="title"><span class="rc_ico89"></span> {% trans 'Over beveiliging' %}</h2>               
+                	</header>
+                    
+
+                        <div class="canvas1 scrollbar_container informationscroll">
+
+                            <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                            <div class='viewport information_security'>
+
+                            <div class="content overview">
+                            {% if user|checkgroup:"patients" %}
+
+
+                            <p>De makers van Remote Care nemen privacy en informatiebeveiliging heel serieus. De applicaties, de verbindingen, de servers en zelfs onze medewerkers moeten allemaal voldoen aan de hoogste standaarden.</p>
+
+<p>Informatiebeveiliging bestaat uit een aantal verschillende aspecten.</p>
+<ul>
+<li>
+<b>Beschikbaarheid</b>: Op belangrijke tijdstippen moeten de artsen altijd bij uw gegevens kunnen. Denk bijvoorbeeld aan een noodgeval.
+</li>
+<li>
+<b>Vertrouwelijkheid</b>: Alleen de juiste personen kunnen toegang krijgen tot uw gegevens. Alleen met de juiste combinatie van gebruikersnaam, wachtwoord en sms-code is Remote Care te openen.
+</li>
+<li>
+<b>Integriteit</b>: Medische gegevens moeten ook juist zijn. Sommige gegevens worden daarom door Remote Care automatisch gecontroleerd op juistheid.
+</li>
+
+
+                        {% else %}
+<p>De makers van Remote Care nemen privacy en informatiebeveiliging heel serieus. De applicaties, de verbindingen, de servers en zelfs onze medewerkers moeten allemaal voldoen aan de hoogste standaarden.</p>
+
+<p>Informatiebeveiliging bestaat uit een aantal verschillende aspecten. Die zijn hieronder kort uitgelegd.</p>
+<ul>
+<li>
+<b>Beschikbaarheid</b>: Op belangrijke tijdstippen moeten de artsen altijd bij de gegevens kunnen. Denk bijvoorbeeld aan een noodgeval.
+</li>
+<li>
+<b>Vertrouwelijkheid</b>: Alleen de juiste personen kunnen toegang krijgen tot de gegevens. Alleen met de juiste combinatie van gebruikersnaam, wachtwoord en sms-code is Remote Care te openen.
+</li>
+<li>
+<b>Integriteit</b>: Medische gegevens moeten ook juist zijn. Sommige gegevens worden daarom door Remote Care automatisch gecontroleerd op juistheid.
+</li>
+</ul>
+
+                        {% endif %}
+                            </div>                        
+                        </div>                   
+                    </div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

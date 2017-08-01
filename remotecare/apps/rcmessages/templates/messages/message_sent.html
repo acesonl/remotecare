@@ -1,0 +1,68 @@
+{% extends 'base_context.html' %}
+{% load i18n %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href='{% url "patient_search" %}?action=message&back=True'>
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Terug' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>                  
+                </ul>
+                            
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+					<header class="line">
+						<h2 class="title"><span class="rc_ico7"></span> {% trans 'Bericht verstuurd' %}</h2>               
+					</header>
+				            
+					<div class="content">                       
+						<div class='message'>
+							{% trans 'Het bericht is verstuurd naar' %} {{ patient.user.full_name }}.
+						</div>
+					</div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">				
+							<a href='{% url "patient_search" %}?action=message&back=True' class='button'>{% trans 'Terug naar zoekresultaten' %}</a>
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+    <div class='leftcontentwrapper'>        
+        <div>
+            <b>Filled in questionnaire:</b>
+            {% include questionnaire.display_template %}
+       </div> 
+    </div>
+   
+    <div class='rightcontentwrapper'>  
+        <div class='sidemenubox'>
+            <div class='smallbox small_linkstyle2'>
+                <a href='{% url "index" %}'>
+                    {% blocktrans %}Back to home{% endblocktrans %}
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle1'>                
+
+            </div>
+            <div class='smallbox small_linkstyle1 clearboth'>
+                <a href='{% url "questionnaire_overview" questionnaire.patient.patient_id|get_random_session_key:request %}'>
+                    {% blocktrans %}Back to questionnaire overview{% endblocktrans %}
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle2'>       
+            </div>
+        </div>             
+        <div class='sidemenubox'>
+            <div class='smallbox small_linkstyle2'>
+                <a href='#'>
+
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle1'></div>
+            <div class='smallbox small_linkstyle1 clearboth'></div>
+            <div class='smallbox small_linkstyle2'></div>
+        </div>             
+    </div>       
+{% endblock %}

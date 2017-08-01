@@ -1,0 +1,46 @@
+{% load i18n %}
+<b style='font-size:14px'>Remote care - Respons Controle - {{ patient.get_diagnose_display }}</b>
+<br/>
+<p>
+Beste {%if is_male%}heer{%else%}mevrouw{%endif%} {{ patient.user.first_name }} {{ patient.user.prefix|default:"" }} {{ patient.user.last_name }},
+</p>
+<p>
+Op {{ questionnaire_request.finished_on }} voerde u een digitale controle uit voor {{ patient.get_diagnose_display }}.
+U gaf aan dat het {{ startquestionnaire.get_current_status_display|lower }} met u ging.
+</p>
+
+<p>
+<u><i>Reactie op vragenlijst</i></u><br/>
+Ik heb uw antwoorden bekeken. --vul reactie hier in--
+</p>
+
+<p>
+<u><i>Bloedwaarden</i></u><br/>
+De ontstekeningswaarde CRP in uw bloed was: --vul CRP waarde hier in--
+</p>
+
+<p>
+<u><i>Afspraak</i></u><br/>
+U gaf aan dat u {% if finishquestionnaire.appointment == 'no' %}geen{% else %}graag{% endif %} een afspraak wilde maken.<br/>
+{% if finishquestionnaire.appointment != 'no' %}Het secretariaat zal een afspraak voor u inplannen. U
+ontvangt hiervan een bericht.{% endif %}
+<br/>
+{% if finishquestionnaire.appointment == 'no' %}
+{% if not report.patient_needs_appointment %}
+Gezien uw antwoorden vind ik een afspraak ook niet noodzakelijk.
+{% else %}
+Ondanks dat u aangaf geen afspraak te willen, wil ik u gezien uw antwoorden op de
+vragen toch graag spreken. Het secretariaat zal u een oproep voor een afspraak sturen.
+{% endif %}
+{% endif %}
+</p>
+
+<p>
+Met vriendelijke groet,<br/><br/>
+{{ healthprofessional.user.first_name }} {{ healthprofessional.user.prefix|default:"" }} {{ healthprofessional.user.last_name }}<br/>
+{{ healthprofessional.get_function_display }} {{ healthprofessional.get_specialism_display }}<br/>
+{{ healthprofessional.user.hospital }}
+</p>
+
+
+

@@ -1,0 +1,21 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1'>
+        <title>{% trans 'Remote Care e-mail' %}</title>  
+        <style>
+            .wrapper {
+                font-family:Arial;
+                font-size:10pt;
+            }            
+        </style>      
+    </head>
+    <body>
+        <div id='container'>
+            <div id='content-wrapper' class='wrapper'>
+            {% block content_wrapper %} {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

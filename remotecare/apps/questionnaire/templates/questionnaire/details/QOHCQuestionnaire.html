@@ -1,0 +1,17 @@
+{% load i18n %}
+
+{% if questionnaire.not_fill_in != 'no' %}
+    <table class="tabledisplay">
+    <tbody><tr><th>{% trans 'Vraag' %}</th><th>{% trans 'Antwoord' %}</th></tr>
+
+        <tr><td colspan="2"><h5><i>{% trans 'Kwaliteit van zorg scores' %}</i></h5></td></tr>
+        <tr><td>{% trans 'Hoe tevreden bent u over onze totale zorg voor u?' %}</td><td>{{ questionnaire.get_hc_satisfaction_score_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Voelt u zich serieus genomen?' %}</td><td>{{ questionnaire.get_serious_score_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Voelt u zich vriendelijk en netjes behandeld?' %}</td><td>{{ questionnaire.get_friendly_score_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Is de informatie die u krijgt over uw ziekte goed begrijpelijk?' %}</td><td>{{ questionnaire.get_information_score_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Hoe tevreden bent u over de App Remote Care?' %}</td><td>{{ questionnaire.get_rc_satisfation_score_display|default:"-" }}</td></tr>
+    </tbody></table>
+{% else %}
+    {% trans 'U heeft er voor gekozen om dit onderdeel niet in te vullen.' %}
+{% endif %}
+

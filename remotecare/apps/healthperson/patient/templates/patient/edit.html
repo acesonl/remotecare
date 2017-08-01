@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+    <div class='leftcontentwrapper'>        
+        <div>
+            <b>Edit profile information</b>
+            <form id="profileform" action='.' method='post'>              
+                {% include 'form.html' %}
+            </form>
+        </div> 
+    </div>
+   
+    <div class='rightcontentwrapper'>  
+        <div class='sidemenubox'>
+            <div class='smallbox small_linkstyle2'>
+                <a href='{% url "index" %}'>
+                    {% blocktrans %}Back to home{% endblocktrans %}
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle1'>                
+            </div>
+            <div class='smallbox small_linkstyle1 clearboth'>
+                <a href='{% url "account_details" %}'>
+                    {% blocktrans %}Cancel{% endblocktrans %}
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle2'>
+                <a href='#' onclick="document.forms['profileform'].submit();return false;">
+                    {% blocktrans %}Save changes{% endblocktrans %}
+                </a> 
+            </div>
+        </div>             
+        <div class='sidemenubox'>
+            <div class='smallbox small_linkstyle2'>
+                <a href='#'>
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle1'></div>
+            <div class='smallbox small_linkstyle1 clearboth'></div>
+            <div class='smallbox small_linkstyle2'></div>
+        </div>             
+    </div>       
+{% endblock %}

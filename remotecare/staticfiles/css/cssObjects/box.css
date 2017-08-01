@@ -1,0 +1,218 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@
+BOX
+@@@@@@@@@@@@@@@@@@@@@@
+
+    about                boxes of all kinds
+
+*/
+
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    setup
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+        [class^="box"]{position:relative; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+        [class^="box"]:after{visibility: hidden; display: block;font-size: 0;content: " ";clear: both;height: 0;}
+
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    box
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+        /*+ setup
+        ..........................................................................*/
+
+            .box{margin-bottom:10px; background-color:#2188e8; padding:15px 15px; background-repeat:no-repeat; background-position:top right; background-size:contain;}
+            .box.hasList{padding-bottom:0px;}
+            .box.hasDoubleLine{padding-top:6px; padding-bottom:6px;}
+
+        /*+ shades
+        ..........................................................................*/
+
+                    .box.shade7{background-color:#36698a;}
+                .box.shade6{background-color:#267cc1;}
+            .box.shade5{background-color:#2188e8;}
+                .box.shade4{background-color:#24adff;}
+                    .box.shade3{background-color:#21aee8;}
+                        .box.shade2{background-color:#4fc0eb;}
+                            .box.shade1{background-color:#fff; color:black; }
+                                .box.shade0{background-color:#d7d7d7; color:black; }
+
+
+        /*+ heights
+        ..........................................................................*/
+
+            .box.height1{height:401px; }
+            .box.height2{height:200px; }
+
+            .box.edit_content {min-height:300px;}
+
+            .box.urgent_box {height:278px;}
+            .box.controle_box {height:278px;}
+        /*+ title
+        ..........................................................................*/
+
+            .box .title{padding:5px 0px 0px 0px; }
+            .box .title i{position:absolute; top:-2px; right:0px;}
+            .box .title span{position:relative; top:-4px; }
+            .box .title small{font-size:14px; display:block;}
+
+            .box .title .tooltip{position:relative; top:-1px; }
+
+            .box .information {float:right; font-size:11px;}
+        /*+ content
+        ..........................................................................*/
+
+            .box .content{padding:15px 0px 0px 0px; }
+            .box .content.dokterProfiel{padding-right:110px; font-size:13px; height:88px;}
+            .box .content.condensed{margin:0px -15px; }
+
+            .box.messageoverview {height:114px;}
+            .box .content .results {padding-top:90px;}
+        /*+ optionbar
+        ..........................................................................*/
+
+            .box .optionbar{float:right; margin-top:10px;}
+
+        /*+ hr
+        ..........................................................................*/
+
+            .box .hr{border-top:1px solid #cccccc; margin:15px 0px; }
+
+        /*+ tag
+        ..........................................................................*/
+
+            .box .tag{background-color:#dbdbdb; margin-bottom:10px; padding:0px 10px 0px 0px; font-size:13px; display:inline-block; border:1px solid #c7c7c7; }
+            .box .tag .tooltip{background-color:#919191; color:white; }
+            .box .tag .tooltip.left:after{border-left:5px solid #919191; }
+
+            .box .tag.active .tooltip{background-color:#267cc1; }
+            .box .tag.active .tooltip.left:after{border-left:5px solid #267cc1; }
+
+        /*+ headers
+        ..........................................................................*/
+
+            .box header h1, .box header h2, .box header h3, .box header h4, .box header h5, .box header h6{margin:0px 0px 0px 0px; }
+
+            .box header.line{border-bottom:1px solid #cccccc; padding-bottom:10px;}
+
+        /*+ scroll
+        ..........................................................................*/
+
+            .box .scroll{overflow-y:scroll;}
+            .box .scroll p{font-size:13px;}
+
+            .box .scroll.canvas1{ padding-right:30px;}
+
+            .box .scroll.messagescroll {height:300px;}
+                        .box .scroll.reportscroll {height:300px;}
+
+            /*Message scroll */
+            nav .scroll.navscroll {height:320px;  min-height:auto;}
+            nav .scroll
+            {
+
+            }
+            nav .scroll .listNavigation li {width:280px;}
+            nav .scroll.navscrollsent {height:248px; }
+
+            /*Patient controles overview page scroll */
+            nav .scroll.navscroll2 {height:507px;  min-height:auto;}
+
+
+            .box .scroll.scroll_urgent {height:207px; min-height:auto;}
+            .box .scroll.scroll_controle {height:207px;min-height:auto;}
+            .box .scroll.scroll_controle_secretary {height:457px;min-height:auto;}
+            .box .message_overview {min-height:300px;}
+            .box .min_height {min-height:300px;}
+            .messageview ol {list-style:decimal; margin:auto; padding-left:40px; margin-top:1em; margin-bottom:1em;}
+            .messageview ul {list-style:inherit; margin:auto; padding-left:40px; margin-top:1em; margin-bottom:1em;}
+
+
+        /*+ footers
+        ..........................................................................*/
+
+            .box footer.buttonBar{ clear:both; /* padding:35px 0px 0px 0px; */}
+
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    boxes
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+        /*+ boxInfo
+        ..........................................................................*/
+
+            .boxInfo{text-align:center; }
+
+            .boxInfo > .header{height:60px; }
+            .boxInfo > .content{height:150px; }
+            .boxInfo > footer{}
+
+            .boxInfo p{margin-bottom:30px;}
+
+        /*+ boxLogin
+        ..........................................................................*/
+
+            .boxLogin{}
+
+            /*listNavigation*/
+            .boxLogin .listNavigation li .box{background-color:#36698a; padding-top:17px; padding-bottom:18px;}
+
+            .boxLogin .listNavigation li .box.large {padding-top:25px; padding-bottom:25px;}
+
+
+            .boxLogin .listNavigation > li.active .box{background-color:#2188e8; }
+            .boxLogin .listNavigation > li.active .box:before{border-left: 20px solid #2188e8;}
+
+            .boxLogin .listNavigation .title{text-align:center; font-size:14px;}
+            .boxLogin .listNavigation .title span{display:block; margin:0px auto 10px auto; }
+
+            /*loginTitle*/
+            .boxLogin .loginTitle{font-size:48px; text-align:center; font-weight:bold; padding:50px 0px;}
+            .boxLogin .information {padding-top:10px;}
+            /*box*/
+            .boxLogin .box.shade7{padding-left:40px; padding-right:40px; height:237px; }
+            .boxLogin .box.shade7.large{height:267px;}
+
+            .boxLogin .message {padding-top:50px;}
+            /*form*/
+            .boxLogin form{margin-top:15px;}
+            .boxLogin form input{display:block; width:100%; margin-bottom:10px;}
+
+            .box .bottom {margin-bottom:0px;}
+
+            .tableview td:first-child  {width:250px;}
+            .tableview h5 {margin-bottom:0px; margin-top:10px;}
+
+            .tabledisplay {}
+            .tabledisplay th {text-align:left;}
+            .tabledisplay td:first-child {padding-right:100px; width:300px; font-style:italic; }
+
+
+            .box .content .searchcontent {min-height:300px;}
+            .box .content .subject {padding-bottom:10px; font-weight:bold;}
+
+            .tabledisplay td {vertical-align:top;}
+            .tabledisplay h5 {margin-bottom:0px; margin-top:5px; font-weight:bold; font-style:normal; font-size:14px;}
+            .tabledisplay td.wide {width:auto;}
+            .painscores td {width:200px;}
+            .painscores td:first-child {width:200px;}
+            .graphic_placeholder {width:600px; height:200px;}
+            .box .scroll.scroll_small {height:180px;}
+            .box .scroll.scroll_small_list {height: 120px;}
+            .box .scroll.questionnaire_answers{height:200px; min-height:auto;}
+
+
+            .box .padleft {padding-left:33px;}
+            .box .title .icoCheckRight {top: 0px; margin-top:4px; float:right;}
+
+            .box .date_unknown {float:right; padding-right:188px;}
+
+            .box .informationscroll p {font-size:13px;}
+            .box .informationscroll ul {list-style-type: disc; list-style:circle inside;}
+            .box .informationscroll li {padding-bottom:5px;font-size:13px;display:block; list-style:circle inside;}
+            .box .scroll.informationscroll {height: 520px;}
+
+            /*divers*/
+            .box .invalidreport {color:red;}
+
+            .econsult {width: 960px;}
+

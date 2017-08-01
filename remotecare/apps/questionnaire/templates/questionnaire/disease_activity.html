@@ -1,0 +1,185 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+{% load staticfiles %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="{% static "js/flot/excanvas.min.js" %}"></script><![endif]-->
+    <script type='text/javascript' src='{% static "js/flot/jquery.flot.js" %}'></script>
+{% endblock %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+
+        	<!--left-->
+        	<nav>
+        	    <!--left-->
+                {% if not questionnaire_requests %}
+                <ul class="listNavigation">
+                    <li>
+                        <a href="{% url "index" %}">
+                        <div class="box">
+                            <h4 class="title"> {% trans 'Terug' %} </h4>
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+                {% endif %}
+
+                <div class='scrollbar_container scrollbar_questionnaire'>
+		            <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+			        <div class="viewport">	
+		        	    <div class="content overview" >
+                            <ul class="listNavigation">
+                                {% for questionnaire_request in questionnaire_requests %}
+                                <li {% if questionnaire_request == selected_questionnaire_request %}class='active'{% endif %}>
+                                    <a href="{% url "disease_activity_overview" patient.health_person_id|get_random_session_key:request %}?qr={{questionnaire_request.id}}">
+                                    <div class="box">
+                                        <h4 class="title">
+                                        {% if questionnaire_request.urgent %}{% trans 'Het gaat niet goed' %}{% else %}{% trans 'Controle' %}{% endif %}
+                                        <small>{{ questionnaire_request.finished_on }}</small>
+                                        </h4>
+                                    </div>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+        	<!--left-->
+            </nav>
+        	<!--left-->
+
+        	<!--right-->
+        	<section>
+        	<!--right-->
+
+				<div class="box shade1">
+
+                	<header class="line">
+
+
+
+                        <h2 class="title"><span class="rc_ico101"></span> {% trans 'Ziekteactiviteit grafiek' %}
+
+                            <a class="button white  questionnaire_view" href="{% url "index" %}">
+                                <i class="icoBack"></i>{% trans 'Terug' %}
+                            </a>
+
+                        </h2>
+
+                	</header>
+
+                    <div class="content">
+                        <div id="placeholder" class='graphic_placeholder'></div>
+
+
+                        <script type="text/javascript">
+                        $(function () {
+
+
+                            var activity = [];
+                            var count = 0;
+                            {% for questionnair in disease_activity_questionnaires %}
+                                var date = {{questionnair.get_finished_on_timestamp}};
+                                activity.push([date,{{questionnair.graphic_score_display}}]);
+                                count += 1;
+                            {% endfor %}
+
+
+                            var plot = $.plot($("#placeholder"),
+                                   [{data: activity, label: "{{select_disease_activity_questionnaire.graphic_score_name}}", color: 'rgb(175,216,248)'}],
+                                    {
+                                       series: {
+                                           lines: { show: true },
+                                           points: { show: true, radius:5},
+
+                                       },
+                                       grid: { hoverable: true, clickable: true, backgroundColor: { colors: ["#AAA", "#AAA"] } },
+                                       yaxis: { min: {{select_disease_activity_questionnaire.graphic_score_min}}, max: {{select_disease_activity_questionnaire.graphic_score_max}} },
+                                       xaxis: { mode: "time", timeformat: "%d/%m/%y", ticks:count}
+                                     });
+
+                            function showTooltip(x, y, contents) {
+                                $('<div id="tooltip">' + contents + '</div>').css( {
+                                    position: 'absolute',
+                                    display: 'none',
+                                    top: y + 5,
+                                    left: x + 5,
+                                    border: '1px solid #fdd',
+                                    padding: '2px',
+                                    'background-color': '#fff',
+                                    'color': '#000',
+
+                                    opacity: 0.80
+                                }).appendTo("body").fadeIn(200);
+                            }
+
+                            var previousPoint = null;
+                            $("#placeholder").bind("plothover", function (event, pos, item) {
+
+                                if (item) {
+                                    if (previousPoint != item.dataIndex) {
+                                        previousPoint = item.dataIndex;
+
+                                        $("#tooltip").remove();
+                                        var x = item.datapoint[0],
+                                            y = item.datapoint[1];
+                                        x_date = new Date(x);
+                                        //item.series.label
+                                        // x_date.getDate() + '/' + (x_date.getMonth() + 1) + '/' + x_date.getFullYear() + " = "
+                                        showTooltip(item.pageX, item.pageY,item.series.label + ' = ' + y);
+                                    }
+                                }
+                                else {
+                                    $("#tooltip").remove();
+                                    previousPoint = null;
+                                }
+
+                            });
+
+
+                        });
+                        </script>
+                    </div>
+
+
+                </div>
+
+                <div class="box shade1">
+
+                	<header class="line">
+                         <h2 class="title"><span class="rc_ico101"></span> {% trans 'Ziekteactiviteit antwoorden' %}</h2>
+                	</header>
+                    <div class="scrollbar_container questionnaire_answers canvas1">
+				        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+				        <div class="viewport qa">	
+				        	<div class="content overview">
+						    {% if select_disease_activity_questionnaire %}
+						        {% with select_disease_activity_questionnaire as questionnaire %}
+						        {% include select_disease_activity_questionnaire.display_template %}
+						        {% endwith %}
+						    {% else %}
+						       {% trans 'Er is geen ziekteactiviteit score gekoppeld aan deze controle of "het gaat niet goed"' %}
+						    {% endif %}
+                    		</div>
+		                </div>
+		            </div>
+		    </div>
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+
+    </div>
+{% endblock %}

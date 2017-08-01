@@ -1,0 +1,91 @@
+{% extends 'report/report_context.html' %}
+{% load i18n customfilters %}
+{% load staticfiles %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <script type='text/javascript' src='{% static "js/ckeditor/ckeditor.js" %}'></script>
+
+    <script>
+
+        $(document).ready(function() {
+            $('.listselector a').click(function(event) {
+                $.Event(event).preventDefault();
+                var control_name = $(this).attr("to_set");
+                var value = $(this).attr("value");
+                var control = $('#' + control_name);
+                if ($(control).attr("checked"))
+                    $(control).attr("checked", "")
+                else
+                     $(control).attr("checked", "checked")
+                //Needed for showing hiding related questions.
+                control.change();
+                return false;
+            });
+
+            //Hide the checkboxes.
+            $('.listselector').parents('.field').find('.hiddeninput').hide();
+
+            //Set the li to selected/deselected
+            $('.hiddeninput :checkbox').change(function() {
+                $('[name=' + $(this).attr('name') + ']').each(function() {
+                    var li = $(this).parents('.field').find('[to_set=' +$(this).attr("id") + ']').parent();
+                    if ($(this).attr("checked"))
+                        $(li).addClass("active");
+                    else
+                        $(li).removeClass("active");
+                });
+
+
+                if($(this).attr('name') == 'sent_to_doctor')
+                {
+                    if ($(this).attr("checked"))
+                        $('.cke_wysiwyg_frame').contents().find('.doctorheaders').show();
+                    else
+                        $('.cke_wysiwyg_frame').contents().find('.doctorheaders').hide();
+                }
+
+                if($(this).attr('name') == 'patient_needs_appointment')
+                {
+                    if ($(this).attr("checked"))
+                    {
+                        $('.cke_wysiwyg_frame').contents().find('.appointment').show();
+                        $('.cke_wysiwyg_frame').contents().find('.no_appointment').hide();
+                    }
+                    else
+                    {
+                        $('.cke_wysiwyg_frame').contents().find('.appointment').hide();
+                        $('.cke_wysiwyg_frame').contents().find('.no_appointment').show();
+                    }
+                }
+            });
+
+            //init once
+            $('.hiddeninput :checkbox').each(function() {
+                $(this).change();
+            });
+
+        });
+    </script>
+
+{% endblock %}
+
+{% block title %}
+ <h2 class="title"><span class="icoKwaliteitBlue"></span> {% if questionnaire_request.urgent %}{% trans 'Medisch verslag' %}{% else %}{% trans 'Medisch verslag, Poli-oproep & HA-Brief' %}{% endif %}</h2>
+{% endblock %}
+
+
+{% block contents %}
+    <p>{% trans 'Het onderstaande Verslag is automatisch gegenereerd m.b.v. de antwoorden van de patiënt.' %}
+       {% trans 'U kunt dit verslag handmatig aanpassen.' %}</p>
+
+    <form id="reportaddform" class='reportform'  action='.' method='post'>
+    {% include 'questionnaire/forms/reportform.html' %}
+
+    <div class='submitbuttons'>
+        <a href='{% url "report_view" questionnaire_request.patient.health_person_id|get_random_session_key:request questionnaire_request.id %}' class='button'>{% trans 'Annuleren' %}</a>
+        <input type='submit' class='button' value="{% trans 'Medisch verslag opslaan' %}">
+    </div>
+
+    </form>
+{% endblock %}

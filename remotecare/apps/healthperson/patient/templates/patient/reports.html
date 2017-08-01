@@ -1,0 +1,63 @@
+{% extends 'patient/patient_context.html' %}
+{% load i18n customfilters %}
+
+{% block section_title %}
+    <h2 class="title"><span class="icoKwaliteitBlue"></span> {% trans 'Verslagen' %}</h2>     
+{% endblock %}
+{% block section_content %}                      
+    <div class="scrollbar_container canvas1">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport patrep">	
+	        <div class="content overview">	
+                <table class="table zebra lesser">
+                  <tr class="action">
+                    <th scope="col">{% trans 'Ingevuld op' %}</th>
+                    <th scope="col">{% trans 'Ingevuld door' %}</th>
+                    <th scope="col"></th>
+                  </tr>
+                  {% for report in reports %}
+                  <tr {% if report.invalid %} class='invalidreport' {% endif %}>
+                    <td>{{ report.created_on|date:SHORT_DATE_FORMAT  }}</td>
+                    <td>{{ report.created_by.user.professional_name }} {% if report.invalid %} {% trans '(Verslag is ongeldig)' %} {% endif %}</td>
+                    <td class='buttonsrow'><a title="{% trans 'Bekijk verslag' %}" href='{% url "patient_view_reports" patient.health_person_id|get_random_session_key:request %}?report={{ report.id }}' class='button gray ico'><i class='rc_ico74'></i></a></td> 
+                  </tr>
+                  {% endfor %}
+                </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block extra_section %}
+        <div class="box shade1">
+                    
+        	<header class="line">
+                 <h2 class="title"><span class="icoKwaliteitBlue"></span>  <span {%if selected_report.invalid %}class='invalidreport'{% endif %}> {% trans 'Geselecteerd verslag' %}
+{%if selected_report.invalid %} {% trans '(is ongeldig)' %} {% endif %} </span>
+ {% if selected_report  %}
+ {% if not selected_report.invalid %}
+                    <form id='makeinvalidform' class='searchmessageform' method='post'>
+                    {% csrf_token %}
+                    <input type='submit' value='{% trans 'Maak verslag ongeldig' %}' name='make_invalid' onclick='return confirm("Weet u zeker dat u dit verslag ongeldig wilt maken? Dit kan niet ongedaan worden gemaakt.");' class='button change_button multiplebuttons'/>
+                    </form>
+ {% endif %}
+ {% endif %}
+                </h2>              
+        	</header>
+            
+             <div class="scrollbar_container canvas1">
+                <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                <div class="viewport patrepsel">	
+	                <div class="content overview">	
+                    {% if selected_report %}
+                        {% autoescape off %}{{ selected_report.report }}{% endautoescape %}
+                    {% else %}
+                    {% trans 'Geen verslag geselecteerd' %}    
+                    {% endif %}
+                </div>
+            </div>
+                
+        </div>
+
+{% endblock %}

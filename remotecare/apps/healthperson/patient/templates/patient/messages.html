@@ -1,0 +1,80 @@
+{% extends 'patient/patient_context.html' %}
+{% load i18n customfilters %}
+
+{% block section_title %}
+    <h2 class="title"><span class="icoKwaliteitBlue"></span> {% trans 'Berichten' %}  
+
+
+    <form id='searchmessageform' class='defaultform searchmessageform' action='.' method='post'>
+         {% csrf_token %}
+        <input type="text" name='searchterm' id='id_searchterm' class="inputtext" placeholder="{% trans 'Zoek...' %}"> 
+        <input type='submit' class='button' value="{% trans 'Zoek bericht' %}" />   
+    </form>
+
+    
+</h2>
+{% endblock %}
+{% block section_content %}                      
+    <div class="scrollbar_container canvas1">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport patmes">	
+	        <div class="content overview">	
+	            {% if has_searched %}
+                    {% trans 'Zoekresultaten:' %}
+                {% endif %}
+
+                {% if rc_messages %}
+                <table class="table zebra lesser">
+                  <tr class="action">
+                    <th scope="col">{% trans 'Toegevoegd op' %}</th>
+                    <th scope="col">{% trans 'Toegevoegd door' %}</th>
+                    <th scope="col"></th>
+                  </tr>
+                  {% for message in rc_messages %}
+                  <tr>
+                    <td>{{ message.added_on|date:SHORT_DATE_FORMAT  }}</td>
+                    <td>{{ message.sender.user.professional_name }}</td>
+                    <td class='buttonsrow'><a title="{% trans 'Bekijk bericht' %}" href='{% url "patient_view_messages" patient.health_person_id|get_random_session_key:request %}?message={{ message.id }}' class='button gray ico'><i class='rc_ico74'></i></a></td> 
+                  </tr>
+                  {% endfor %}
+                </table>
+                {% else %}
+                    {% if has_searched %} 
+                    {% trans 'Geen resultaten' %}
+                    {% else %}
+                    {% trans 'Geen berichten' %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block extra_section %}
+        <div class="box shade1">
+                    
+        	<header class="line">
+                 <h2 class="title"><span class="icoKwaliteitBlue"></span> {% trans 'Geselecteerd bericht' %}</h2>              
+        	</header>
+            
+            <div class="content">
+                <div class="scrollbar_container canvas1">
+                    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                    <div class="viewport patmessel">	
+	                    <div class="content overview">	
+                            {% if selected_message %}
+                                <div class='subject'>
+                                {% trans 'Onderwerp' %}: {{ selected_message.subject }}
+                                </div>
+                                {% autoescape off %}{{ selected_message.internal_message }}{% endautoescape %}
+                            {% else %}
+                            {% trans 'Geen bericht geselecteerd' %}    
+                            {% endif %}
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'healthprofessional/healthprofessional_context.html' %}
+{% load i18n customfilters %}
+
+{% block section_title %}
+    <h2 class="title"><span class="rc_ico88"></span> {% trans 'Afwezigheid' %}<a href="{% url "healthprofessional_edit_out_of_office" healthprofessional.health_person_id|get_random_session_key:request %}" class='button change_button'>Wijzig</a></h2> 
+{% endblock %}
+{% block section_content %} 
+
+    <div class='min_height'>                     
+    <table class='tableview'>
+        <tr><td colspan=2><h5>{% trans 'Afwezigheid' %}</h5></td></tr>
+        {% if healthprofessional.out_of_office_start %}
+        <tr><td>{% trans 'Start afwezigheid' %}</td><td>{{ healthprofessional.out_of_office_start }}</td></tr>
+        <tr><td>{% trans 'Einde afwezigheid' %}</td><td>{{ healthprofessional.out_of_office_end }}</td></tr>
+        <tr><td>{% trans 'Vervangende specialist' %}</td><td>{{ healthprofessional.out_of_office_replacement.user.professional_name }}</td></tr>        
+        {% else %}
+        <tr><td colspan=2>{% trans 'Geen afwezigheidsperiode ingesteld' %}</td></tr>
+       
+        {% endif %}
+    </table>          
+    </div>
+{% endblock %}

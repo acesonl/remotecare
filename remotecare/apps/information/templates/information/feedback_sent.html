@@ -1,0 +1,68 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li >                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Terug'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>                    
+                </ul>
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        <h2 class="title"><span class="icoKwaliteitBlue"></span> {% trans 'Stuur feedback' %}</h2>              
+                	</header>
+                    
+                    <div class="content">
+                         <form class='defaultform'> 
+
+                            <p>Bedankt voor het versturen van uw feedback.</p>
+
+                            <div class='submitbuttons'>
+                                <a class='button' href="{% url "index" %}">{% trans 'Terug'  %}</h4></a> 
+                               
+                            </div>
+                            
+                        </form>     
+                    </div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

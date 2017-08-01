@@ -1,0 +1,16 @@
+{% extends 'information/information_context.html' %}
+{% load i18n %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block section_title %}
+    <h2 class="title"><span class="rc_ico5"></span> {% trans 'Ontstaan en werking' %}</h2> 
+{% endblock %}
+
+{% block section_content %}
+   <p>Hier komt informatie betreffende ontstaan en werking te staan.</p>
+{% endblock %}
+
+

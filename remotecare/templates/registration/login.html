@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block debug %}
+{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block content_wrapper %}
+<div class="frameSection login boxLogin">
+    
+    	<div class="loginTitle">{% trans 'Remote Care' %}</div>
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abbb">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<div>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li {% if step == 'password' %}class="active"{% endif %}>
+                    
+                        
+                        <div class="box">
+                        
+                            <h4 class="title"><span class="icoPassword"></span> {% trans 'Wachtwoord' %}</h4>
+                        
+                        </div>
+                        
+                        
+                    </li>
+                    <li {% if step != 'password' %}class="active"{% endif %}>
+                    
+                       
+                        <div class="box">
+                        
+                            <h4 class="title"><span class="icoSMS"></span> {% trans 'Code via sms' %}</h4>
+                        
+                        </div>
+                        
+                        
+                    </li>
+                </ul>
+                
+        	<!--left-->
+            </div>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade7">
+                
+                	<div class="optionbar"><a class="underline" href='{% url "about_security" %}'><em>{% trans 'Over beveiliging' %}</em></a></div>
+                
+                    <h2 class="title"><span class="icoLock"></span> {% trans 'Login' %}</h2>
+
+					<form id='loginform' class='loginform' action='.' method='post'>
+                       {% include 'login_form.html' %}
+
+                       <div class='submitbuttons'>
+                        {% if step != 'smscode' %}
+                        
+                        <a href="{% url "forgot_password" %}">{% trans 'Wachtwoord vergeten?' %}</a>
+                      
+                        {% endif %}
+                    	<button id='submitbutton' type='submit' value='SMS code' class="button white"><i class="icoLockOpen"></i> {% if step == 'password' %}{% trans 'SMS code' %}{% else %}{% trans 'Login' %}{% endif %}</button>
+
+                      </div>
+
+
+
+                    </form>
+                    
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+
+{% endblock %}

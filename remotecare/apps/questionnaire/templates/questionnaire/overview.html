@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+    <div class='leftcontentwrapper'>        
+        <div>
+            <b>Questionnaire requests</b>
+            <table>
+                <tr><th>{% trans 'Created on' %}</th><th>{% trans 'Fill in' %}</th></tr>
+                {% for questionnaire_request in questionnairerequests %}
+                <tr><td>{{ questionnaire_request.created_on|date:SHORT_DATE_FORMAT }}</td>
+                <td>
+                {% if questionnaire_request.filled_in %}
+                <a href='{% url "questionnaire_details" patient.health_person_id|get_random_session_key:request questionnaire_request.id %}'>{% trans 'Filled in' %}</a>
+                {% else %}
+                <a href='{% url "questionnaire_fillin" patient.health_person_id|get_random_session_key:request questionnaire_request.id %}'>Fill in</a></td>
+                {% endif %}
+
+                </tr>
+                {% endfor %}
+            </table>      
+
+            <br><br><br>
+            <a href='{% url "questionnaire_add" patient.health_person_id|get_random_session_key:request %}'>Voeg vragenlijst aanvraag toe</a>
+        </div> 
+    </div>
+   
+    <div class='rightcontentwrapper'>  
+        <div class='sidemenubox'>
+            <div class='smallbox small_linkstyle2'>
+                <a href='{% url "index" %}'>
+                    {% blocktrans %}Back to home{% endblocktrans %}
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle1'>                
+                <a href='{% url "questionnaire_view" patient.health_person_id|get_random_session_key:request "QOLQuestionnaire" %}'>
+                    {% blocktrans %}QOL vragenlijst overzicht{% endblocktrans %}
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle1 clearboth'>
+            </div>
+            <div class='smallbox small_linkstyle2'>         
+            </div>
+        </div>             
+        <div class='sidemenubox'>
+            <div class='smallbox small_linkstyle2'>
+                <a href='#'>
+
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle1'></div>
+            <div class='smallbox small_linkstyle1 clearboth'></div>
+            <div class='smallbox small_linkstyle2'></div>
+        </div>             
+    </div>       
+{% endblock %}

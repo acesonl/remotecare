@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="nl">
+<head>
+	<title>Remote Care</title>
+	<meta name="keywords" content="Remote Care, E-health">
+	<meta name="description" content="Remote Care">
+	<meta name="author" content="ExampleInc">
+
+    <link href="{% static "css/cssObjects/cssObjects.css" %}" rel="stylesheet">
+
+	<link rel="shortcut icon" href="{% static "images/favicon.ico" %}">
+    <link rel="apple-touch-icon" href="{% static "images/ios-icon.png" %}"><!--ios web app icon 114x114-->	
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+	<meta name="robots" content="all">	
+    <script type='text/javascript' src='{% static "js/jquery.js" %}'></script>
+    <link rel='stylesheet' href='{% static "css/jquery-ui-1.10.1.custom.min.css" %}'>
+    <script type='text/javascript' src='{% static "js/jquery.ui.js" %}'></script>
+
+	<!--[if lt IE 9]>
+    <link href="{% static "css/ie8.css" %}" rel="stylesheet">
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+
+
+    <!--frame-->
+    <div class="frame"><div class="frameContainer"><div class="frameApp">
+    <!--frame-->
+
+    <div class="frameHeader">
+
+    <hgroup>
+    	<h1 class="logo"><a href="/">Remote Care</a></h1>
+
+    </hgroup>
+    <div class="optionbar">
+        <form id='searchform' action='/search/' method='post'>
+            {% csrf_token %}
+            <input type="text" name='searchterm' id='id_searchterm' class="inputtext" placeholder="Zoek..."> <button onclick='document.getElementById("searchform").submit();'><i class="icoSearch"></i></button>
+        </form>
+    </div>
+
+    <nav class="nav header">
+
+        <ul class="menu">
+            <li ><a class="lvl1" href="/">Home</a></li>
+            <li ><a class="lvl1" href="/information/security/">Over beveiliging</a></li>
+            <li><a class="lvl1" href="/logout/">Uitloggen</a></li>
+            <li><a class="lvl1" href="/information/faq/">Help</a></li>
+        </ul>
+
+    </nav>
+
+
+    </div>
+
+
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>
+                        <a href='/'>
+                        <div class="box">
+                            <h4 class="title">Terug</h4>
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+
+
+        	<!--left-->
+            </nav>
+        	<!--left-->
+
+        	<!--right-->
+        	<section>
+        	<!--right-->
+
+				<div class="box shade1">
+
+                	<header class="line">
+                        <h2 class="title"><span class="icoKwaliteitBlue"></span> Fout in de applicatie</h2>
+                	</header>
+
+                    <div class="content">
+                        <div class="scroll canvas1 informationscroll">
+                            <p>Er is een fout opgetreden in de applicatie, de beheerder is op de hoogte gesteld.</p>
+                        </div>
+                    </div>
+
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+
+    </div>
+
+<!--frame-->
+</div></div></div>
+<!--frame-->
+
+</body>
+</html>
+

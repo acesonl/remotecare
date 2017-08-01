@@ -1,0 +1,60 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@
+TYPOGRAPHY
+@@@@@@@@@@@@@@@@@@@@@@
+
+	about				typographic settings
+	
+	syntax
+
+*/
+
+	/*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	standard tags
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+	
+		/*+ heading
+		..........................................................................*/
+	
+			h1, h2, h3, h4, h5, h6{margin:0px 0px 0px 0px; position:relative;  font-weight:normal;}
+		
+			h1{font-size:28px;}
+			h2{font-size:24px;}
+			h3{font-size:22px;}
+			h4{font-size:21px;}
+			h5{font-size:16px; margin-bottom:10px;}
+			h6{font-size:15px;}
+			
+			article h1, article h2, article h3, article h4, article h5, article h6{margin-bottom:10px;}
+			
+
+            .content h5 {margin-bottom:0px;}
+		/*+ anchor
+		..........................................................................*/
+	
+			a{text-decoration:none; color:inherit;}
+			
+		/*+ paragraph
+		..........................................................................*/
+
+			p{margin:0px 0px 10px 0px; }
+			p:last-child{margin-bottom:0px;}
+			p a{color:#00c2eb; text-decoration:underline; }
+			p a:hover{color:#15a2c0; }
+			
+		/*+ address
+		..........................................................................*/
+			
+			address{font-style:normal; font-size:13px;}
+			address i{margin-right:5px;}
+			
+		/*+ list
+		..........................................................................*/
+			
+			ul, ol{ list-style:none; margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; }
+			
+
+
+
+
+

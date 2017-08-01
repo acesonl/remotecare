@@ -1,0 +1,103 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href='{% url "patient_search" %}?back=True'>
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Terug' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>                    
+                    <li {% if submenu == 'personalia' %}class='active'{% endif %}>                    
+                        <a href="{% url "patient_view_personalia" patient.health_person_id|get_random_session_key:request %}">
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Personalia & Account'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    
+                    <li  {% if submenu == 'control_freq' %}class='active'{% endif %}>                    
+                        <a href="{% url "patient_view_freq_control" patient.health_person_id|get_random_session_key:request %}">
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Diagnose & Controle freq.'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    {% if user|checkgroup:"healthprofessionals" %}
+                    <li {% if submenu == 'controles' %}class='active'{% endif %}>                    
+                        <a href="{% url "patient_view_controles" patient.health_person_id|get_random_session_key:request %}">
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Controles'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'reports' %}class='active'{% endif %}>                    
+                        <a href="{% url "patient_view_reports" patient.health_person_id|get_random_session_key:request %}">
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Verslagen'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'appointments' %}class='active'{% endif %}>         
+                        <a href="{% url "patient_view_appointments" patient.health_person_id|get_random_session_key:request %}">
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Afspraken'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'message' %}class='active'{% endif %}>                    
+                        <a href="{% url "patient_view_messages" patient.health_person_id|get_random_session_key:request %}">
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Berichten'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    {% endif %}
+                </ul>
+                            
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        {% block section_title %} {% endblock %}                
+                	</header>
+                    
+                    <div class="content edit_content">
+                        {% block section_content %} {% endblock %}                       
+                    </div>
+                
+                </div>
+                {% block extra_section %}
+
+                {% endblock %}
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

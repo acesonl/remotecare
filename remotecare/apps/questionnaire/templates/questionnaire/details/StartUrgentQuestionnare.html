@@ -1,0 +1,15 @@
+{% load i18n %}
+
+
+
+<table class='tabledisplay'>
+
+    <tr><th>{% trans 'Vraag' %}</th><th>{% trans 'Antwoord' %}</th></tr>
+
+
+    <tr><td colspan=2><h5><i>Afspraak termijn</i></h5></td></tr>
+    <tr><td >{% trans 'Op welke termijn zou u deze afspraak willen?' %}</td><td>{{ questionnaire.get_appointment_period_display|default:"-" }}</td></tr>
+</table>
+
+
+

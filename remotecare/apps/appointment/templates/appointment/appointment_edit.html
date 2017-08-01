@@ -1,0 +1,54 @@
+{% extends 'appointment/appointment_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }}
+{% endblock %}
+
+{% block title %}
+ <h2 class="title"><span class="rc_ico71"></span> {% trans 'Afspraak verzoek afhandelen' %}</h2>
+{% endblock %}
+
+
+{% block contents %}
+    <h5>{% trans 'Gegevens patiënt' %}</h5>
+    <p>
+    {{ patient.user.first_name }} {{ patient.user.prefix|default:"" }} {{ patient.user.last_name }}, {% trans 'geboren' %} {{ patient.user.date_of_birth }}, {{ patient.user.get_gender_display|lower }}
+    </p>
+
+    <h5>{% trans 'Informatie' %}</h5>
+
+
+
+    <p>
+    {% trans 'Huidige behandelaar:' %} {{ patient.current_practitioner.user.professional_name }}
+    </p>
+
+    <p>
+    {% trans 'Gewenste termijn afspraak:' %} {% if questionnaire_request.appointment_period %} {{ questionnaire_request.appointment_period|default:"-" }} ({% trans 'ingevuld op' %} {{ questionnaire_request.finished_on }}) {% else %} {% trans 'Niet ingevuld' %} {% endif %}
+    </p>
+
+    <form id="reportaddform" class='defaultform appointmentform'  action='.' method='post'>
+
+    {% include 'appointment/appointmentform.html' %}
+
+    <div class='message'>
+    {% trans 'Na bevestiging wordt er een bericht naar de patiënt gestuurd betreffende de afspraak. De afhandeling van de ingevoerde vragenlijsten blijft openstaan voor de (opgegeven) behandelaar.' %}</i>
+    </div>
+
+
+    <div class='message'>
+    <i>{% trans 'Nb. Indien er een andere behandelaar wordt gekozen dan de huidige behandelaar wordt de afspraak eenmalig overgedragen aan de gekozen behandelaar' %}</i>
+    </div>
+
+
+    {% if show_warning %}
+    <input type='hidden' value='True' name='appointment_warning' id='id_appointment_warning' />
+    <div class='message message_error'><b>{% trans 'De afspraak datum is niet binnen de gewenste termijn. Weet u zeker dat dit goed is? Indien ja, klik dan op bevestigen hieronder.' %}</b></div>
+    {% endif %}
+    <div class='submitbuttons'>
+        <a href='{% url "index" %}' class='button'>{% trans 'Annuleren' %}</a>
+        <input type='submit' class='button' value="{% trans 'Bevestigen en versturen naar de patiënt' %}">
+    </div>
+    </form>
+{% endblock %}

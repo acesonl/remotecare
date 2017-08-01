@@ -1,0 +1,63 @@
+{% extends 'messages/message_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block title %}
+ 
+ <h2 class="title"><span class="rc_ico7"></span> {% trans 'Zoek bericht' %}
+
+<a class="button white questionnaire_view" href="/">
+    <i class="icoBack"></i>{% trans 'Terug naar home' %}
+</a>
+
+
+</h2>
+
+{% endblock %}
+
+{% block contents %}
+    <div class='searchcontent'>
+        <form id="messagesearchform" class='defaultform' action='.' method='post'>              
+            {% include 'form.html' %}
+        <div class='submitbuttons'>
+            <input type='submit' class='button' value="{% trans 'Zoek bericht' %}">
+        </div> 
+        </form>  
+
+
+        <div class='results'>
+            {% if searched %}
+                {% if search_results %}
+
+                 <div class="scrollbar_container questionnaire_answers canvas1">
+				        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+				        <div class="viewport qa">	
+				        	<div class="content overview">	
+                                <table class="table zebra lesser">
+                                  <tr class="action">
+                                    <th scope="col">{% trans 'Toegevoegd op' %}</th>
+                                    <th scope="col">{% trans 'Ontvanger' %}</th>
+                                    <th scope="col"></th>
+                                  </tr>
+                                  {% for result in search_results %}
+                                  <tr>
+                                    <td>{{ result.added_on|date:SHORT_DATE_FORMAT  }}</td>
+                                    <td>{{ result.patient.user.full_name }}</td>
+                                    <td class='buttonsrow'>
+                    <a title="{% trans 'Bekijk bericht' %}" href='{% url "sent_message_details" healthperson.health_person_id|get_random_session_key:request result.id %}' class='button gray ico'><i class='rc_ico74'></i></a></td> 
+                                  </tr>
+                                  {% endfor %}
+                              </table>
+                        </div>
+                    </div>
+                </div>
+                {% else %}    
+                {% trans 'Geen resultaten gevonden' %}
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

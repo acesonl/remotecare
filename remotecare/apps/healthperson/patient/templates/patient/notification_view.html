@@ -1,0 +1,82 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Terug' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>                    
+                    <li>                    
+                        <a href='{% url "patient_view_profile" patient.health_person_id|get_random_session_key:request %}'>
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Account' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>                    
+                    <li class='active'>                    
+                        <a href='{% url "patient_view_notification" patient.health_person_id|get_random_session_key:request %}'>
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Notificatie instellingen' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>                    
+
+                </ul>
+                                        
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                          <h2 class="title"><span class="rc_ico88"></span> {% trans 'Notificatie instellingen' %}<a href="{% url "patient_edit_notification" patient.health_person_id|get_random_session_key:request %}" class='button change_button'>Wijzig</a></h2>           
+                	</header>
+                    
+                    <div class="content edit_content">
+                        <table class='tableview'>
+                            <tr><td colspan=2><h5>{% trans 'Notificatie instellingen' %}</h5></td></tr>
+                            <tr><td>{% trans 'Starten van een reguliere controle' %}</td><td>{{ patient.get_regular_control_start_notification_display }}</td></tr>
+                            <tr><td>{% trans 'Herinneringen bij een reguliere controle, indien deze niet binnen 1 week is ingevuld.' %}</td><td>{{ patient.get_regular_control_reminder_notification_display }}</td></tr>
+                            <tr><td>{% trans 'Uitslag van een controle of opvlamming nadat de behandelaar deze heeft beoordeeld en verwerkt.' %}</td><td>{{ patient.get_healthprofessional_handling_notification_display }}</td></tr>  
+                            <tr><td>{% trans 'Overige berichten van een arts of verpleegkundige.' %}</td><td>{{ patient.get_message_notification_display }}</td></tr>     
+                                    
+                        </table>                
+                    </div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

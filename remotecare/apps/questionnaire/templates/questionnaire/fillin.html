@@ -1,0 +1,285 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }} 
+    <script>
+       var QuestionnaireForm = {
+            link_to : function(url) {
+                window.location = url;
+            },
+            confirm_cancel_remove: function() {
+
+                if(confirm("{% trans 'Weet u zeker dat u de vragenlijst wilt annuleren en de vragenlijst wilt verwijderen?' %}"))
+                { 
+                    QuestionnaireForm.remove_and_exit(event, '{% url "questionnaire_request_remove" patient.health_person_id|get_random_session_key:request questionnaire_request.id %}', '{% if questionnaire_request.urgent %}{% url "index" %}{% else %}{% url "index" %}{% endif %}');
+                }
+            },
+            remove_and_exit: function(event, url, exit_url, step) {
+                //submit partial form, remove the questionnaire and exit
+                $.Event(event).preventDefault();
+                callback = function() { QuestionnaireForm.link_to(exit_url);};
+                QuestionnaireForm.submit_partial_form(event,url,callback);
+                return false;
+            },    
+            save_exit: function(event, url, exit_url, step) {
+                //submit partial form and exit to overview
+                $.Event(event).preventDefault();
+                callback = function() { QuestionnaireForm.link_to(exit_url);};
+                QuestionnaireForm.submit_partial_form(event,url,callback);
+                return false;
+            },    
+            go_step_back: function(event, url, redirect_url) {
+                //submit partial form and redirect to
+                //previous step
+                $.Event(event).preventDefault();
+                link_to_url = redirect_url;                
+                callback = function() { QuestionnaireForm.link_to(link_to_url);};
+                QuestionnaireForm.submit_partial_form(event,url, callback);
+                return false;
+            },            
+            submit_partial_form: function (event, url, callback)
+            {               
+                $.post(
+                    url,
+                    $('#questionnaireaddform').serialize(),
+                    function(data) {
+                        if (data == 'succes') {                                             
+                            callback();
+                        } 
+                    }
+                );
+            }
+        } 
+        $(document).ready(function() {
+            $('.listselector a').click(function(event) {
+                $.Event(event).preventDefault();
+                var control_name = $(this).attr("to_set");
+                var value = $(this).attr("value");                
+                var control = $('#' + control_name);
+                control.val(value);                
+                //Needed for showing hiding related questions.
+                control.change();                
+                return false;
+            });
+
+            //Hide the dropboxes.
+            $('.listselector').parents('.field').find('.hiddeninput').hide();
+
+
+            $('.multiplelistselector a').click(function(event) {
+                $.Event(event).preventDefault();
+                var control_name = $(this).attr("to_set");
+                var value = $(this).attr("value");                
+                var control = $('#' + control_name);
+              
+                if (control.attr("checked"))   
+                    control.removeAttr("checked");
+                else
+                    control.attr("checked","checked");
+
+                //Needed for hide/showing related controls and the controls
+                //that replace the original checkboxes.
+                control.change();                
+                return false;
+            });
+
+            $('.hiddeninput .other-choice-text').each(function() {
+                $(this).parents('.field').find('.inputselector').append($(this));
+            });
+
+//other-choice-text
+
+            //Hide the checkboxes.
+            $('.multiplelistselector').parents('.field').find('.hiddeninput').hide();
+
+            //Set the li to selected/deselected
+            $('.hiddeninput :checkbox').change(function() {
+                $('[name=' + $(this).attr('name') + ']').each(function() {
+                    var li = $(this).parents('.field').find('[to_set=' +$(this).attr("id") + ']').parent();
+                    if ($(this).attr("checked"))
+                        $(li).addClass("active");
+                    else
+                        $(li).removeClass("active");
+                });
+            });
+           
+           $('.hiddeninput select').change(function() {
+                var val = $(this).val();                
+                //var li = $(this).parents('.field').find('[to_set=' +$(this).attr("id") + ']').parent();                
+                $('[to_set=' + $(this).attr("id") + ']').each(function() {                   
+                    if ($(this).attr("value") == val) 
+                        $(this).parents('li').addClass("active");   
+                    else
+                       $(this).parents('li').removeClass("active");   
+                }); 
+           });
+
+            
+           //init once
+           $('select.other-choice-select').each(function() {
+                $(this).change();
+           });
+
+           //init once
+           $('.hiddeninput :checkbox').each(function() {
+                $(this).change();
+           });
+
+
+        });
+    </script>
+{% endblock %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation toBottom">
+                    {% with questionnaire_request.last_filled_in_step as last_filled_in_step %} 
+
+                    {% for questionnaire_step_name in questionnaire_step_names %}
+
+                        <li {% if forloop.counter0|slugify  <= last_filled_in_step %}style='cursor:pointer;' onclick="location.href='{% url "questionnaire_fillin" patient.health_person_id|get_random_session_key:request questionnaire_request.id %}?step={{forloop.counter0}}'"{% endif %} class='{% if questionnaire_step_name == current_step_name %}active{% endif%}{% if forloop.last %} last_step_li{%endif%}' >                                                
+                            <div class="box">
+                            
+                                <h4 class="title">
+                                    {% if questionnaire_step_name == 'Ziekteactiviteit' %}                                    
+                                    <span class="icoSetZiekteActiviteit"></span> 
+                                    {% elif questionnaire_step_name == 'Kwaliteit van leven' %}
+                                    <span class="icoSetKwaliteit"></span> 
+                                    {% elif questionnaire_step_name == 'Kwaliteit van zorg' or questionnaire_step_name == 'Omschrijving problemen' %}
+                                    <span class="icoSetKwaliteitZorg"></span> 
+                                    {% else %}
+                                    <span class="icoSetControle"></span> 
+                                    {% endif %}
+                                    {{ questionnaire_step_name }}
+                                </h4>
+                                {% if form_step_names %}
+                                {% if questionnaire_step_name == current_step_name %}
+
+
+                                {% with forloop.counter0 as outer_forloopcounter_0 %}
+                                             
+                                <ul class="listCheck">
+                                {% for step_nr in form_step_nrs %}
+                                        
+                                    {% if outer_forloopcounter_0|slugify  <= last_filled_in_step %}
+                                    <a href="{% url "questionnaire_fillin" patient.health_person_id|get_random_session_key:request questionnaire_request.id %}?step={{outer_forloopcounter_0}}&form_step={{ step_nr }}">
+                                    {% endif %}
+                                    <li  class="{% if forloop.counter0 < form_step_counter|add:"0" %}active {% endif %}{% if form_step_names|length > 5 %}double_column{% endif %}">{% trans 'Stap' %} {{ forloop.counter }}</li>
+                                    {% if outer_forloopcounter_0|slugify  <= last_filled_in_step %}
+                                    </a>
+                                    {% endif %}
+
+                                {% endfor %}
+                                </ul>
+                                {% endwith %}
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                           
+                            
+                        </li>  
+                
+                      
+                    {% endfor %}
+                    {% endwith %}
+
+                </ul>
+               
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                
+                	<header class="line">
+                    
+                        <h2 class="title">
+
+                        
+                        {% if current_step_name == 'Ziekteactiviteit' %}                                    
+                        <span class="icoZiekteKwaliteitBlue"></span> 
+                        {% elif current_step_name == 'Kwaliteit van leven' %}
+                        <span class="icoKwaliteitLevenBlue"></span> 
+                        {% elif current_step_name == 'Kwaliteit van zorg' or current_step_name == 'Omschrijving problemen' %}
+                        <span class="icoKwaliteitBlue"></span> 
+                        {% else %}
+                        <span class="icoControleAfspraakBlue"></span> 
+                        {% endif %}
+
+                        {{ current_step_name }}
+
+                        <span class='information'>{% trans 'Vragen met een * zijn verplicht.' %}</span>
+
+                        </h2>
+                	</header>
+                    
+                    <div class="content questionnairecontent">
+                        <form id="questionnaireaddform" action='.' method='post'>  
+                            <input type='hidden' name='form_step' id='form_step' value='{{ form_step }}' >
+                            <input type='hidden' name='step' id='step' value='{{ questionnaire_step }}' >
+            
+                            {% include form_template %}
+                        </form>
+                    </div>
+                    
+                    <footer class="buttonBar">
+
+
+                    
+                    	<div class="floatRight">
+                        {% if previous_step_url %}
+                                   <a href='#' class="button" onclick="QuestionnaireForm.go_step_back(event, '{% url "questionnaire_partial_fillin" patient.health_person_id|get_random_session_key:request questionnaire_request.id %}', '{{ previous_step_url }}');">
+                                   <i class="icoArrowLeftSmall"></i> {% blocktrans %}Vorige{% endblocktrans %}
+                                </a>
+                        {% endif %}
+
+                        <a href='#' class="button" onclick="document.forms['questionnaireaddform'].submit();return false;">                             
+                            {% if is_next_step %}
+                                <i class="icoArrowRightSmall"></i>                         
+                                {% blocktrans %}Volgende{% endblocktrans %}                              
+                            {% else %}
+                                {% blocktrans %}Sla vragenlijst op{% endblocktrans %}
+                            {% endif %}
+                        </a> 
+                       
+                        </div>
+                    
+                    	<div>
+                            <a href='#' class="button" onclick="QuestionnaireForm.save_exit(event, '{% url "questionnaire_partial_fillin" patient.health_person_id|get_random_session_key:request questionnaire_request.id %}', '{% url "index" %}');">
+                               <i class="icoSave"></i> {% blocktrans %}Opslaan en later verder gaan{% endblocktrans %}
+                            </a>
+                            <a href='#' class="button" onclick="QuestionnaireForm.confirm_cancel_remove();">
+                                <i class="icoCancel"></i> {% blocktrans %}Annuleren{% endblocktrans %}
+                            </a>
+                        </div>
+                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

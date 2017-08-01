@@ -1,0 +1,158 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+
+{% block extra_head %}
+     {{ block.super }} 
+    {% if add_diagnose_script %}
+    <script type='text/javascript'>
+    
+    var DiagnoseSelector = {
+        init: function(content) {
+            $(content).find('select.choice_display_diagnose').change(function() {
+                DiagnoseSelector.changed(content, $(this), true);
+            });  
+
+            $(content).find('select.choice_display_diagnose').each(function() {
+                DiagnoseSelector.changed(content, $(this), false);
+            });
+         
+        },
+        changed: function(content, control, changed) {
+            if ($(control).val() != '')                
+            {
+                //get list
+                $.ajax({
+                    url: '{% url "get_questionnaires_for_diagnose_by_patient" patient.health_person_id|get_random_session_key:request %}?questionnaire=' + $(control).val(),
+                    success: function(data) { 
+
+                        var ul = $('.diagnose .field ul');
+                        ul.empty();
+                        data = eval(data);
+                        for (var i = 0; i < data.length; i++) {  
+                            var checked = 'checked=True';
+                            {% if excluded_questionnaire_posted %}
+
+                            if (!changed)
+                            {
+                                var excluded_questionnaire_posted = {{ excluded_questionnaire_posted|safe }};
+                                if (excluded_questionnaire_posted.indexOf(data[i][0]) == -1)
+                                {
+                                    checked = '';
+                                }
+                            }
+                            {% else %}                           
+                            if (data[i][2])
+                            {
+                                checked = '';
+                            }
+                            {% endif %}
+
+                            var li = $('<li><label for="id_exclude_questionnaires_' + i + '"><input type="checkbox" name="exclude_questionnaires" id="id_exclude_questionnaires_' + i + '" ' + checked + ' value="' + data[i][0] + '"></input>' + data[i][1] + '</label></li>');                               
+                            ul.append(li);                               
+                        }   
+                    },
+                    type: 'GET',
+                    async: false
+                });
+                var fieldset = $('.hi-light.diagnose', content).show();
+            }
+            else 
+            {
+                var fieldset = $('.hi-light.diagnose', content).hide();
+            }
+        }
+    }
+
+
+    $(document).ready(function() {
+        DiagnoseSelector.init();
+    });
+
+    </script>
+    {% endif %}
+{% endblock %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li >                    
+                        <a onclick="document.forms['edit_form'].submit();return false;" href="#">
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Sla op'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li>                    
+                        <a href="{{ cancel_url }}">
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Annuleren'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                </ul>
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1  edit_content">
+                    
+                	<header class="line">
+                        <h2 class="title"><span class="rc_ico2"></span> {{ section }}  <span class='information'>{% trans 'Velden met een * zijn verplicht.' %}</span></h2>              
+                	</header>
+                    
+                    <div class="content">
+                         <form id="edit_form" class='defaultform' action='.' method='post'>              
+                            {% include 'form.html' %}
+
+
+                            {% if extra_message %}<p class='message'>{{ extra_message }}</p>{% endif %}
+                            {% if show_warning %}
+                            <div class='message'>
+                            {% trans 'Let op: Zorg dat u deze gegevens correct invoert. Zonder deze gegevens kunt u niet meer inloggen in Remote Care.' %}
+                            {% if is_manager %}<br/>
+                            {% trans 'Als het wachtwoord ongeldig wordt gemaakt dan kan de patiënt niet meer inloggen met het huidige wachtwoord en krijgt hij/zij een e-mail met het verzoek een nieuw wachtwoord in te stellen.' %}  
+                            {% endif %}
+                            </div>
+                            {% endif %}
+                            
+                            <div class='submitbuttons'>
+                                <a class='button' href="{{ cancel_url }}">{% trans 'Annuleren'  %}</h4></a> 
+                                <input type='submit' class='button' value="{% trans 'Sla op' %}">
+                            </div>
+
+                    
+                        </form>                    
+                    </div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

@@ -1,0 +1,7 @@
+syntax: glob
+*.pyc
+*.*~
+dev_settings.py
+remotecare/media/upload/*
+*.nja
+

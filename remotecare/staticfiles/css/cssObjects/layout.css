@@ -1,0 +1,290 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@
+LAYOUT
+@@@@@@@@@@@@@@@@@@@@@@
+
+	about				Structural settings for this site: width, height, margin, padding & position
+	
+	syntax
+
+*/
+
+	/*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	layout
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+		.layout > *{dposition:relative; float:left; margin-left:2%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+		.layout > *:first-child{margin-left:0%;}
+		.layout:after{visibility:hidden; display:block; font-size:0; content: " "; clear:both; height:0;}
+
+		.layout.reverse > *{float:right; margin-left:2%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+		.layout.reverse > *:last-child{margin-left:0%;}
+
+		/*+ equal layout columns
+		..........................................................................*/
+
+			/*span6*/
+			.layout.ab > *{width:49.0%;}
+			.layout.ab.debug > *:after{content:"span6"; }
+	
+			/*span4*/
+			.layout.abc > *{width:32%;}
+			.layout.abc.debug > *:after{content:"span4"; }
+	
+			/*span3*/
+			.layout.abcd > *{width:23.5%;}
+			.layout.abcd.debug > *:after{content:"span3"; }
+	
+			/*span2.5*/
+			.layout.abcde > *{width:18.4%;}
+			.layout.abcde.debug > *:after{content:"span2.5"; }
+	
+			/*span2*/
+			.layout.abcdef > *{width:15%;}
+			.layout.abcdef.debug > *:after{content:"span2"; }
+
+		/*+ aside columns
+		..........................................................................*/
+			
+			/*span10 span2*/
+			.layout.aaaaab > *{width:83%;}
+			.layout.aaaaab > * + *{width:15%;}
+			.layout.aaaaab.debug > *:after{content:"span10"; }
+			.layout.aaaaab.debug > * + *:after{content:"span2"; }
+
+			/*span9 span3*/
+			.layout.aaab > *{width:74.5%;}
+			.layout.aaab > * + *{width:23.5%;}
+			.layout.aaab.debug > *:after{content:"span9"; }
+			.layout.aaab.debug > * + *:after{content:"span3"; }
+	
+			/*span8 span4*/
+			.layout.aab > *{width:66%;}
+			.layout.aab > * + *{width:32%;}
+			.layout.aab.debug > *:after{content:"span8"; }
+			.layout.aab.debug > * + *:after{content:"span4"; }
+
+			/*span2 span10*/
+			.layout.abbbbb > *{width:15%;}
+			.layout.abbbbb > * + *{width:83%;}
+			.layout.abbbbb.debug > *:after{content:"span2"; }
+			.layout.abbbbb.debug > * + *:after{content:"span10"; }
+
+			/*span3 span9*/
+			.layout.abbb > *{width:23.5%;}
+			.layout.abbb > * + *{width:74.5%;}
+			.layout.abbb.debug > *:after{content:"span3"; }
+			.layout.abbb.debug > * + *:after{content:"span9"; }
+
+			/*span4 span8*/
+			.layout.abb > *{width:32%;}
+			.layout.abb > * + *{width:66%;}
+			.layout.abb.debug > *:after{content:"span4"; }
+			.layout.abb.debug > * + *:after{content:"span8"; }
+	
+		/*+ double aside columns
+		..........................................................................*/
+			
+			/*span8 span2 span2*/
+			.layout.aaaabc > *{width:66%;}
+			.layout.aaaabc > * + *{width:15%;}
+			.layout.aaaabc > * + * + *{width:15%;}
+			.layout.aaaabc.debug > *:after{content:"span8"; }
+			.layout.aaaabc.debug > * + *:after{content:"span2"; }
+			.layout.aaaabc.debug > * + * + *:after{content:"span2"; }
+
+			/*span2 span2 span8*/
+			.layout.abcccc > *{width:15%;}
+			.layout.abcccc > * + *{width:15%;}
+			.layout.abcccc > * + * + *{width:66%;}
+			.layout.abcccc.debug > *:after{content:"span2"; }
+			.layout.abcccc.debug > * + *:after{content:"span2"; }
+			.layout.abcccc.debug > * + * + *:after{content:"span8"; }
+
+			/*span6 span3 span3*/
+			.layout.aabc > *{width:49.0%;}
+			.layout.aabc > * + *{width:23.5%;}
+			.layout.aabc > * + * + *{width:23.5%;}
+			.layout.aabc.debug > *:after{content:"span6"; }
+			.layout.aabc.debug > * + *:after{content:"span3"; }
+			.layout.aabc.debug > * + * + *:after{content:"span3"; }
+			
+			/*span3 span3 span6*/
+			.layout.abcc > *{width:23.5%;}
+			.layout.abcc > * + *{width:23.5%;}
+			.layout.abcc > * + * + *{width:49.0%;}
+			.layout.abcc.debug > *:after{content:"span3"; }
+			.layout.abcc.debug > * + *:after{content:"span3"; }
+			.layout.abcc.debug > * + * + *:after{content:"span6"; }
+
+		/*+ center columns
+		..........................................................................*/
+
+			/*span2 span10 span2*/
+			.layout.abbbbc > *{width:15%;}
+			.layout.abbbbc > * + *{width:66%;}
+			.layout.abbbbc > * + * + *{width:15%;}
+			.layout.abbbbc.debug > *:after{content:"span2"; }
+			.layout.abbbbc.debug > * + *:after{content:"span4"; }
+			.layout.abbbbc.debug > * + * + *:after{content:"span2"; }
+	
+			/*span3 span6 span3*/
+			.layout.abbc > *{width:23.5%;}
+			.layout.abbc > * + *{width:49.0%;}
+			.layout.abbc > * + * + *{width:23.5%;}
+			.layout.abbc.debug > *:after{content:"span3"; }
+			.layout.abbc.debug > * + *:after{content:"span6"; }
+			.layout.abbc.debug > * + * + *:after{content:"span3"; }
+
+		/*+ layoutMainColumn
+		..........................................................................*/
+
+			.layoutMainColumn{
+			min-height: 621px;		
+			}
+
+			/*span8 span4*/
+			.layoutMainColumn.aab > *{width:60%;}
+			.layoutMainColumn.aab > * + *{width:38.7%; margin-left:1.3%;}
+
+
+			.layoutMainColumn.aab_2 > *{width:66%;}
+			.layoutMainColumn.aab_2 > * + *{width:32.7%; margin-left:1.3%;}
+
+
+			/*span4 span8*/
+			.layoutMainColumn.abb > *{width:33%; }
+			.layoutMainColumn.abb > * + *{width:66%; margin-left:1%;}
+
+	/*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	media queries
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+		
+		@media all and (max-width: 960px)
+		{
+			
+		/*+ equal layout columns
+		..........................................................................*/
+
+			/*span2*/
+			.layout.abcdef > *{width:32%; }
+			.layout.abcdef > *:nth-child(4){margin-left:0px;}
+			.layout.abcdef > *:nth-child(-n+3){margin-bottom:15px;} 
+		
+		/*+ aside columns
+		..........................................................................*/
+
+			/*span10 span2*/
+			.layout.aaaaab > *{width:74.5%;}
+			.layout.aaaaab > * + *{width:23.5%;}
+		
+			/*span10 span2*/
+			.layout.abbbbb > *{width:23.5%;}
+			.layout.abbbbb > * + *{width:74.5%;}
+		
+		/*+ double aside columns
+		..........................................................................*/
+			
+			/*span8 span2 span2*/
+			.layout.aaaabc > *{width:49%;}
+			.layout.aaaabc > * + *{width:23.5%;}
+			.layout.aaaabc > * + * + *{width:23.5%;}
+		
+			/*span8 span2 span2*/
+			.layout.abcccc > *{width:23.5%;}
+			.layout.abcccc > * + *{width:23.5%;}
+			.layout.abcccc > * + * + *{width:49%;}
+		
+		/*+ center columns
+		..........................................................................*/
+
+			/*span2 span10 span2*/
+			.layout.abbbbc > *{width:23.5%;}
+			.layout.abbbbc > * + *{width:49%;}
+			.layout.abbbbc > * + * + *{width:23.5%;}
+		
+		}
+		
+		@media all and (max-width: 786px)
+		{
+			
+		/*+ equal layout columns
+		..........................................................................*/
+
+			/*span6*/
+			.layout.ab > *{width:100%; margin-left:0px; float:none; margin-bottom:15px;}
+			.layout.ab > *:last-child{margin-bottom:0px;}
+
+			/*span4*/
+			.layout.abc > *{width:49%; }
+			.layout.abc > *:nth-child(1){width:100%; margin-bottom:15px;}
+			.layout.abc > *:nth-child(2){margin-left:0px;}
+	
+			/*span3*/
+			.layout.abcd > *{width:49%; }
+			.layout.abcd > *:nth-child(3){margin-left:0px;}
+			.layout.abcd > *:nth-child(-n+2){margin-bottom:15px;} 
+			
+			/*span2*/
+			.layout.abcdef > *:nth-child(n){width:49%; float:left; margin-bottom:15px; margin-left:2%;}			
+			.layout.abcdef > *:first-child{margin-left:0;}			
+			.layout.abcdef > *:nth-child(2n+3){margin-left:0px;} 
+			
+		/*+ aside columns
+		..........................................................................*/
+
+			/*span9 span3*/
+			.layout.aaab > *{width:49%; }
+			.layout.aaab > * + *{width:49%;}
+
+			/*span9 span3*/
+			.layout.aab > *{width:49%; }
+			.layout.aab > * + *{width:49%;}
+
+			/*span9 span3*/
+			.layout.abb > *{width:49%; }
+			.layout.abb > * + *{width:49%;}
+
+			/*span9 span3*/
+			.layout.abbb > *{width:49.0%; }
+			.layout.abbb > * + *{width:49.0%;}
+			
+			/*span10 span2*/
+			.layout.aaaaab > *{width:66%;}
+			.layout.aaaaab > * + *{width:32%;}
+
+			/*span10 span2*/
+			.layout.abbbbb > *{width:32%;}
+			.layout.abbbbb > * + *{width:66%;}
+
+		/*+ double aside columns
+		..........................................................................*/
+			
+			/*span8 span2 span2*/
+			.layout.aaaabc > *{width:100%; margin-bottom:15px;}
+			.layout.aaaabc > * + *{width:49%; margin-left:0px;}
+			.layout.aaaabc > * + * + *{width:49%; margin-left:2%;}
+			.layout.aaaabc > *:nth-child(n+2){margin-bottom:0px;}
+
+			/*span8 span2 span2*/
+			.layout.abcccc > *{width:100%; margin-bottom:15px;}
+			.layout.abcccc > * + *{width:49%; margin-left:0px;}
+			.layout.abcccc > * + * + *{width:49%; margin-left:2%;}
+			.layout.abcccc > *:nth-child(n+2){margin-bottom:0px;}
+
+			/*span8 span2 span2*/
+			.layout.aabc > *{width:100%; margin-bottom:15px;}
+			.layout.aabc > * + *{width:49%; margin-left:0px;}
+			.layout.aabc > * + * + *{width:49%; margin-left:2%;}
+			.layout.aabc > *:nth-child(n+2){margin-bottom:0px;}
+
+			/*span8 span2 span2*/
+			.layout.abcc > *{width:100%; margin-bottom:15px;}
+			.layout.abcc > * + *{width:49%; margin-left:0px;}
+			.layout.abcc > * + * + *{width:49%; margin-left:2%;}
+			.layout.abcc > *:nth-child(n+2){margin-bottom:0px;}
+
+		}
+		

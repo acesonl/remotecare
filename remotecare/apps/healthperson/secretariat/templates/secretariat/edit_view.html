@@ -1,0 +1,72 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li >                    
+                        <a onclick="document.forms['edit_form'].submit();return false;" href="#">
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Sla op'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li>                    
+                        <a href="{{ cancel_url }}">
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Annuleren'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                </ul>
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        <h2 class="title"><span class="rc_ico2"></span> {{ section }} <span class='information'>{% trans 'Velden met een * zijn verplicht.' %}</span></h2>              
+                	</header>
+                    
+                    <div class="content">
+                         <form id="edit_form" class='defaultform' action='.' method='post'>              
+                            {% include 'form.html' %}
+                            <div class='submitbuttons'>
+                                <a class='button' href="{{ cancel_url }}">{% trans 'Annuleren'  %}</h4></a> 
+                                <input type='submit' class='button' value="{% trans 'Sla op' %}">
+                            </div>
+                        </form>                    
+                    </div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load i18n %}
+
+
+
+<table class='tabledisplay'>
+    <tr><th>{% trans 'Vraag' %}</th><th>{% trans 'Antwoord' %}</th></tr>
+
+    <tr><td colspan=2><h5><i>{% trans 'Belangrijkste klachten' %}</i></h5></td></tr>
+    <tr><td>{% trans 'Kunt u hier onder beschrijven hoe het met u gaat en waar u op dit moment het meeste last van heeft?' %}</td><td>{{ questionnaire.problems|default:"-" }}</td></tr>
+
+    <tr><td colspan=2><h5><i>{% trans 'Problemen score' %}</i></h5></td></tr>
+
+    <tr><td>{% trans 'Hoe veel last heeft u van problemen, klachten of zorgen? Dit gaat zowel om de lichamelijke klachten die u ondervindt van uw ziekte als emotionele, sociale of praktische problemen. (1=geen klachten,10=heel veel klachten of problemen)' %}</td><td>{{ questionnaire.problem_severity }}</td></tr>
+
+</table>
+
+
+

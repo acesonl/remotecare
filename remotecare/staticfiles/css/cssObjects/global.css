@@ -1,0 +1,61 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@
+GLOBAL
+@@@@@@@@@@@@@@@@@@@@@@
+
+	about				global constants
+	
+	syntax
+
+*/
+		
+	/*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	alignment
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+	
+		/*+ float
+		..........................................................................*/
+	
+			.floatLeft{float:left;}
+			.floatRight{float:right;}
+		
+		/*+ center a block
+		..........................................................................*/
+	
+			.marginAuto{margin-left:auto; margin-right:auto;}
+		
+		/*+ absolute
+		..........................................................................*/
+		
+			.alignCenterBottomAbsolute{position:absolute; bottom:10px; left:0px; right:0px; text-align:center;}
+			.alignBottomLeftAbsolute{position:absolute !important; bottom:10px; left:10px; }
+		
+		/*+ alignment
+		..........................................................................*/
+			
+			.alignLeft{text-align:left;}
+			.alignRight{text-align:right;}		
+			.alignCenter{text-align:center;}		
+			.alignJustify{text-align:justify;}		
+		
+		/*+ vertical alignment
+		..........................................................................*/
+			
+			.alignTop{vertical-align:top;}
+			.alignMiddle{vertical-align:middle;}
+			.alignBottom{vertical-align:bottom;}
+			
+	/*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	text
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+		/*+ text
+		..........................................................................*/
+			
+			.bold{font-weight:bold; }
+			.italic{font-style:italic; }
+			.underline{text-decoration:underline; }
+			.linethrough{text-decoration:line-through; }
+			.uppercase{text-transform:uppercase; }
+	
+		

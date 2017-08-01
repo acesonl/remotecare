@@ -1,0 +1,128 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>
+                    
+                        <a onclick="document.forms['healthprofessional_search_form'].submit();return false;" href="#">
+                        <div class="box">
+                        
+                            <h4 class="title"> {% trans 'Zoek behandelaar'  %} </h4>
+                           
+                        </div>
+                        </a>
+                        
+                    </li>
+                    <li>
+                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">
+                        
+                            <h4 class="title"> {% trans 'Annuleren' %}</h4>
+                        
+                        </div>
+                        </a>
+                        
+                    </li>
+
+                </ul>
+                <a  class="button white alignBottomLeftAbsolute" href='{% url "index" %}'>
+                    <i class="icoBack"></i>  {% blocktrans %}Terug{% endblocktrans %}
+                </a>                
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                
+                	<header class="line">
+                    
+                        <h2 class="title"><span class="rc_ico96"></span> 
+                            {% trans 'Zoek behandelaar' %} {% if request.GET.action == 'edit' %}{% trans 'en wijzig' %}{% endif %}{% if request.GET.action == 'remove' %}{% trans 'en verwijder' %}{% endif %}  </h2>
+                
+                	</header>
+                    
+                    <div class="content">
+                         <b></b>
+                        <form id="healthprofessional_search_form" class='defaultform' action='.' method='post'>              
+                            {% include 'form.html' %}
+                            <div class='submitbuttons'>
+                                <input type='submit' class='button' value="{% trans 'Zoek behandelaar' %}">
+                            </div>
+                        </form>
+
+
+                        <div class='results'>
+                            {% if has_searched %}
+                                {% if healthprofessionals %}
+                                    <table class="table zebra lesser">
+                                      <tr class="action">
+                                        <th scope="col">{% trans 'Achternaam' %}</th>
+                                        <th scope="col">{% trans 'Functie' %}</th>
+                                        <th scope="col">{% trans 'Specialisme' %}</th>
+                                        <th scope="col"></th>
+                                      </tr>
+
+                                    {% for healthprofessional in healthprofessionals %}
+                                    
+                                      <tr>
+                                        <td>{{ healthprofessional.user.last_name }}</td>
+                                        <td>{{ healthprofessional.get_function_display|default:"-" }}</td>
+                                        <td>{{ healthprofessional.get_specialism_display|default:"-" }}</td>
+                                        <td class='buttonsrow'><a title="{% trans 'Inzien/wijzigen' %}" href='{% url "healthprofessional_view_personalia" healthprofessional.health_person_id|get_random_session_key:request %}' class='button gray ico'><i class='rc_ico74'></i></a> <a title="{% trans 'Verwijder' %}" href='{% url "healthprofessional_remove" healthprofessional.health_person_id|get_random_session_key:request %}' class='button gray ico'><i class='rc_ico50'></i></a></td> 
+                                      </tr>
+                          
+                       
+                                    {% endfor %}
+                                 </table>
+                                {% else %}    
+                                {% trans 'Geen resultaten gevonden' %}
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    	
+                    
+                    </div>
+    
+                    
+                    <footer class="buttonBar">
+
+
+                    
+                    	<div class="floatRight">
+                      
+                        </div>
+                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

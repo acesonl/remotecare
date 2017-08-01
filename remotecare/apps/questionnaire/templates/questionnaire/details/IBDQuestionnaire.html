@@ -1,0 +1,81 @@
+{% load i18n customfilters %}
+<table class="tabledisplay">
+    <tbody><tr><th>{% trans 'Vraag' %}</th><th>{% trans 'Antwoord' %}</th></tr>
+
+    <tr><td>{% trans 'Heeft u nu een stoma?' %}</td><td>{{ questionnaire.get_has_stoma_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Heeft u een pouch? (Een pouch is een chirurgisch aangelegd reservoir voor de ontlasting)' %}</td><td>{{ questionnaire.get_has_pouch_display|default:"-" }}</td></tr>
+
+    {% if questionnaire.has_pouch == 'yes' %}
+        <tr><td>{% trans 'Heeft u klachten van uw pouch?' %}</td><td>{{ questionnaire.get_has_pouch_problems_display|default:"-" }}</td></tr>
+    {% endif %}
+
+    {% if questionnaire.has_pouch_problems == 'yes' %}
+        <tr><td>{% trans 'Kunt u vertellen welke klachten u heeft van uw pouch?' %}</td><td>{{ questionnaire.pouch_problems|default:"-" }}</td></tr>
+    {% endif %}
+
+    {% if questionnaire.has_stoma == 'no' %}
+        <tr><td>{% trans 'Hoeveel keer heeft u gemiddeld per dag ontlasting?' %}</td><td>{{ questionnaire.get_stool_freq_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Hoe dik is de ontlasting?' %}</td><td>{{ questionnaire.get_stool_thickness_display|default:"-" }}</td></tr>
+
+        {% if questionnaire.stool_thickness == 'liquid' %}
+            <tr><td>{% trans 'Hoe veel keer per dag is de ontlasting waterdun?' %}</td><td>{{ questionnaire.get_stool_liquid_freq_display|default:"-" }}</td></tr>
+        {% endif %}
+
+        <tr><td>{% trans "Heeft u 's nachts diarree?" %}</td><td>{{ questionnaire.get_diarrhea_at_night_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Zit er bloed bij de ontlasting?' %}</td><td>{{ questionnaire.get_stool_has_blood_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Zit er slijm bij de ontlasting?' %}</td><td>{{ questionnaire.get_stool_has_slime_display|default:"-" }}</td></tr>
+            
+        <tr><td>{% trans 'Heeft u last van pijnlijke aandrang?' %}</td><td>{{ questionnaire.get_stool_urgency_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Kunt u de stoelgang uitstellen als dat moet?' %}</td><td>{{ questionnaire.get_stool_planning_display|default:"-" }}</td></tr>
+        <tr><td>{% trans 'Verliest u wel eens ongewild wat ontlasting?' %}</td><td>{{ questionnaire.get_stool_continence_display|default:"-" }}</td></tr>
+    {% else %}
+        <tr><td>{% trans 'Wat voor stoma heeft u?' %}</td><td>{{ questionnaire.get_stoma_version_display|default:"-" }}</td></tr>        
+        <tr><td>{% trans 'Hoe vaak moet u uw stomazakje legen?' %}</td><td>{{ questionnaire.stoma_empty_freq|default:"-" }}</td></tr>        
+        <tr><td>{% trans 'Zijn er momenteel problemen met uw stoma?' %}</td><td>{{ questionnaire.get_stoma_has_problems_display|default:"-" }}</td></tr>        
+        {% if questionnaire.stoma_has_problems == 'yes' %}
+            <tr><td>{% trans 'Welke problemen heeft u met het stoma?' %}</td><td>{{ questionnaire.stoma_problems|default:"-" }}</td></tr>        
+        {% endif %}        
+    {% endif %}
+    
+    <tr><td>{% trans 'Heeft u last van misselijkheid of braken?' %}</td><td>{{ questionnaire.get_nausea_vomit_display|default:"-" }}</td></tr>
+    {% if questionnaire.nausea_vomit == 'yes' %}
+        <tr><td>{% trans 'Wanneer heeft u last van misselijkheid of braken?' %}</td><td>{% for item in questionnaire.nausea_vomit_time.all %} {{ item }}{% if not forloop.last %},{% endif %}{% endfor %}</td></tr>
+    {% endif %}
+
+    <tr><td>{% trans 'Heeft u nu fistels?' %}</td><td>{{ questionnaire.get_has_fistel_display|default:"-" }}</td></tr>
+    {% if questionnaire.has_fistel == 'yes' %}
+        <tr><td>{% trans 'Kunt u aangeven waar de fistels zich bevinden?' %}</td><td>{{ questionnaire.fistel_location|default:"-" }}</td></tr>
+    {% endif %}
+
+    <tr><td>{% trans 'Heeft u last van anale pijn?' %}</td><td>{{ questionnaire.get_anal_pain_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Heeft u een of meer anale fissuren, anale fistels of anale abcessen?' %}</td><td>{{ questionnaire.get_anal_problems_display|default:"-" }}</td></tr>
+
+    <tr><td>{% trans 'Hoe is uw eetlust?' %}</td><td>{{ questionnaire.get_appetite_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Hoeveel weegt u op dit moment?' %}</td><td>{{ questionnaire.patient_weight|comma|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Hoe lang bent u?' %}</td><td>{{ questionnaire.patient_length|comma|default:"-" }}</td></tr>
+    <tr><td>{% trans 'BMI' %}</td><td>{{ questionnaire.BMI|default:"-" }}</td></tr>
+
+    <tr><td>{% trans 'Heeft u last van buikpijn?' %}</td><td>{{ questionnaire.get_stomach_ache_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Heeft u last van moeheid?' %}</td><td>{{ questionnaire.get_fatigue_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Heeft u sinds de laatste controle koorts gehad?' %}</td><td>{{ questionnaire.get_fever_display|default:"-" }}</td></tr>
+    {% if questionnaire.fever == 'yes' %}
+        <tr><td>{% trans 'Kunt u vertellen wanneer u koorts had en hoe hoog uw koorts was?' %}</td><td>{{ questionnaire.fever_specify|default:"-" }}</td></tr>
+    {% endif %}
+    
+    <tr><td>{% trans 'Heeft u last van gewrichtspijn?' %}</td><td>{{ questionnaire.get_joint_pain_display|default:"-" }}</td></tr>
+    {% if questionnaire.joint_pain == 'yes' %}
+    <tr><td>{% trans 'Welke klachten heeft u hiervan?' %}</td><td>{{ questionnaire.joint_pain_complaints|default:"-" }}</td></tr>
+    {% endif %}
+
+    <tr><td>{% trans 'Heeft u last van oogonstekingen?' %}</td><td>{{ questionnaire.get_eye_inflammation_display|default:"-" }}</td></tr>
+    {% if questionnaire.eye_inflammation == 'yes' %}
+    <tr><td>{% trans 'Welke klachten heeft u hiervan?' %}</td><td>{{ questionnaire.eye_inflammation_complaints|default:"-" }}</td></tr>
+    {% endif %}
+
+    <tr><td>{% trans 'Heeft u last van huidafwijkingen?' %}</td><td>{{ questionnaire.get_skin_disorder_display|default:"-" }}</td></tr>
+    {% if questionnaire.skin_disorder == 'yes' %}
+    <tr><td>{% trans 'Welke klachten heeft u hiervan?' %}</td><td>{{ questionnaire.skin_disorder_complaints|default:"-" }}</td></tr>
+    {% endif %}
+</tbody></table>
+
+

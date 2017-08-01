@@ -1,0 +1,89 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@
+TOOLTIP
+@@@@@@@@@@@@@@@@@@@@@@
+
+	about				tooltips for adding additional information, is used in combination with other cssObjects.
+	objects				.tooltip
+
+*/
+
+
+	/*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	progress
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+		
+		/*+ setup
+		..........................................................................*/
+			
+			.tooltip{text-align:center; color:black; line-height:1.3;  z-index:200; padding:3px 6px 0px 6px; font-size:14px; display:inline-block; position:relative;}
+
+		/*+ style
+		..........................................................................*/
+			
+			/*tooltip ____________*/
+			
+				/*background*/
+				.tooltip{background-color:#f6f6f6; }
+
+			/*pointer ____________*/
+
+				.tooltip:after, .tooltip:before{position:absolute; content:""; display:block; width:0; height:0; }
+
+		/*+ methods
+		..........................................................................*/
+		
+			/*pointer right ____________*/
+		
+				/*border*/
+				.tooltip.right:after{border-top:5px solid transparent; border-bottom:5px solid transparent; }
+				.tooltip.right:before{border-top:5px solid transparent; border-bottom:5px solid transparent; }
+	
+				/*border color*/
+				.tooltip.right:after{border-right:5px solid #f6f6f6; }
+				.tooltip.right:before{border-right:5px solid rgba(0,0,0,0.2); }
+	
+				/*position*/
+				.tooltip.right:after{left:-5px; top:50%; margin-top:-6px;}
+				.tooltip.right:before{left:-6px; top:50%; margin-top:-6px;}
+				.tooltip.right{margin-left:8px;}
+		
+			/*pointer left ____________*/
+		
+				/*border*/
+				.tooltip.left:after{border-top:5px solid transparent; border-bottom:5px solid transparent; }
+				.tooltip.left:before{border-top:5px solid transparent; border-bottom:5px solid transparent; }
+	
+				/*border color*/
+				.tooltip.left:after{border-left:5px solid #f6f6f6; }
+				.tooltip.left:before{border-left:5px solid rgba(0,0,0,0.2); }
+	
+				/*position*/
+				.tooltip.left:after{right:-5px; top:50%; margin-top:-4px;}
+				.tooltip.left:before{right:-6px; top:50%; margin-top:-4px;}
+				.tooltip.left{margin-right:8px;}
+
+		/*+ colors
+		..........................................................................*/
+
+			/*text*/
+			.tooltip.alert,
+			.tooltip.action,
+			.tooltip.check,
+			.tooltip.spot,
+			.tooltip.mark,
+			.tooltip.direction
+			{color:white; }
+
+		/*+ backgrounds
+		..........................................................................*/
+
+			/*spot (black)*/
+			.tooltip.spot{background-color:#193042;}
+			
+			.tooltip.spot.top:after{border-top-color:#193042;}
+			.tooltip.spot.right:after{border-right-color:#193042; }
+			.tooltip.spot.bottom:after{border-bottom-color:#193042; }
+			.tooltip.spot.left:after{border-left-color:#193042; }
+
+

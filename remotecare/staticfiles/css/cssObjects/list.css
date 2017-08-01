@@ -1,0 +1,125 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@
+LIST
+@@@@@@@@@@@@@@@@@@@@@@
+
+    about                Lists of all sorts
+
+    syntax
+
+*/
+
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    list
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+        [class^="list"]{}
+        [class^="list"]:after{visibility: hidden; display: block;font-size: 0;content: " ";clear: both;height: 0;}
+
+
+
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    list
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+        /*+ listZebra
+        ..........................................................................*/
+
+            .listZebra{margin:0px -15px 0px -15px;}
+            .listZebra li{}
+            .listZebra li a{display:block; padding:5px 15px 3px 15px; }
+            .listZebra li:nth-child(odd) a{background-color:rgba(0,0,0,0.2);}
+
+            .listZebra i{position:relative; top:-2px; margin-right:3px;}
+            .listZebra .type{float:right; font-size:14px; position:relative; top:1px; }
+
+            .listZebra.monotone{}
+            .listZebra.monotone li{margin-bottom:5px;}
+            .listZebra.monotone li:last-child{margin-bottom:0px;}
+            .listZebra.monotone li a{background-color:#2c6496; }
+
+        /*+ listColumn
+        ..........................................................................*/
+
+            .listColumn{}
+            .listColumn li{width:50%; float:left;}
+
+        /*+ listCheck
+        ..........................................................................*/
+
+            .listCheck{margin:8px 0px 0px 10px; }
+            .listCheck li{padding:2px 0px;}
+            .listCheck li:before{content:""; width:20px; height:19px; position:relative; top:5px; margin-right:10px; display:inline-block; background: url(../../images/icoCheck.png) no-repeat top left; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; filter: alpha(opacity=30); opacity:0.30;}
+
+            .listCheck .active:before {-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter: alpha(opacity=100); opacity:1.0; }
+
+        /*+ listTagScore
+        ..........................................................................*/
+
+            .listTagScore{}
+            .listTagScore li{display:inline-block;}
+            .listTagScore.block li{display:block;}
+            .listTagScore li.active .tooltip{background-color:#267cc1; }
+            .listTagScore li.active .tooltip.left:after{border-left:5px solid #267cc1; }
+
+
+            .listTagScore li.double_column {float: left; display: inline; width: 50%;}
+            .listTagScore li.triple_column {float: left; display: inline; width: 33%;}
+
+            .hr.double_column {clear:both;}
+        /*+ listNavigation
+        ..........................................................................*/
+
+            .listNavigation{}
+            .listNavigation li{position:relative; }
+            .listNavigation li .box{background-color:#4fc0eb; }
+            .listNavigation > li.active .box{background-color:#267cc1; }
+            .listNavigation > li.active .box:before{content:""; position:absolute; top:50%; right:-20px; margin-top:-10px; width:0; height:0; z-index:100; border-top:10px solid transparent; border-left: 20px solid #267cc1; border-bottom: 10px solid transparent; }
+
+            .listNavigation.toBottom > li:after{content:""; z-index:100;  width:26px; height:19px; position:absolute; bottom:-19px; left:15px; background: url(../../images/listNavigationToBottom.png) no-repeat top left; }
+            .listNavigation.toBottom > li.active:after{background: url(../../images/listNavigationToBottomActive.png) no-repeat top left;}
+            .listNavigation.toBottom > li:last-child:after{display:none; }
+
+            .listNavigation.toBottom li span{margin-right:5px;}
+
+            listNavigation .listCheck li:before{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter: alpha(opacity=100); opacity:1;}
+
+            .listNavigation li.double_column {float: left; display: inline; width: 50%;}
+
+        /*+ listTableview
+        ..........................................................................*/
+
+            .listTableview{display:table;}
+            .listTableview li{display:table-row;}
+            .listTableview li span{display:table-cell; padding-right:40px;}
+
+            .listTableview.bericht{margin-bottom:50px;}
+
+        /*+ listScore
+        ..........................................................................*/
+
+            .listScore{display:table; width:100%;}
+            .listScore li{text-align:center; display:table-cell; width:10%;}
+            .listScore li .label{width:15px; margin-bottom:3px;}
+            .listScore li.active .label{background-color:#267cc1; }
+            .listScore li.active span, .listScore li:hover span{ visibility:visible;}
+
+            .listScore li span{display:block; font-size:11px; visibility:hidden;}
+
+        /*+ Helptext list
+        ..........................................................................*/
+
+        #helplist { color:Black; }
+        #helplist ul li {float:none; background-image:none; }
+        #helplist ul li a {clear:both; color:Black; line-height:20px; font-size:12px;}
+        #helplist ul li ul li a span {float:none;}
+        #helplist ul li ul {clear:both;float:none;  padding-left:30px; }
+        #helplist ul li ul {display:none; }
+
+
+        #helplist .openclose > span {padding-left:20px;}
+
+        #helplist .selected > ul {display:block; }
+
+        #helplist .highlight {color:#267cc1; font-weight:bold;}
+

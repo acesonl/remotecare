@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">                        
+                            <h4 class="title"><span class="icoSetControle"></span>{% trans 'Terug' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'diagnosis' %}class='active'{% endif %}>                    
+                        <a href="">
+                        <div class="box shade6">                        
+                            <h4 class="title"><span class="icoSetControle"></span>{% trans 'Diagnose en onderzoeken'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li  {% if submenu == 'treatment' %}class='active'{% endif %}>                    
+                        <a href="">
+                        <div class="box shade2">                        
+                            <h4 class="title"><span class="icoSetControle"></span>{% trans 'Behandeling'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'workings' %}class='active'{% endif %}>                    
+                        <a href="#">
+                        <div class="box shade4">                        
+                            <h4 class="title"><span class="icoSetControle"></span>{% trans 'Ontstaan en werking'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'science' %}class='active'{% endif %}>                    
+                        <a href="#">
+                        <div class="box shade7">                        
+                            <h4 class="title"><span class="icoSetControle"></span>{% trans 'Wetenschappelijk nieuws'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                </ul>
+                            
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        {% block section_title %} {% endblock %}                
+                	</header>
+                    
+                    <div class="content">
+                        {% block section_content %} {% endblock %}                       
+                    </div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}
+
+{% block content_wrapper2 %}
+    <div class='leftcontentwrapper'>        
+        <br><br>
+        Deze pagina bevat 4 links naar de volgende onderdelen:
+        <br><br>
+
+        <a href='/information/diagnose-en-onderzoeken/'></a><br>
+        <a href='/information/behandeling/'></a><br>
+        <a href='/information/over-de-ziekte-onstaan-en-werking/'></a><br>
+        <a href='/information/wetenschappelijk-nieuws/'></a>
+
+
+    </div>
+   
+    <div class='rightcontentwrapper'>  
+        <div class='sidemenubox'>
+            <div class='smallbox small_linkstyle2'>
+                <a href='{% url "index" %}'>
+                    {% blocktrans %}Back to home{% endblocktrans %}
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle1'>                
+
+            </div>
+            <div class='smallbox small_linkstyle1 clearboth'>
+            </div>
+            <div class='smallbox small_linkstyle2'>         
+            </div>
+        </div>             
+        <div class='sidemenubox'>
+            <div class='smallbox small_linkstyle2'>
+                <a href='#'>
+
+                </a>
+            </div>
+            <div class='smallbox small_linkstyle1'></div>
+            <div class='smallbox small_linkstyle1 clearboth'></div>
+            <div class='smallbox small_linkstyle2'></div>
+        </div>             
+    </div>       
+{% endblock %}

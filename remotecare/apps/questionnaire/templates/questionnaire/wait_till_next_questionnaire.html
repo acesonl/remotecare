@@ -1,0 +1,87 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation toBottom">
+                    <li> 
+                        <a href='{% url "index" %}'>                   
+                        <div class="box">                            
+                            <h4 class="title">
+                                                            
+                                <span class="icoSetControle"></span>                                   
+                                {% trans 'Terug' %}
+                            </h4>                          
+                        </div>
+                        </a>
+                    </li>                        
+                </ul>               
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                
+                	<header class="line">
+                    
+                        <h2 class="title">
+                        <span class="icoControleAfspraakBlue"></span> {% trans 'Geen openstaande controle' %}
+                       </h2>
+                
+                	</header>
+                    
+                    <div class="content questionnairecontent">
+                       
+                        <p class='content_message'>{% trans 'Op dit moment is er geen openstaande controle.' %}</p>
+                        <p> {% trans 'De volgende controle vindt plaats op:' %} {{ patient.next_questionnaire_date|default:"-" }}</p>                   	
+                    
+                    </div>
+                    
+                    <footer class="buttonBar">
+
+                        <form id="questionnaireaddform" action='.' method='post'>  
+                            {% csrf_token %}
+                        	<div class="floatRight">
+                               
+                                <a href='{% url "index" %}' class="button">                                                         
+                                    <i class="icoArrowRightSmall"></i> {% blocktrans %}Terug naar hoofdmenu{% endblocktrans %}                          
+                                </a>                        
+                            </div>
+                        
+                        	<div>                           
+                           
+                            </div>
+                    	</form>
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

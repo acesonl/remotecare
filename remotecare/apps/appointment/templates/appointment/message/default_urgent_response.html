@@ -1,0 +1,22 @@
+{% load i18n %}
+<b style='font-size:14px'>Remote care - Urgente Afspraak - {{ patient.get_diagnose_display }}</b>
+<br/>
+<p>
+Beste {%if is_male%}heer{%else%}mevrouw{%endif%} {{ patient.user.first_name }} {{ patient.user.prefix|default:"" }} {{ patient.user.last_name }},
+</p>
+<p>
+U heeft een urgente afspraak aangevraagd. Wij hebben daarom op {{ appointment.get_day }} {{ appointment.appointment_date }} om {{ appointment.get_appointment_hour_display }}:{{ appointment.get_appointment_minute_display }} een urgente afspraak met {{ appointment.appointment_healthprofessional.user.professional_name }} voor u ingepland.
+</p>
+
+<p>
+Mocht deze afspraak niet snel genoeg zijn gezien de dringende situatie, wilt u dan bellen met het Secretariaat? Telefoonnummer: {{ appointment.appointment_healthprofessional.telephone }}. Dan kunnen wij proberen de afspraak te vervroegen.
+</p>
+
+<p>
+Met vriendelijke groet,<br/><br/>
+Secretariaat {{ secretary.get_specialism_display }}<br/>
+{{ secretary.user.hospital }}
+</p>
+
+
+

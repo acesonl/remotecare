@@ -1,0 +1,91 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation toBottom">
+                    <li> 
+                        <a href='{% url "index" %}'>                   
+                        <div class="box">                            
+                            <h4 class="title">
+                                                            
+                                <span class="icoSetControle"></span>                                   
+                                {% trans 'Terug' %}
+                            </h4>                          
+                        </div>
+                        </a>
+                    </li>                        
+                </ul>               
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                
+                	<header class="line">
+                    
+                        <h2 class="title">
+                        <span class="icoControleAfspraakBlue"></span> {% if not urgent %}{% trans 'Controle niet volledig afgerond' %}{% else %}{% trans 'Spoedafspraak niet volledig afgerond' %}{% endif %}
+                       </h2>
+                
+                	</header>
+                    
+                    <div class="content questionnairecontent">
+                       
+                        {% if not urgent %}
+                        <p class='content_message'>{% trans 'U heeft uw controle de vorige keer niet volledig afgerond, wilt u deze nu afmaken of wilt u deze verwijderen?' %}</p>                   	
+                        {% else %}
+                        <p class='content_message'>{% trans 'U heeft uw spoedafspraak de vorige keer niet volledig afgerond, wilt u deze nu afmaken of wilt u deze verwijderen?' %}</p>                   	
+                        {% endif %}
+                    </div>
+                    
+                    <footer class="buttonBar">
+
+                        <form id="questionnaireaddform" action='.' method='post'>  
+                            {% csrf_token %}
+                        	<div class="floatRight">
+                                <button type='submit'  class="button" >
+                                    <i class="icoCancel"></i> {% if not urgent %}{% blocktrans %}Verwijder controle{% endblocktrans %}{% else %}{% blocktrans %}Verwijder spoedafspraak{% endblocktrans %}{% endif %}
+                                </button>
+                                <a href='{{ fill_in_url  }}' class="button">                                                         
+                                    <i class="icoArrowRightSmall"></i> {% if not urgent %}{% blocktrans %}Maak controle af{% endblocktrans %}{% else %}{% blocktrans %}Maak spoedafspraak af{% endblocktrans %}{% endif %}                        
+                                </a>                        
+                            </div>
+                        
+                        	<div>                           
+                           
+                            </div>
+                    	</form>
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

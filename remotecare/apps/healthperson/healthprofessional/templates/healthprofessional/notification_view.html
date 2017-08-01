@@ -1,0 +1,18 @@
+{% extends 'healthprofessional/healthprofessional_context.html' %}
+{% load i18n customfilters %}
+
+{% block section_title %}
+    <h2 class="title"><span class="rc_ico88"></span> {% trans 'Notificatie instellingen' %}<a href="{% url "healthprofessional_edit_notification" healthprofessional.health_person_id|get_random_session_key:request %}" class='button change_button'>Wijzig</a></h2> 
+{% endblock %}
+{% block section_content %}                      
+    <div class='min_height'> 
+    <table class='tableview'>
+        <tr><td colspan=2><h5>{% trans 'Notificatie instellingen' %}</h5></td></tr>
+        <tr><td>{% trans 'Langer dan 3 dagen niet gereageerd op een urgente patient.' %}</td><td>{{ healthprofessional.get_urgent_control_notification_display }}</td></tr>
+ 
+        {% if healthprofessional.urgent_control_notification == 'to_secretary' %}
+        <tr><td>{% trans 'Secretariaat medewerker' %}</td><td>{{ healthprofessional.urgent_control_secretary.user.professional_name }}</td></tr>
+        {% endif %} 
+    </table>          
+    </div>
+{% endblock %}

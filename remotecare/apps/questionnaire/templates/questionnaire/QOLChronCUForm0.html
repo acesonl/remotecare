@@ -1,0 +1,37 @@
+{% load i18n customfilters %}
+
+
+{% if form.errors %}
+<div class='form-error'>   
+    {% blocktrans count form.errors.items|length as counter %}Corrigeer de fout hieronder alstublieft.{% plural %}Corrigeer de fouten hieronder alstublieft.{% endblocktrans %}
+</div>
+{% endif %}
+{% if form.non_field_errors %}
+<div class='error'>
+    {% for error in form.non_field_errors %}
+        <p>{{ error }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+<h5>
+{% trans 'In het begin van deze controle heeft u aangegeven dat het' %} {{ initial_data.get_current_status_display|lower }} {% trans 'met u gaat. U heeft uw problemen van 1 (geen klachten of problemen) tot 10 (heel veel klachten of problemen) gescored op een' %} {{ initial_data.problem_severity }}.
+</h5>
+<div class='message'>
+<h5>{% trans 'Wilt u dit nog wijzigen? Klik dan op de knop hieronder.' %}</h5>
+</div>
+
+<div class='message'>
+<a id="hasproblems_1" class="tag" href="{% url "questionnaire_fillin" patient.health_person_id|get_random_session_key:request questionnaire_request.id %}?step=0"><span class="tooltip left">{% trans 'Ja,' %}</span>{% trans 'ik wil dit graag wijzigen.' %}</a>
+</div>
+
+
+<a >
+
+{% if DEBUG %}
+    <input type='hidden' id='id_form_class' value='{{  form | moduleclassname }}'>
+    <input type='hidden' id='id_form_prefix' value='{{  form.prefix}}'>
+{% endif %}
+
+<div style='display: none;'>{{ form.media }}</div>
+{% csrf_token %}

@@ -1,0 +1,188 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+{% load staticfiles %}
+
+{% block content_wrapper %}
+    	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout aab layoutMainColumn">
+        <!--layoutMainColumn-->
+
+        	<!--left-->
+        	<section>
+        	<!--left-->
+
+            	<div class="layout ab">
+                	<div>
+
+                        <div class="box shade5 height1">
+
+                        	<div class="boxInfo">
+
+                            	<div class="header"><h2>{% trans 'Controle' %}</h2></div>
+
+                                <div class="content">
+
+                                    <p><span class="tooltip spot left">{{ patient.days_since_last_questionnaire|default:"-" }}</span>{% trans 'Dagen sinds laatste controle' %}</p>
+
+                                   	<p><span class="tooltip spot left">{{ patient.next_questionnaire_date|date:SHORT_DATE_FORMAT|default:"-" }}</span> {% trans 'Volgende controle' %}</p>
+
+                                </div>
+
+                            	<footer><a class="button grand {% if not patient.next_questionnaire_ready %}grand_gray{% endif %}" href="{% if patient.next_questionnaire_ready %}{% url "questionnaire_start_controle" patient.healthperson_ptr_id|get_random_session_key:request %}{% else %}#{% endif %}"><i class="icoControle"></i> {% trans 'Start Controle' %}</a></footer>
+
+                            </div>
+
+                        </div>
+
+                        <div class="box shade1 height2" style="background-image:url({% static "images/imgVideo.png" %})">
+
+                        	<div class="alignCenterBottomAbsolute"><a class="button" href="{% url "information_page" 'e-consult' %}"><i class="icoVideo"></i> {% trans 'eConsult verbinding' %}</a></div>
+
+                        </div>
+
+                    </div>
+                	<div>
+
+                        <div class="box shade3 height1">
+
+                        	<div class="boxInfo">
+
+                            	<div class="header"><h2>{% trans 'Het gaat niet goed' %}</h2></div>
+
+                                <div class="content">
+
+                                    <p>{% blocktrans %}Als het niet goed met u gaat, kunt u via deze knop een afspraak maken voor binnen een paar dagen.{% endblocktrans %}</p>
+
+                                    <p>{% blocktrans %}Let op: Dit is niet bedoeld voor echte noodsituaties. Neem in dat geval altijd contact op met uw huisarts of bel 112.{% endblocktrans %}</p>
+
+                                </div>
+
+                            	<footer><a class="button grand" href="{% url "questionnaire_start_urgent" patient.health_person_id|get_random_session_key:request %}">
+                                <i class="icoWarning"></i> {% trans 'Spoedafspraak' %}</a></footer>
+
+                            </div>
+
+                        </div>
+
+                        <div class="box shade1 height2">
+
+                        	<article>
+                                {% include 'patient/diagnose_home.html' %}
+                                <div class="alignCenterBottomAbsolute"><a class="button" href="{% url "information_page" 'diagnose-en-onderzoeken' %}">
+                                <i class="icoInfo"></i> {% trans 'Meer informatie' %}</a></div>
+
+                        	</article>
+
+                        </div>
+
+                    </div>
+                </div>
+
+        	<!--left-->
+            </section>
+        	<!--left-->
+
+        	<!--right-->
+        	<aside>
+        	<!--right-->
+
+                <ul>
+                    <li>
+
+                        <a href="{% url "disease_activity_overview" patient.healthperson_ptr_id|get_random_session_key:request %}">
+                        <div class="box shade6">
+
+                            <h4 class="title">{% trans 'Ziekteactiviteit' %} <i class="rc_ico18"></i></h4>
+
+                        </div>
+                        </a>
+
+                    </li>
+                    <li>
+
+                        <a href="{% url "quality_of_life_overview" patient.healthperson_ptr_id|get_random_session_key:request %}">
+                        <div class="box shade4">
+
+                            <h4 class="title">{% trans 'Kwaliteit van leven' %} <i class="rc_ico8 qol_ico_center"></i></h4>
+
+                        </div>
+                        </a>
+
+                    </li>
+                    <li>
+
+                        <a href="{% url "healthcare_quality_overview" patient.healthperson_ptr_id|get_random_session_key:request %}">
+                        <div class="box shade2">
+
+                            <h4 class="title">{% trans 'Kwaliteit van zorg' %} <i class="rc_ico9"></i></h4>
+
+                        </div>
+                        </a>
+
+                    </li>
+                </ul>
+
+                <div class="box shade7 hasList messageoverview">
+                    <a href="{% if first_rc_message %}{% url "message_details" patient.healthperson_ptr_id|get_random_session_key:request first_rc_message.id %}{% else %}{% url "message_overview" patient.id|get_random_session_key:request %}{% endif %}">
+                	<h4 class="title">{% trans 'Berichten' %} <span class="tooltip right">{{ message_unread_count }}</span> <i class="icoBerichten"></i></h4>
+                    </a>
+                	<div class="content">
+                        {% if rc_messages %}
+                        <ul class="listZebra">
+                            {% for rc_message in rc_messages %}
+                            <li><a href="{% url "message_details" patient.healthperson_ptr_id|get_random_session_key:request rc_message.id %}"><i class="icoArrowRight"></i>{% if rc_message.related_to %}Reactie {% if not rc_message.related_to.urgent %}controle{% else %}spoedafspraak{% endif %}{% else %}Bericht{% endif %} {% if not rc_message.read_on  %}{% trans '*' %} {% endif %} <span class="type">{{ rc_message.sender.user.professional_name }}</span></a></li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                            {% trans 'Er zijn geen berichten' %}
+                        {% endif %}
+                    </div>
+
+                </div>
+                <a href="{% url "patient_view_profile" patient.healthperson_ptr_id|get_random_session_key:request %}">
+                <div class="box shade6">
+
+                	<h4 class="title">{{ user.full_name|default:"-" }}<i class="icoProfiel"></i><span class="icoSettingsWhite"></span></h4>
+			                	
+                    <div class="content">
+
+                    	<address>
+
+                            <ul class="listColumn">
+                                <li><i class="icoPhone"></i>{{ user.mobile_number|default:"-" }}</li>
+                                <li><i class="icoEmail"></i>{{ user.email|default:"-" }}</li>
+                            </ul>
+
+                        </address>
+
+                    </div>
+
+                </div>
+                </a>
+                <div class="box shade6" style="background-image: {% if practitioner.photo_location %}url({{ MEDIA_URL }}{{ practitioner.photo_location }}){% else %}{% if practitioner.user.gender == 'male' %}url({% static "images/male.png" %}){% else %}url({% static "images/female.png" %}){% endif %}{% endif %}; background-size:133px 165px;">
+
+                	<h4 class="title">{% trans 'Mijn behandelaar' %}</h4>
+                	
+                    <div class="content dokterProfiel">
+
+                    	<h5> {{ practitioner.user.professional_name }}</h5>
+                        <p>{{ practitioner.get_function_display }}, {{ practitioner.get_specialism_display }} </p>
+
+                    	<i class="icoPhone"></i> {{ practitioner.telephone }}
+
+                    </div>
+
+                </div>
+
+        	<!--right-->
+            </aside>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'healthprofessional/healthprofessional_context.html' %}
+{% load i18n customfilters %}
+{% load staticfiles %}
+
+{% block section_title %}
+    <h2 class="title"><span class="rc_ico2"></span> {% trans 'Behandelaar pasfoto' %}<a href="{% url "healthprofessional_edit_photo" healthprofessional.health_person_id|get_random_session_key:request %}" class='button change_button'>Wijzig</a></h2>
+{% endblock %}
+{% block section_content %}
+
+    <h5>{% trans 'Behandelaar pasfoto' %}</h5>
+    <div class='photoview'>
+        {% if healthprofessional.photo_location %}
+        <img src='{{ MEDIA_URL }}{{ healthprofessional.photo_location }}' />
+        {% else %}
+            {% if healthprofessional.user.gender == 'male' %}
+                <img src='{% static "images/icon-79.png" %}' />
+            {% else %}
+                <img src='{% static "images/icon-80.png" %}' />
+            {% endif %}
+            <p>
+                {% trans 'Er is nog geen pasfoto toegevoegd' %}
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}

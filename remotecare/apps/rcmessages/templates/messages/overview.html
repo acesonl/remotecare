@@ -1,0 +1,25 @@
+{% extends 'messages/message_context.html' %}
+{% load i18n %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block title %}
+       <h2 class="title"><span class="rc_ico7"></span> {% if sent_view %}{% trans 'Verstuurde berichten' %}{% else %}{% trans 'Berichten overzicht' %}{% endif %}
+
+<a class="button white  questionnaire_view" href="/">
+                                <i class="icoBack"></i>Terug
+                            </a>
+ </h2>
+{% endblock %}
+
+{% block contents %}
+    <div class='message_overview' >
+    {% if sent_view %}
+        {% trans 'U heeft nog geen verstuurde berichten.' %}  
+    {% else %}
+        {% trans 'U heeft nog geen berichten.' %}
+    {% endif %}
+    </div>
+{% endblock %}

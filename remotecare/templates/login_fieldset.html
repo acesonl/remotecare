@@ -1,0 +1,24 @@
+<fieldset{% if name %} class='hi-light {{ name|lower|slugify  }}'{% endif %}>
+{% for field in fields %}
+    {% ifequal field.name 'tags' %}
+        <div class='tag-field'>
+    {% else %}
+        {% ifequal field.name 'notes' %}
+            <div class='note-field'>
+        {% else %}
+            <div>
+        {% endifequal %}
+    {% endifequal %}
+
+        {% if field.help_text %}
+        <!--    <div class='help_text'>{{ field.help_text }}</div> -->
+        {% endif %}
+        <div class='field{% if field.errors %} error{% endif %}'>{{ field }}</div>
+        {% if field.errors %}
+            <div class='error'>{% for error in field.errors %}{{ error }}{% endfor %}</div>
+        {% endif %}
+
+    </div>
+{% endfor %}
+</fieldset>
+

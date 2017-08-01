@@ -1,0 +1,24 @@
+{% load i18n %}
+<b style='font-size:14px'>Remote care - Afspraak - {{ patient.get_diagnose_display }}</b>
+<br/>
+<p>
+Beste {%if is_male%}heer{%else%}mevrouw{%endif%} {{ patient.user.first_name }} {{ patient.user.prefix|default:"" }} {{ patient.user.last_name }},
+</p>
+<p>
+Op {{ appointment.get_day }} {{ appointment.appointment_date }} heeft u om {{ appointment.get_appointment_hour_display }}:{{ appointment.get_appointment_minute_display }} een afspraak met {{ appointment.appointment_healthprofessional.user.professional_name }}.
+</p>
+
+<p>
+Mocht u onverhoopt verhinderd zijn, wilt u dan tijdig contact opnemen met het Secretariaat {{ secretary.get_specialism_display }}?
+</p>
+
+<p>
+Met vriendelijke groet,<br/><br/>
+Secretariaat {{ secretary.get_specialism_display }}<br/>
+{{ secretary.user.hospital }}<br/>
+Telefoon: {{ appointment.appointment_healthprofessional.telephone }}
+
+</p>
+
+
+

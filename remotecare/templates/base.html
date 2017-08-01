@@ -1,0 +1,57 @@
+{% load  i18n %}
+{% load staticfiles pipeline %}
+
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+    <title>{% trans 'Remote Care' %}</title>
+    <meta name="keywords" content="Remote Care, E-health">
+    <meta name="description" content="Remote Care">
+    <meta name="author" content="ExampleInc">
+
+    {% stylesheet 'default' %}
+
+    <link rel="shortcut icon" href="{% static "images/favicon.ico" %}">
+    <link rel="apple-touch-icon" href="{% static "images/ios-icon.png" %}"><!--ios web app icon 114x114-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+    <meta name="robots" content="all">
+    {% javascript 'default' %}
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.scrollbar_container').tinyscrollbar();
+        });
+    </script>
+
+    {% block extra_head %}{% endblock %}
+
+    <!--[if lt IE 9]>
+        <link href="{% static "css/ie8.css" %}" rel="stylesheet">
+        <script src="{% static "js/html5.js" %}></script>
+    <![endif]-->
+</head>
+<body>
+    {% if DEBUG %}
+        <input type='hidden' id='id_logged_in_user' value='{{ user.id }}'>
+    {% endif %}
+
+    {% block debug %}{% endblock %}
+    <!--frame-->
+    <div class="frame" ><div class="frameContainer"><div class="frameApp">
+    <!--frame-->
+
+    <div class="frameHeader">
+        {% block header_wrapper %} {% endblock %}
+
+    </div>
+   {% block content_wrapper %} {% endblock %}
+<!--frame-->
+</div></div></div>
+<!--frame-->
+
+</body>
+</html>

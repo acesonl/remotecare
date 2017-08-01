@@ -1,0 +1,84 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation toBottom">
+                    <li> 
+                        <a href='{% url "index" %}'>                   
+                        <div class="box">                            
+                            <h4 class="title">
+                                                            
+                                <span class="icoSetControle"></span>                                   
+                                {% trans 'Terug' %}
+                            </h4>                          
+                        </div>
+                        </a>
+                    </li>                        
+                </ul>               
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                
+                	<header class="line">
+                    
+                        <h2 class="title">
+                        <span class="icoControleAfspraakBlue"></span> {% trans 'Spoedafspraak al aangevraagd.' %}
+                       </h2>
+                
+                	</header>
+                    
+                    <div class="content questionnairecontent">
+                       
+                     
+                        <p class='content_message'>{% trans 'U heeft al een spoedafspraak aangevraagd, deze zal zo spoedig mogelijk worden behandeld. Klik hieronder op terug om naar het hoofdmenu terug te keren' %}</p>                     
+                    </div>
+                    
+                    <footer class="buttonBar">
+
+                       
+                        	<div class="floatRight">                     
+                                <a href='{% url "index" %}' class="button">                                                         
+                                    <i class="icoArrowRightSmall"></i>{% blocktrans %}Terug naar hoofdmenu{% endblocktrans %}                       
+                                </a>                        
+                            </div>
+                        
+                        	<div>                           
+                           
+                            </div>
+                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

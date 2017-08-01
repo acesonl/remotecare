@@ -1,0 +1,147 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation toBottom">
+
+                    {% for questionnaire_step_name in questionnaire_step_names %}
+
+                        <li {% if questionnaire_step_name == current_step_name %}class='active'{% endif%}>                    
+
+                            
+                            <div class="box">
+                            
+                                <h4 class="title">
+                                    {% if questionnaire_step_name == 'Ziekteactiviteit' %}                                    
+                                    <span class="icoSetZiekteActiviteit"></span> 
+                                    {% elif questionnaire_step_name == 'Kwaliteit van leven' %}
+                                    <span class="icoSetKwaliteit"></span> 
+                                    {% elif questionnaire_step_name == 'Kwaliteit van zorg' or questionnaire_step_name == 'Omschrijving problemen' %}
+                                    <span class="icoSetKwaliteitZorg"></span> 
+                                    {% else %}
+                                    <span class="icoSetControle"></span> 
+                                    {% endif %}
+                                    {{ questionnaire_step_name }}
+                                </h4>
+                                {% if form_step_names %}
+                                {% if questionnaire_step_name == current_step_name %}
+
+
+                                {% with forloop.counter0 as outer_forloopcounter_0 %}             
+                                <ul class="listCheck">
+                                {% for step_name in form_step_names %}
+                                    <li class="{% if forloop.counter0 < form_step_counter|add:"0" %}active {% endif %}{% if form_step_names|length > 5 %}double_column{% endif %}">{% trans 'Stap' %} {{ forloop.counter }}</li>
+                                {% endfor %}
+                                </ul>
+                                {% endwith %}
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                           
+                            
+                        </li>  
+                      
+                      
+                    {% endfor %}
+
+
+                   
+
+                </ul>
+               
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                
+                	<header class="line">
+                    
+                        <h2 class="title">
+
+                        
+                        {% if current_step_name == 'Ziekteactiviteit' %}                                    
+                        <span class="icoZiekteKwaliteitBlue"></span> 
+                        {% elif current_step_name == 'Kwaliteit van leven' %}
+                        <span class="icoKwaliteitLevenBlue"></span> 
+                        {% elif current_step_name == 'Kwaliteit van zorg' or current_step_name == 'Omschrijving problemen' %}
+                        <span class="icoKwaliteitBlue"></span> 
+                        {% else %}
+                        <span class="icoControleAfspraakBlue"></span> 
+                        {% endif %}
+
+                        {{ current_step_name }}</h2>
+                
+                	</header>
+                    
+                    <div class="content questionnairecontent">
+                        <form id="questionnaireaddform" action='.' method='post'>  
+                          {% if questionnaire_request.urgent %}
+                            <p>{% trans 'Uw spoedafspraak is opgeslagen, klik op "terug naar hoofdmenu" om terug te keren.' %}</p>
+                            {% if questionnaire_request.appointment_on_short_term %}
+                            <p>{% trans 'Er volgt zo spoedig mogelijk een reactie op uw spoedafspraak' %}</p>
+                            {% else %}
+                            <p>{% trans 'Er volgt binnen 3 dagen een reactie op uw spoedafspraak' %}</p>
+                            {% endif %}
+                          {% else %}
+                            <p>{% trans 'Uw vragenlijst is opgeslagen, klik op "terug naar hoofdmenu" om terug te keren.' %}</p>
+                            {% if questionnaire_request.appointment_on_short_term %}
+                            <p>{% trans 'Uw controle wordt zo spoedig mogelijk bekeken door een arts' %}</p>            
+                            {% else %} 
+                            <p>{% trans 'Uw controle wordt binnen 3 weken bekeken door een arts' %}</p>
+                            {% endif %}
+                          {% endif %}
+                        </form>
+                    </div>
+                    
+                    <footer class="buttonBar">
+
+
+                    
+                    	<div class="floatRight">                        
+
+                        <a href='{% url "index" %}' class="button">                                                         
+                            {% blocktrans %}Terug naar hoofdmenu{% endblocktrans %}                            
+                        </a> 
+                       
+                        </div>
+                    
+                    	<div>
+                            
+                           
+                        </div>
+                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

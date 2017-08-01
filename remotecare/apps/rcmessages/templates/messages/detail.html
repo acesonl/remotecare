@@ -1,0 +1,46 @@
+{% extends 'messages/message_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block title %}
+ {% with message as rc_message %}
+ <h2 class="title"><span class="rc_ico7"></span> {% if rc_message.related_to %}{% trans 'Reactie' %}{% if not rc_message.urgent %} {% trans 'controle' %}{% else %} {% trans 'spoedafspraak' %}{% endif %}{% else %}{% trans 'Bericht' %}{% endif %}
+
+
+
+
+<a class="button white questionnaire_view" href="/">
+    <i class="icoBack"></i>{% trans 'Terug' %}
+</a>
+
+
+{% if sent_view %}
+<a class="button white questionnaire_view search_button" href="{% url "sent_message_search" healthperson.health_person_id|get_random_session_key:request %}">
+    {% trans 'Zoek bericht' %}
+</a>
+{% endif %}
+
+
+</h2>
+
+
+
+ {% endwith %}
+{% endblock %}
+
+{% block contents %}
+    <div class='subject'>
+    {% trans 'Onderwerp' %}: {{ message.subject }}
+    </div>
+    <div class="scrollbar_container canvas1 messageview">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+		<div class="viewport msg">	
+		    <div class="content overview">
+            {% autoescape off %}{{ message.message|default:"-" }}{% endautoescape %}          
+            </div>
+        </div>
+    </div>
+{% endblock %}

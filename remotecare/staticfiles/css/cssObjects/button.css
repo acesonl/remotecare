@@ -1,0 +1,102 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@
+BUTTON
+@@@@@@@@@@@@@@@@@@@@@@
+
+    about                a collection of buttons and related objects
+    objects                .button, .buttonGroup, .buttonRibbon
+
+*/
+
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    button
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+        /*+ setup
+        ..........................................................................*/
+
+            .button{padding:2px 10px; line-height:30px; position:relative; display:inline-block; cursor:pointer; vertical-align:middle;}
+            button.button{height:32px; }
+            button{border:0px; }
+            button::-moz-focus-inner{border:0; padding:0;}
+            .button i{margin-right:5px;}
+            .change_button {float:right; line-height:30px; font-size:14px;}
+            .remove_button {float:right; line-height:30px; font-size:14px; margin-right:10px;}
+
+
+            .buttonsrow {float:right;}
+
+            .multiplebuttons {margin-right:2px; vertical-align:middle;}
+        /*+ style
+        ..........................................................................*/
+
+            /*border*/
+            .button{-moz-box-shadow:0px 0px 10px rgba(0,0,0,0.2); -webkit-box-shadow:0px 0px 10px rgba(0,0,0,0.2); box-shadow:0px 0px 10px rgba(0,0,0,0.2);}
+
+            /*color*/
+            .button{color:white; background-color:#193042;}
+
+            /*color*/
+            .button.white{color:black; background-color:#fff;}
+            .button.gray{color:black; background-color:#e6e6e6;}
+
+        /*+ states
+        ..........................................................................*/
+
+            /*hover ____________*/
+
+                /*color*/
+                .button:hover{background-color:#233e53; }
+                .button.white:hover{background-color:#e6e6e6; }
+                .button.gray:hover{background-color:#fff; }
+
+
+            /*active ____________*/
+
+                /*border*/
+                .button:active, .button.active{}
+
+                /*color*/
+                .button:active, .button.active{background-color:#000000; }
+                .button.white:active, .button.white.active{background-color:#c7c7c7; }
+
+                .buttonsrow a { vertical-align:middle;}
+        /*+ shapes
+        ..........................................................................*/
+
+            /*greater ____________*/
+
+                .button.greater{ line-height:40px; }
+                .button.greater i{margin-right:5px;}
+
+            /*grand ____________*/
+
+                .button.grand{line-height:60px; font-size:24px; padding:0px 15px;}
+                .button.grand i{position:relative; top:-3px; margin-right:5px;}
+
+                .button.grand_gray {background-color:#717171; cursor:default}
+                .button.grand_gray:hover{background-color:#717171; }
+        /*+ positions
+        ..........................................................................*/
+
+            /*bottomCenter ____________*/
+
+                .button.bottomCenter{position:absolute; bottom:10px; left:auto; right:auto;}
+
+
+
+                .button.questionnaire_view {
+                    font-size:14px;
+                    float:right;
+                    margin-top:-2px;
+                    padding-top:2px;
+                }
+
+                .button.search_button {
+                    margin-right:20px;
+                }
+                .button.questionnaire_view .icoBack {
+                    position:relative;
+                    top:-1px;
+                }
+

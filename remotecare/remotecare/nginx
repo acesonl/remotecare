@@ -1,0 +1,33 @@
+upstream django {
+    server 127.0.0.1:3031; # for a web port socket (we'll use this first)
+    #server unix:///path/to/your/mysite/mysite.sock
+}
+
+server {
+    sendfile on;
+    listen 80 default_server;
+    listen [::]:80 default_server ipv6only=on;
+
+    #root /usr/share/nginx/html;
+    #index index.html index.htm;
+    server_name localhost;
+
+    location /static {
+        # your Django project's static files - amend as required
+        alias /srv/remotecare/default/remotecare/static;
+        expires 2h;
+    }
+
+    #/xsendmedia is used as the default internal url
+    #since /media will not work.
+    location /xsendmedia {
+        internal;
+        #protected media which needs authentication
+        alias /srv/remotecare/default/remotecare/mediafiles;
+    }
+
+    location / {
+        uwsgi_pass  django;
+        include /etc/nginx/uwsgi_params;
+    }
+}

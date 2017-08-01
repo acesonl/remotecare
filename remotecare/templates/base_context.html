@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load i18n customfilters staticfiles pipeline %}
+
+{% block extra_head %}
+    {{ block.super }}
+    {% stylesheet 'default_context' %}
+    {% javascript 'default_context' %}
+
+{% endblock %}
+
+{% block debug %}
+{% endblock %}
+
+{% block header_wrapper %}
+    <hgroup>
+		<h1 class="logo"><a href="{% url "index" %}">Remote Care</a></h1>
+
+    </hgroup>
+    <div class="optionbar">
+        <form id='searchform' action='{% url "index_search" %}' method='post'>
+             {% csrf_token %}
+            <input type="text" name='searchterm' id='id_searchterm' class="inputtext" placeholder="Zoek..."> <button onclick='document.getElementById("searchform").submit();'><i class="icoSearch"></i></button>
+        </form>
+    </div>
+    <nav class="nav header">
+        <ul class="menu">
+            <li {% if home %}class="active"{% endif %}><a class="lvl1" href="{% url "index" %}">Home</a></li>
+            <li {% if security %}class="active"{% endif %}><a class="lvl1" href="{% url "information_page" "security" %}">Over beveiliging</a></li>
+            <li {% if feedback %}class="active"{% endif %}><a class="lvl1" href="{% url "information_feedback" %}">Feedback</a></li>
+
+            <li><a class="lvl1" href="/logout/">Uitloggen</a></li>
+            <li{% if help %}class="active"{% endif %}><a class="lvl1" href="{% url "information_page" "faq" %}">Help</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+

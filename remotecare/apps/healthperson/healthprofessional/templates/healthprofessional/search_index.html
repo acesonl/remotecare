@@ -1,0 +1,95 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">                        
+                            <h4 class="title">{% trans 'Terug' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>                  
+                </ul>
+                            
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        <h2 class="title"><span class="rc_ico32"></span> {% trans 'Zoekresultaten' %}</h2>      
+                	</header>
+                    
+                    <div class="content">
+                        {% if patients %}
+                            <table class="table zebra lesser">
+                              <tr class="action">
+                                <th scope="col">{% trans 'Achternaam' %}</th>
+                                <th scope="col">{% trans 'Nr.' %}</th>
+                                <th scope="col">{% trans 'Geb. datum' %}</th>
+                                <th scope="col">{% trans 'BSN' %}</th>
+                                <th scope="col"></th>
+                              
+                              </tr>
+
+                            
+                            {% for patient in patients %}
+                              <tr>
+                                <td>{{ patient.user.last_name }}</td>
+                                <td>{{ patient.user.encrypted_local_hospital_number|default:"-" }}</td>
+                                <td>{{ patient.user.date_of_birth|date:SHORT_DATE_FORMAT }}</td>
+                                <td>{{ patient.user.encrypted_BSN|default:"-" }}</td>
+                                <td class='buttonsrow'>    
+                                    <a title="{% trans 'Verstuur bericht' %}" href='{% url "message_add" patient.health_person_id|get_random_session_key:request %}' class='button gray ico'><i class='rc_ico59'></i></a>
+                                    <a title="{% trans 'Inzien/wijzigen' %}" href='{% url "patient_view_personalia" patient.health_person_id|get_random_session_key:request %}' class='button gray ico'><i class='rc_ico74'></i></a>
+                                    <a title="{% trans 'Verwijder' %}" href='{% url "patient_remove" patient.health_person_id|get_random_session_key:request %}' class='button gray ico'><i class='rc_ico50'></i></a>
+                                </td> 
+                              </tr>
+                  
+               
+                            {% endfor %}
+                         </table>
+                        {% else %}
+                            {% if no_search_term %}
+                            <p>{% trans 'Vul a.u.b. een zoekterm in.'  %}</p>
+                            {% else %}
+                            <p>{% trans 'Geen patiënten gevonden.'  %}</p>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

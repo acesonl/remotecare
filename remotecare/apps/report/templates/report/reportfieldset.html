@@ -1,0 +1,33 @@
+
+{% load i18n customfilters %}
+
+{% with forloop.counter|add:"0" as fieldset_counter %}
+<fieldset{% if name %} class='hi-light {{ name|lower|slugify  }}'{% endif %}>
+
+
+{% for field in fields %}
+
+
+        <div class='field{% if field.errors %} error{% endif %}'>
+            {% if field.help_text %}
+               {{ field.help_text }}
+            {% endif %}
+            {% if field.field|classname == 'BooleanField' %}
+                <div class='hiddeninput'>{{ field }}</div>
+                <div class='inputselector'>
+                <ul class="listselector listTagScore">                                        
+                     <li {% if key == field.value|add:"0" %}class="active"{% endif %}>
+                        <a id="{{ field.html_name }}" value="{{ key }}" to_set="id_{{ field.html_name }}" class="tag" href="#"><span class="tooltip left">v</span>{{ field.label_tag }}</a>
+                    </li> 
+                </ul> 
+               </div>      
+            {% else %}
+                {{ field }} 
+            {% endif %}       
+            {% if field.errors %}
+                <div class='error'>{% for error in field.errors %}{{ error }}{% endfor %}</div>
+            {% endif %}
+        </div>
+{% endfor %}
+</fieldset>
+{% endwith %}

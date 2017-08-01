@@ -1,0 +1,56 @@
+
+
+
+<fieldset{% if name %} class='hi-light {{ name|lower|slugify  }}'{% endif %}>
+  <div>
+     <div class='label'>
+    </div>
+    <div class='field'>
+{% with fields|first as first_field %} 
+    {% for key, value in first_field.field.choices %}  
+      <div class='combinedradio'>
+      {{ value }}
+      </div>
+    {% endfor %}
+{% endwith %}
+    </div>
+    </div>
+</fieldset>
+
+
+<fieldset{% if name %} class='hi-light {{ name|lower|slugify  }}'{% endif %}>
+
+
+{% for field in fields %}
+
+        {% if field.help_text %}
+            <div class='help_text'>{{ field.help_text }}</div>
+        {% endif %}
+
+    {% ifequal field.name 'tags' %}
+        <div class='tag-field'>
+    {% else %}
+        {% ifequal field.name 'notes' %}
+            <div class='note-field'>
+        {% else %}
+            <div>
+        {% endifequal %}
+    {% endifequal %}
+        <div class='label'>
+            {% if field.field.required %}<span>*</span>{% endif %}{{ field.label_tag }}
+        </div>
+
+        <div class='field{% if field.errors %} error{% endif %}'>
+            {% for key, value in field.field.choices %}  
+            <div class='combinedradio'>
+              <input type="radio" id="{{ field.html_name }}_{{ forloop.counter0 }}" value="{{ key }}" {% if key == field.value %}checked='checked'{% endif %} name="{{ field.html_name }}" />
+            </div>
+            {% endfor %}               
+        </div>
+        {% if field.errors %}
+            <div class='error'>{% for error in field.errors %}{{ error }}{% endfor %}</div>
+        {% endif %}
+
+    </div>
+{% endfor %}
+</fieldset>

@@ -1,0 +1,3736 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-01 10:58+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps/account/forms.py:40
+msgid "Mobiel telefoonnummer (herhaal)"
+msgstr ""
+
+#: apps/account/forms.py:44
+msgid "E-mail (herhaal)"
+msgstr ""
+
+#: apps/account/forms.py:78
+msgid "Het mobiele nummer is niet gelijk."
+msgstr ""
+
+#: apps/account/forms.py:91
+msgid "Het e-mail adres is niet gelijk."
+msgstr ""
+
+#: apps/account/forms.py:108
+msgid "E-mail adres is al in gebruik."
+msgstr ""
+
+#: apps/account/forms.py:117
+msgid "Invalide e-mail adres"
+msgstr ""
+
+#: apps/account/forms.py:136
+msgid "Verander wachtwoord?"
+msgstr ""
+
+#: apps/account/forms.py:141 apps/account/forms.py:155
+#: apps/authentication/forms.py:22 apps/authentication/forms.py:37
+#: apps/authentication/forms.py:48
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:20
+#: apps/healthperson/management/templates/management/personalia_view.html:22
+#: apps/healthperson/patient/templates/patient/personalia_view.html:26
+#: apps/healthperson/patient/templates/patient/profile_view.html:60
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:20
+#: templates/registration/account_blocked.html:23
+#: templates/registration/blocked.html:24
+#: templates/registration/email_sent.html:32
+#: templates/registration/logged_out.html:23
+#: templates/registration/login.html:52
+#: templates/registration/password_change_request_invalid.html:23
+#: templates/registration/password_reset_form.html:23
+#: templates/registration/request_sms_code_form.html:34
+msgid "Wachtwoord"
+msgstr ""
+
+#: apps/account/forms.py:148 apps/account/forms.py:157
+#: apps/authentication/forms.py:41 apps/authentication/forms.py:50
+msgid "Wachtwoord (herhaal)"
+msgstr ""
+
+#: apps/account/forms.py:173 apps/account/forms.py:177
+msgid "Dit veld is verplicht."
+msgstr ""
+
+#: apps/account/forms.py:183 apps/authentication/forms.py:60
+msgid "Het wachtwoord is niet gelijk."
+msgstr ""
+
+#: apps/account/forms.py:208
+msgid "I do agree with the rules"
+msgstr ""
+
+#: apps/account/forms.py:218
+msgid "Toegang is alleen mogelijk indien u akkoord gaat met de regels."
+msgstr ""
+
+#: apps/account/models.py:95 apps/account/models.py:100
+#: apps/healthperson/healthprofessional/forms.py:20
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:10
+#: apps/healthperson/management/templates/management/personalia_view.html:12
+#: apps/healthperson/patient/templates/patient/personalia_view.html:16
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:10
+msgid "Voornaam"
+msgstr ""
+
+#: apps/account/models.py:105 apps/account/models.py:108
+#: apps/healthperson/healthprofessional/forms.py:23
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:30
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:63
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:13
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:79
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:45
+#: apps/healthperson/management/templates/management/personalia_view.html:15
+#: apps/healthperson/management/templates/management/search.html:45
+#: apps/healthperson/patient/forms.py:26
+#: apps/healthperson/patient/templates/patient/personalia_view.html:19
+#: apps/healthperson/secretariat/forms.py:14
+#: apps/healthperson/secretariat/templates/secretariat/index.html:25
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:13
+#: apps/healthperson/secretariat/templates/secretariat/search.html:79
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:45
+#: apps/rcmessages/forms.py:36
+msgid "Achternaam"
+msgstr ""
+
+#: apps/account/models.py:113 apps/account/models.py:117
+msgid "E-mail adres"
+msgstr ""
+
+#: apps/account/models.py:124
+#: apps/healthperson/management/templates/management/personalia_view.html:10
+msgid "Titel"
+msgstr ""
+
+#: apps/account/models.py:130
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:31
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:64
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:11
+#: apps/healthperson/management/templates/management/personalia_view.html:13
+#: apps/healthperson/patient/templates/patient/personalia_view.html:17
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:11
+msgid "Voorletters"
+msgstr ""
+
+#: apps/account/models.py:136
+msgid "Tussenvoegsel"
+msgstr ""
+
+#: apps/account/models.py:143
+msgid "Mobiel telefoonnummer"
+msgstr ""
+
+#: apps/account/models.py:146
+msgid "staff status"
+msgstr ""
+
+#: apps/account/models.py:148
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: apps/account/models.py:151
+msgid "active"
+msgstr ""
+
+#: apps/account/models.py:153
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: apps/account/models.py:156
+msgid "date joined"
+msgstr ""
+
+#: apps/account/models.py:162
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:14
+#: apps/healthperson/management/templates/management/personalia_view.html:16
+#: apps/healthperson/patient/templates/patient/personalia_view.html:20
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:14
+msgid "Geslacht"
+msgstr ""
+
+#: apps/account/models.py:175 apps/account/models.py:180
+msgid "Burger Service Nummer"
+msgstr ""
+
+#: apps/account/models.py:184 apps/authentication/forms.py:142
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:15
+#: apps/healthperson/management/templates/management/personalia_view.html:17
+#: apps/healthperson/patient/forms.py:29
+#: apps/healthperson/patient/templates/patient/personalia_view.html:21
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:15
+msgid "Geboortedatum"
+msgstr ""
+
+#: apps/account/models.py:209
+msgid "Ziekenhuis"
+msgstr ""
+
+#: apps/account/models.py:218 apps/account/models.py:223
+msgid "Lokaal ziekenhuis-nummer"
+msgstr ""
+
+#: apps/appointment/forms.py:60
+msgid "Tijdstip moet in de toekomst liggen."
+msgstr ""
+
+#: apps/appointment/models.py:62
+msgid "Afspraak datum"
+msgstr ""
+
+#: apps/appointment/models.py:64
+msgid "Afspraak tijd"
+msgstr ""
+
+#: apps/appointment/models.py:67
+#: apps/healthperson/healthprofessional/models.py:101
+#: apps/healthperson/patient/templates/patient/appointments.html:15
+msgid "Behandelaar"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_context.html:23
+#: apps/healthperson/healthprofessional/templates/healthprofessional/add.html:43
+#: apps/healthperson/healthprofessional/templates/healthprofessional/healthprofessional_context.html:24
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:44
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:20
+#: apps/healthperson/management/templates/management/manager_context.html:20
+#: apps/healthperson/management/templates/management/search.html:20
+#: apps/healthperson/patient/templates/patient/add.html:113
+#: apps/healthperson/patient/templates/patient/notification_view.html:20
+#: apps/healthperson/patient/templates/patient/patient_context.html:20
+#: apps/healthperson/patient/templates/patient/profile_view.html:20
+#: apps/healthperson/patient/templates/patient/search.html:44
+#: apps/healthperson/patient/templates/patient/search_index.html:20
+#: apps/healthperson/secretariat/templates/secretariat/add.html:43
+#: apps/healthperson/secretariat/templates/secretariat/search.html:44
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:20
+#: apps/healthperson/secretariat/templates/secretariat/secretariat_context.html:24
+#: apps/information/templates/information/feedback.html:20
+#: apps/information/templates/information/feedback_sent.html:20
+#: apps/information/templates/information/feedback_sent.html:45
+#: apps/information/templates/information/help_context.html:21
+#: apps/information/templates/information/information_context.html:25
+#: apps/information/templates/information/over_beveiliging.html:25
+#: apps/information/templates/information/overview.html:25
+#: apps/information/templates/information/security.html:25
+#: apps/questionnaire/templates/questionnaire/already_filled_in.html:27
+#: apps/questionnaire/templates/questionnaire/disease_activity.html:26
+#: apps/questionnaire/templates/questionnaire/disease_activity.html:72
+#: apps/questionnaire/templates/questionnaire/healthcare_quality.html:27
+#: apps/questionnaire/templates/questionnaire/healthcare_quality.html:67
+#: apps/questionnaire/templates/questionnaire/quality_of_life.html:27
+#: apps/questionnaire/templates/questionnaire/quality_of_life.html:71
+#: apps/questionnaire/templates/questionnaire/unhandled_urgent.html:27
+#: apps/questionnaire/templates/questionnaire/wait_till_next_questionnaire.html:27
+#: apps/rcmessages/templates/messages/add.html:25
+#: apps/rcmessages/templates/messages/detail.html:16
+#: apps/rcmessages/templates/messages/message_context.html:24
+#: apps/rcmessages/templates/messages/message_sent.html:23
+#: apps/report/templates/report/report_context.html:23 templates/404.html:25
+msgid "Terug"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:9
+msgid "Afspraak verzoek afhandelen"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:14
+msgid "Gegevens patiënt"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:16
+msgid "geboren"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:19
+msgid "Informatie"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:24
+msgid "Huidige behandelaar:"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:28
+msgid "Gewenste termijn afspraak:"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:28
+msgid "ingevuld op"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:28
+msgid "Niet ingevuld"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:36
+msgid ""
+"Na bevestiging wordt er een bericht naar de patiënt gestuurd betreffende de "
+"afspraak. De afhandeling van de ingevoerde vragenlijsten blijft openstaan "
+"voor de (opgegeven) behandelaar."
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:41
+msgid ""
+"Nb. Indien er een andere behandelaar wordt gekozen dan de huidige "
+"behandelaar wordt de afspraak eenmalig overgedragen aan de gekozen "
+"behandelaar"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:47
+msgid ""
+"De afspraak datum is niet binnen de gewenste termijn. Weet u zeker dat dit "
+"goed is? Indien ja, klik dan op bevestigen hieronder."
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:50
+#: apps/healthperson/healthprofessional/templates/healthprofessional/add.html:34
+#: apps/healthperson/healthprofessional/templates/healthprofessional/add.html:67
+#: apps/healthperson/healthprofessional/templates/healthprofessional/edit_view.html:27
+#: apps/healthperson/healthprofessional/templates/healthprofessional/edit_view.html:52
+#: apps/healthperson/healthprofessional/templates/healthprofessional/remove_confirmation.html:20
+#: apps/healthperson/healthprofessional/templates/healthprofessional/remove_confirmation.html:46
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:35
+#: apps/healthperson/management/templates/management/edit_view.html:27
+#: apps/healthperson/management/templates/management/edit_view.html:52
+#: apps/healthperson/patient/templates/patient/add.html:104
+#: apps/healthperson/patient/templates/patient/add.html:137
+#: apps/healthperson/patient/templates/patient/edit_view.html:99
+#: apps/healthperson/patient/templates/patient/edit_view.html:134
+#: apps/healthperson/patient/templates/patient/remove_confirmation.html:20
+#: apps/healthperson/patient/templates/patient/remove_confirmation.html:46
+#: apps/healthperson/secretariat/templates/secretariat/add.html:34
+#: apps/healthperson/secretariat/templates/secretariat/add.html:67
+#: apps/healthperson/secretariat/templates/secretariat/edit_view.html:27
+#: apps/healthperson/secretariat/templates/secretariat/edit_view.html:50
+#: apps/healthperson/secretariat/templates/secretariat/remove_confirmation.html:20
+#: apps/healthperson/secretariat/templates/secretariat/remove_confirmation.html:46
+#: apps/healthperson/secretariat/templates/secretariat/search.html:35
+#: apps/information/templates/information/feedback.html:45
+#: apps/questionnaire/templates/questionnaire/fillin.html:268
+#: apps/questionnaire/templates/questionnaire/fillin2.html:238
+#: apps/rcmessages/templates/messages/add.html:50
+#: apps/report/templates/report/message_edit.html:22
+#: apps/report/templates/report/report_edit.html:85
+msgid "Annuleren"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointment_edit.html:51
+msgid "Bevestigen en versturen naar de patiënt"
+msgstr ""
+
+#: apps/appointment/templates/appointment/appointmentform.html:4
+#: apps/questionnaire/templates/questionnaire/DefaultQuestionnaireForm.html:6
+#: apps/questionnaire/templates/questionnaire/QOLChronCUForm0.html:6
+#: apps/questionnaire/templates/questionnaire/Radaiform2.html:6
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36form.html:6
+#: apps/questionnaire/templates/questionnaire/UrgentStartQuestionnaireForm.html:6
+#: apps/questionnaire/templates/questionnaire/forms/FinishQuestionnaireForm.html:6
+#: apps/questionnaire/templates/questionnaire/forms/FinishQuestionnaireForm1.html:6
+#: apps/questionnaire/templates/questionnaire/forms/RADAIQuestionnaireForm1.html:6
+#: apps/questionnaire/templates/questionnaire/forms/StartQuestionnaireForm.html:6
+#: apps/questionnaire/templates/questionnaire/forms/reportform.html:4
+#: apps/report/templates/report/reportform.html:4 templates/form.html:4
+msgid "Corrigeer de fout hieronder alstublieft."
+msgid_plural "Corrigeer de fouten hieronder alstublieft."
+msgstr[0] ""
+msgstr[1] ""
+
+#: apps/authentication/forms.py:19 apps/authentication/forms.py:74
+#: apps/authentication/forms.py:137
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:19
+#: apps/healthperson/management/templates/management/personalia_view.html:21
+#: apps/healthperson/patient/templates/patient/personalia_view.html:25
+#: apps/healthperson/patient/templates/patient/profile_view.html:59
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:19
+msgid "E-mail"
+msgstr ""
+
+#: apps/authentication/forms.py:32 apps/authentication/forms.py:84
+msgid "SMS-code"
+msgstr ""
+
+#: apps/authentication/forms.py:98
+msgid "SMS code is ongeldig"
+msgstr ""
+
+#: apps/authentication/forms.py:99
+msgid "Gebruiker is niet actief"
+msgstr ""
+
+#: apps/authentication/password_check.py:20
+msgid "Alleen cijfers en + aan het begin is toegestaan."
+msgstr ""
+
+#: apps/authentication/password_check.py:27
+msgid "Formaat +31612345678, geen spaties."
+msgstr ""
+
+#: apps/authentication/password_check.py:31
+msgid "Formaat 0612345678, geen spaties."
+msgstr ""
+
+#: apps/authentication/password_check.py:34
+msgid "Formaat 0612345678 of +31612345678, geen spaties."
+msgstr ""
+
+#: apps/authentication/password_check.py:69
+msgid "Wachtwoord moet tenminste 8 tekens lang zijn."
+msgstr ""
+
+#: apps/authentication/password_check.py:82
+msgid "Wachtwoord bevat 3 dezelfde tekens."
+msgstr ""
+
+#: apps/authentication/password_check.py:92
+msgid "Wachtwoord bevat 3 opeenvolgende letters uit alfabet"
+msgstr ""
+
+#: apps/authentication/password_check.py:97
+msgid "Wachtwoord bevat 3 opeenvolgendeletters uit omgekeerd alfabet"
+msgstr ""
+
+#: apps/authentication/password_check.py:107
+msgid "Wachtwoord bevat 3 opeenvolgende cijfers uit 0-9"
+msgstr ""
+
+#: apps/authentication/password_check.py:112
+msgid "Wachtwoord bevat 3 opeenvolgende cijfers uit 9-0"
+msgstr ""
+
+#: apps/authentication/password_check.py:125
+msgid "Wachtwoord bevat 3 opeenvolgendetekens uit een rij van het toetsenbord"
+msgstr ""
+
+#: apps/authentication/password_check.py:130
+msgid ""
+"Wachtwoord bevat 3 opeenvolgendetekens uit een omgekeerde rij van het "
+"toetsenbord"
+msgstr ""
+
+#: apps/authentication/password_check.py:140
+#: apps/authentication/password_check.py:154
+msgid "Wachtwoord bevat 3 opeenvolgende tekensuit een rij van het toetsenbord"
+msgstr ""
+
+#: apps/authentication/password_check.py:145
+#: apps/authentication/password_check.py:159
+msgid ""
+"Wachtwoord bevat 3 opeenvolgende tekensuit een omgekeerde rij van het "
+"toetsenbord"
+msgstr ""
+
+#: apps/authentication/password_check.py:165
+msgid "1 kleine letter is verplicht"
+msgstr ""
+
+#: apps/authentication/password_check.py:168
+msgid "1 hoofdletter is verplicht"
+msgstr ""
+
+#: apps/authentication/password_check.py:171
+msgid "2 cijfers zijn verplicht"
+msgstr ""
+
+#: apps/authentication/password_check.py:187
+msgid "Wachtwoord is zelfde als huidig wachtwoord"
+msgstr ""
+
+#: apps/authentication/password_check.py:191
+msgid "Zelfde als een van de laatste 20 wachtwoorden"
+msgstr ""
+
+#: apps/authentication/views.py:68
+msgid "E-mail adres is onbekend ofhet versturen is niet gelukt."
+msgstr ""
+
+#: apps/authentication/views.py:110 apps/authentication/views.py:169
+msgid "De link in de e-mail is incorrect of is verlopen."
+msgstr ""
+
+#: apps/authentication/views.py:136
+msgid "E-mail adres of geboortedatum incorrect."
+msgstr ""
+
+#: apps/authentication/views.py:227
+msgid "De smscode is onjuist."
+msgstr ""
+
+#: apps/healthperson/healthprofessional/forms.py:24
+#: apps/healthperson/healthprofessional/forms.py:170
+#: apps/healthperson/healthprofessional/forms.py:223
+#: apps/healthperson/healthprofessional/models.py:52
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:23
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:24
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:80
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:23
+msgid "Functie"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/forms.py:25
+#: apps/healthperson/healthprofessional/forms.py:171
+#: apps/healthperson/healthprofessional/forms.py:226
+#: apps/healthperson/healthprofessional/models.py:56
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:25
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:81
+#: apps/healthperson/management/templates/management/search.html:46
+#: apps/healthperson/secretariat/forms.py:16
+#: apps/healthperson/secretariat/forms.py:31
+#: apps/healthperson/secretariat/forms.py:68
+#: apps/healthperson/secretariat/models.py:25
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:24
+#: apps/healthperson/secretariat/templates/secretariat/search.html:80
+msgid "Specialisme"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/forms.py:92
+#: apps/healthperson/healthprofessional/forms.py:96
+msgid "Dit veld is verplicht"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/forms.py:173
+#: apps/healthperson/healthprofessional/forms.py:230
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:26
+msgid "Tel.nr. contact polikliniek"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:7
+msgid "Medisch specialist"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:8
+msgid "Arts-assistent"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:9
+msgid "Gespecialiseerd verpleegkundige"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:10
+msgid "Verpleegkundige"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:11
+msgid "Dietist"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:16
+msgid "Maag-darm-leverziekten"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:17
+msgid "Reumatologie"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:18
+msgid "Chirurgie"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:19
+msgid "Interne geneeskunde"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:20
+msgid "Orhopedie"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:24
+msgid "Zowel per e-mail als per sms"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:25
+msgid "Alleen per sms"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:26
+msgid "Alleen per e-mail"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:27
+msgid "Doorsturen naar"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:31
+msgid "-------"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:32
+#: apps/questionnaire/models.py:159 apps/questionnaire/models.py:196
+#: apps/questionnaire/models.py:771 apps/questionnaire/models.py:1159
+#: apps/questionnaire/models.py:1164 apps/questionnaire/models.py:1355
+#: apps/questionnaire/models.py:1360
+msgid "Ja"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:33
+#: apps/questionnaire/models.py:160 apps/questionnaire/models.py:197
+#: apps/questionnaire/models.py:384 apps/questionnaire/models.py:772
+#: apps/questionnaire/models.py:1160 apps/questionnaire/models.py:1165
+#: apps/questionnaire/models.py:1346 apps/questionnaire/models.py:1356
+#: apps/questionnaire/models.py:1361 apps/questionnaire/models.py:1386
+#: apps/questionnaire/models.py:1392 apps/questionnaire/models.py:1398
+#: apps/questionnaire/models.py:1424 apps/questionnaire/models.py:1436
+msgid "Nee"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:48
+#: apps/healthperson/healthprofessional/templates/healthprofessional/healthprofessional_context.html:53
+msgid "Pasfoto"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:59
+msgid "Telefoonnummer contact polikliniek"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:66
+msgid "Langer dan 3 dagen niet gereageerdop een urgente patient."
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:73
+#: apps/healthperson/healthprofessional/templates/healthprofessional/notification_view.html:14
+msgid "Secretariaat medewerker"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:78
+msgid "Start datum afwezigheid"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:83
+msgid "Eind datum afwezigheid"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/models.py:88
+msgid "Vervangende specialist tijdens afwezigheid"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/views.py:293
+#: apps/healthperson/healthprofessional/templates/healthprofessional/photo_view.html:5
+#: apps/healthperson/healthprofessional/templates/healthprofessional/photo_view.html:9
+msgid "Behandelaar pasfoto"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/views.py:320
+msgid "Pasfoto is te klein, minimaal: "
+msgstr ""
+
+#: apps/healthperson/healthprofessional/views.py:439
+#: apps/healthperson/healthprofessional/templates/healthprofessional/healthprofessional_context.html:45
+#: apps/healthperson/healthprofessional/templates/healthprofessional/out_of_office_view.html:5
+#: apps/healthperson/healthprofessional/templates/healthprofessional/out_of_office_view.html:11
+msgid "Afwezigheid"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/views.py:472
+#: apps/healthperson/healthprofessional/templates/healthprofessional/healthprofessional_context.html:38
+#: apps/healthperson/healthprofessional/templates/healthprofessional/notification_view.html:5
+#: apps/healthperson/healthprofessional/templates/healthprofessional/notification_view.html:10
+#: apps/healthperson/patient/views.py:186
+#: apps/healthperson/patient/templates/patient/notification_view.html:34
+#: apps/healthperson/patient/templates/patient/notification_view.html:52
+#: apps/healthperson/patient/templates/patient/notification_view.html:57
+#: apps/healthperson/patient/templates/patient/profile_view.html:34
+msgid "Notificatie instellingen"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/views.py:516
+#: apps/healthperson/healthprofessional/templates/healthprofessional/healthprofessional_context.html:31
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:5
+#: apps/healthperson/management/views.py:118
+#: apps/healthperson/management/templates/management/manager_context.html:27
+#: apps/healthperson/management/templates/management/personalia_view.html:5
+#: apps/healthperson/patient/views.py:480
+#: apps/healthperson/patient/templates/patient/patient_context.html:27
+#: apps/healthperson/patient/templates/patient/personalia_view.html:5
+#: apps/healthperson/secretariat/views.py:330
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:5
+#: apps/healthperson/secretariat/templates/secretariat/secretariat_context.html:31
+msgid "Personalia & Account"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/add.html:23
+#: apps/healthperson/healthprofessional/templates/healthprofessional/add.html:68
+#: apps/healthperson/secretariat/templates/secretariat/add.html:23
+#: apps/healthperson/secretariat/templates/secretariat/add.html:68
+msgid "Voeg toe"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/add.html:58
+msgid "Voeg nieuwe behandelaar toe"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/edit_view.html:20
+#: apps/healthperson/healthprofessional/templates/healthprofessional/edit_view.html:53
+#: apps/healthperson/healthprofessional/templates/healthprofessional/photo_crop.html:130
+#: apps/healthperson/management/templates/management/edit_view.html:20
+#: apps/healthperson/management/templates/management/edit_view.html:53
+#: apps/healthperson/patient/templates/patient/add.html:138
+#: apps/healthperson/patient/templates/patient/edit_view.html:92
+#: apps/healthperson/patient/templates/patient/edit_view.html:135
+#: apps/healthperson/secretariat/templates/secretariat/edit_view.html:20
+#: apps/healthperson/secretariat/templates/secretariat/edit_view.html:51
+msgid "Sla op"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/edit_view.html:43
+#: apps/healthperson/management/templates/management/edit_view.html:43
+#: apps/healthperson/patient/templates/patient/edit_view.html:115
+#: apps/healthperson/secretariat/templates/secretariat/edit_view.html:43
+msgid "Velden met een * zijn verplicht."
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:20
+#: apps/healthperson/secretariat/templates/secretariat/index.html:16
+msgid "Patiënten"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:22
+msgid "Afhandelen urgente patiënten"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:32
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:65
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:47
+#: apps/healthperson/patient/templates/patient/search.html:81
+#: apps/healthperson/secretariat/templates/secretariat/index.html:27
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:47
+msgid "Geb. datum"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:33
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:66
+#: apps/healthperson/patient/templates/patient/controles.html:15
+msgid "Afspraak geregeld"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:43
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:78
+#: apps/healthperson/secretariat/templates/secretariat/index.html:40
+msgid "Afhandelen"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:56
+msgid "Afhandelen controles"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:67
+#: apps/healthperson/patient/templates/patient/controles.html:16
+msgid "Bloed geprikt"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:105
+#: apps/healthperson/management/templates/management/index.html:22
+#: apps/healthperson/secretariat/templates/secretariat/index.html:66
+msgid "Patiënt zoeken"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:116
+#: apps/healthperson/management/templates/management/index.html:30
+#: apps/healthperson/secretariat/templates/secretariat/index.html:77
+msgid "Patiënt toevoegen"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:127
+#: apps/healthperson/management/templates/management/index.html:37
+msgid "Patiënt wijzigen"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/index.html:138
+#: apps/healthperson/management/templates/management/index.html:44
+#: apps/healthperson/secretariat/templates/secretariat/index.html:99
+msgid "Patiënt verwijderen"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/notification_view.html:11
+msgid "Langer dan 3 dagen niet gereageerd op een urgente patient."
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/out_of_office_view.html:13
+msgid "Start afwezigheid"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/out_of_office_view.html:14
+msgid "Einde afwezigheid"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/out_of_office_view.html:15
+msgid "Vervangende specialist"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/out_of_office_view.html:17
+msgid "Geen afwezigheidsperiode ingesteld"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:9
+#: apps/healthperson/management/templates/management/personalia_view.html:9
+#: apps/healthperson/patient/templates/patient/personalia_view.html:13
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:9
+msgid "Personalia"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:12
+#: apps/healthperson/management/templates/management/personalia_view.html:14
+#: apps/healthperson/patient/templates/patient/personalia_view.html:18
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:12
+msgid "Tussenvoegsels"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:17
+#: apps/healthperson/management/templates/management/personalia_view.html:19
+#: apps/healthperson/patient/views.py:221
+#: apps/healthperson/patient/templates/patient/notification_view.html:27
+#: apps/healthperson/patient/templates/patient/personalia_view.html:23
+#: apps/healthperson/patient/templates/patient/profile_view.html:27
+#: apps/healthperson/patient/templates/patient/profile_view.html:52
+#: apps/healthperson/patient/templates/patient/profile_view.html:57
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:17
+msgid "Account"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/personalia_view.html:18
+#: apps/healthperson/management/templates/management/personalia_view.html:20
+#: apps/healthperson/patient/templates/patient/personalia_view.html:24
+#: apps/healthperson/patient/templates/patient/profile_view.html:58
+#: apps/healthperson/secretariat/templates/secretariat/personalia_view.html:18
+msgid "Mobiel nummer"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/photo_crop.html:108
+msgid "Behandelaar pasfoto bijsnijden"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/photo_crop.html:112
+msgid ""
+"De pasfoto lengte en breedte kloppen niet helemaal, beweeg de selectie-box "
+"over de pasfoto om het gebied te selecteren dat gebruikt gaat worden voor de "
+"pasfoto en klik op opslaan"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/photo_view.html:20
+msgid "Er is nog geen pasfoto toegevoegd"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/remove_confirmation.html:36
+#: apps/healthperson/healthprofessional/templates/healthprofessional/remove_confirmation.html:47
+msgid "Verwijder behandelaar"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/remove_confirmation.html:41
+msgid "Weet u zeker dat uw deze behandelaar wilt verwijderen? "
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/remove_confirmation.html:42
+msgid ""
+"Na verwijdering kan de behandelaar niet meer inloggen maar zijn gegevens "
+"blijven wel in Remote Care staan."
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:24
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:60
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:69
+msgid "Zoek behandelaar"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:60
+#: apps/healthperson/patient/templates/patient/search.html:60
+#: apps/healthperson/secretariat/templates/secretariat/search.html:60
+msgid "en wijzig"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:60
+#: apps/healthperson/patient/templates/patient/search.html:60
+#: apps/healthperson/secretariat/templates/secretariat/search.html:60
+msgid "en verwijder"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:91
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:62
+#: apps/healthperson/patient/templates/patient/search.html:99
+#: apps/healthperson/secretariat/templates/secretariat/search.html:89
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:61
+msgid "Inzien/wijzigen"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:91
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:63
+#: apps/healthperson/patient/templates/patient/search.html:100
+#: apps/healthperson/secretariat/templates/secretariat/search.html:89
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:62
+msgid "Verwijder"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search.html:98
+#: apps/healthperson/patient/templates/patient/search.html:108
+#: apps/healthperson/secretariat/templates/secretariat/search.html:96
+#: apps/rcmessages/templates/messages/search.html:58
+msgid "Geen resultaten gevonden"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:38
+#: apps/healthperson/management/templates/management/search.html:38
+#: apps/healthperson/patient/templates/patient/search_index.html:38
+msgid "Zoekresultaten"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:46
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:46
+msgid "Nr."
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:48
+#: apps/healthperson/patient/forms.py:22
+#: apps/healthperson/patient/templates/patient/search.html:82
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:48
+#: apps/rcmessages/forms.py:32
+msgid "BSN"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:61
+#: apps/healthperson/patient/templates/patient/search.html:96
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:60
+msgid "Verstuur bericht"
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:72
+#: apps/healthperson/management/templates/management/search.html:94
+#: apps/healthperson/patient/templates/patient/search_index.html:74
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:71
+msgid "Vul a.u.b. een zoekterm in."
+msgstr ""
+
+#: apps/healthperson/healthprofessional/templates/healthprofessional/search_index.html:74
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:73
+msgid "Geen patiënten gevonden."
+msgstr ""
+
+#: apps/healthperson/management/models.py:15
+msgid "Manager"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/edit_view.html:50
+#: apps/healthperson/patient/views.py:224
+#: apps/healthperson/patient/templates/patient/edit_view.html:126
+msgid ""
+"Let op: Zorg dat u deze gegevens correct invoert. Zonder deze gegevens kunt "
+"u niet meer inloggen in Remote Care."
+msgstr ""
+
+#: apps/healthperson/management/templates/management/index.html:57
+msgid "Behandelaar zoeken"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/index.html:64
+msgid "Behandelaar toevoegen"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/index.html:71
+msgid "Behandelaar wijzigen"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/index.html:78
+msgid "Behandelaar verwijderen"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/index.html:100
+msgid "Medewerker zoeken"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/index.html:107
+msgid "Medewerker toevoegen"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/index.html:114
+msgid "Medewerker wijzigen"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/index.html:121
+msgid "Medewerker verwijderen"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/search.html:47
+#: apps/healthperson/management/templates/management/search.html:65
+#: apps/healthperson/management/templates/management/search.html:68
+#: apps/healthperson/management/templates/management/search.html:72
+msgid "Inzien/Wijzigen"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/search.html:48
+#: apps/healthperson/management/templates/management/search.html:78
+#: apps/healthperson/management/templates/management/search.html:81
+#: apps/healthperson/management/templates/management/search.html:84
+msgid "Verwijderen"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/search.html:57
+msgid "(patiënt)"
+msgstr ""
+
+#: apps/healthperson/management/templates/management/search.html:96
+msgid "Geen behandelaars of secretariaat medewerkers gevonden"
+msgstr ""
+
+#: apps/healthperson/patient/forms.py:24
+msgid "Lokaal ziekenhuisnummer"
+msgstr ""
+
+#: apps/healthperson/patient/forms.py:36
+#: apps/healthperson/patient/forms.py:202
+msgid "Selecteer vragenlijsten"
+msgstr ""
+
+#: apps/healthperson/patient/forms.py:149
+msgid "Maak wachtwoord ongeldig?"
+msgstr ""
+
+#: apps/healthperson/patient/forms.py:172
+#: apps/healthperson/patient/models.py:69
+#: apps/healthperson/patient/templates/patient/freq_controle_view.html:12
+#: apps/questionnaire/models.py:125
+msgid "Diagnose"
+msgstr ""
+
+#: apps/healthperson/patient/forms.py:176
+msgid "Hoofdbehandelaar"
+msgstr ""
+
+#: apps/healthperson/patient/forms.py:184
+#: apps/healthperson/patient/models.py:82
+#: apps/healthperson/patient/templates/patient/freq_controle_view.html:18
+msgid "Frequentie reguliere controle"
+msgstr ""
+
+#: apps/healthperson/patient/forms.py:192
+#: apps/healthperson/patient/models.py:87
+#: apps/healthperson/patient/templates/patient/freq_controle_view.html:19
+msgid "Frequentie bloedprikken"
+msgstr ""
+
+#: apps/healthperson/patient/forms.py:199
+#: apps/healthperson/patient/models.py:96
+msgid "Volgt altijd een polikliniekbezoek?"
+msgstr ""
+
+#: apps/healthperson/patient/forms.py:244
+#: apps/healthperson/patient/forms.py:254
+msgid "Geef een getal op."
+msgstr ""
+
+#: apps/healthperson/patient/models.py:50
+msgid "week"
+msgstr ""
+
+#: apps/healthperson/patient/models.py:52
+msgid "weken"
+msgstr ""
+
+#: apps/healthperson/patient/models.py:77
+msgid "Hoofd-behandelaar"
+msgstr ""
+
+#: apps/healthperson/patient/models.py:103
+#: apps/healthperson/patient/templates/patient/notification_view.html:58
+msgid "Starten van een reguliere controle"
+msgstr ""
+
+#: apps/healthperson/patient/models.py:109
+#: apps/healthperson/patient/templates/patient/notification_view.html:59
+msgid ""
+"Herinneringen bij een reguliere controle, indien deze niet binnen 1 week is "
+"ingevuld."
+msgstr ""
+
+#: apps/healthperson/patient/models.py:116
+msgid ""
+"Uitslag van een controle of \"het gaat niet goed\" nadat de behandelaar deze "
+"heeft beoordeeld en verwerkt."
+msgstr ""
+
+#: apps/healthperson/patient/models.py:125
+#: apps/healthperson/patient/templates/patient/notification_view.html:61
+msgid "Overige berichten van een arts of verpleegkundige."
+msgstr ""
+
+#: apps/healthperson/patient/models.py:277
+msgid "Patient"
+msgstr ""
+
+#: apps/healthperson/patient/views.py:608
+#: apps/healthperson/patient/templates/patient/freq_controle_view.html:17
+msgid "Controle frequentie"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/add.html:93
+msgid "Opslaan"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/add.html:128
+msgid "Voeg nieuwe patiënt toe"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/appointments.html:5
+#: apps/healthperson/patient/templates/patient/patient_context.html:57
+#: apps/questionnaire/templates/questionnaire/details/FinishQuestionnaire.html:5
+msgid "Afspraken"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/appointments.html:14
+msgid "Afspraak datum en tijd"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/appointments.html:16
+#: apps/healthperson/patient/templates/patient/controles.html:14
+#: apps/healthperson/patient/templates/patient/reports.html:14
+msgid "Ingevuld op"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/appointments.html:17
+#: apps/healthperson/patient/templates/patient/reports.html:15
+msgid "Ingevuld door"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/controles.html:5
+#: apps/healthperson/patient/templates/patient/patient_context.html:43
+msgid "Controles"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/edit.html:22
+#: apps/information/templates/information/overview.html:114
+#: apps/questionnaire/templates/questionnaire/detail.html:20
+#: apps/questionnaire/templates/questionnaire/overview.html:36
+msgid "Back to home"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/edit.html:29
+msgid "Cancel"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/edit.html:34
+msgid "Save changes"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/edit_view.html:128
+msgid ""
+"Als het wachtwoord ongeldig wordt gemaakt dan kan de patiënt niet meer "
+"inloggen met het huidige wachtwoord en krijgt hij/zij een e-mail met het "
+"verzoek een nieuw wachtwoord in te stellen."
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/freq_controle_view.html:5
+msgid "Diagnose & Controle frequentie"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/freq_controle_view.html:11
+msgid "Diagnose & Behandelaar"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/freq_controle_view.html:13
+msgid "Vragenlijsten"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/freq_controle_view.html:15
+msgid "Hoofd behandelaar"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/freq_controle_view.html:20
+msgid "Volgt altijd een polikliniekbezoek"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:22
+#: apps/questionnaire/templates/questionnaire/disease_activity.html:43
+#: apps/questionnaire/templates/questionnaire/healthcare_quality.html:43
+#: apps/questionnaire/templates/questionnaire/quality_of_life.html:43
+#: templates/registration/request_sms_code_form.html:23
+msgid "Controle"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:26
+msgid "Dagen sinds laatste controle"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:28
+msgid "Volgende controle"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:32
+msgid "Start Controle"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:40
+msgid "eConsult verbinding"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:51
+#: apps/questionnaire/templates/questionnaire/disease_activity.html:43
+#: apps/questionnaire/templates/questionnaire/healthcare_quality.html:43
+#: apps/questionnaire/templates/questionnaire/quality_of_life.html:43
+msgid "Het gaat niet goed"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:55
+msgid ""
+"Als het niet goed met u gaat, kunt u via deze knop een afspraak maken voor "
+"binnen een paar dagen."
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:57
+msgid ""
+"Let op: Dit is niet bedoeld voor echte noodsituaties. Neem in dat geval "
+"altijd contact op met uw huisarts of bel 112."
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:62
+msgid "Spoedafspraak"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:73
+msgid "Meer informatie"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:96
+#: apps/questionnaire/models.py:722 apps/questionnaire/models.py:1715
+msgid "Ziekteactiviteit"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:107
+#: apps/questionnaire/models.py:1062 apps/questionnaire/models.py:1273
+msgid "Kwaliteit van leven"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:118
+#: apps/questionnaire/models.py:567
+#: apps/questionnaire/templates/questionnaire/healthcare_quality.html:65
+#: apps/questionnaire/templates/questionnaire/healthcare_quality.html:152
+msgid "Kwaliteit van zorg"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:128
+#: apps/healthperson/patient/templates/patient/messages.html:5
+#: apps/healthperson/patient/templates/patient/patient_context.html:64
+msgid "Berichten"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:134
+msgid "*"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:138
+msgid "Er zijn geen berichten"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/index.html:165
+msgid "Mijn behandelaar"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:10
+#: apps/information/templates/information/onderwerpen_lijst.html:43
+msgid "Zoek..."
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:11
+#: apps/rcmessages/templates/messages/detail.html:22
+#: apps/rcmessages/templates/messages/search.html:10
+#: apps/rcmessages/templates/messages/search.html:26
+msgid "Zoek bericht"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:23
+msgid "Zoekresultaten:"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:29
+#: apps/rcmessages/templates/messages/search.html:41
+msgid "Toegevoegd op"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:30
+msgid "Toegevoegd door"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:37
+#: apps/healthperson/patient/templates/patient/search_index.html:55
+#: apps/rcmessages/templates/messages/search.html:50
+msgid "Bekijk bericht"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:43
+msgid "Geen resultaten"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:45
+msgid "Geen berichten"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:58
+msgid "Geselecteerd bericht"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:68
+#: apps/rcmessages/models.py:32
+#: apps/rcmessages/templates/messages/detail.html:36
+msgid "Onderwerp"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/messages.html:72
+msgid "Geen bericht geselecteerd"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/notification_view.html:60
+msgid ""
+"Uitslag van een controle of opvlamming nadat de behandelaar deze heeft "
+"beoordeeld en verwerkt."
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/patient_context.html:35
+msgid "Diagnose & Controle freq."
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/patient_context.html:50
+#: apps/healthperson/patient/templates/patient/reports.html:5
+msgid "Verslagen"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/personalia_view.html:5
+msgid "Wijzig"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/personalia_view.html:7
+#: apps/healthperson/patient/templates/patient/remove_confirmation.html:36
+#: apps/healthperson/patient/templates/patient/remove_confirmation.html:47
+msgid "Verwijder patiënt"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/personalia_view.html:14
+msgid "Burger service nummer"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/personalia_view.html:15
+msgid "Lokaal ziekenhuis nummer"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/remove_confirmation.html:41
+msgid "Weet u zeker dat uw deze patiënt wilt verwijderen? "
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/remove_confirmation.html:42
+msgid ""
+"Na verwijdering is het niet meer mogelijk om deze patiënt terug te halen. "
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/reports.html:21
+msgid "(Verslag is ongeldig)"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/reports.html:22
+msgid "Bekijk verslag"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/reports.html:36
+msgid "Geselecteerd verslag"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/reports.html:37
+msgid "(is ongeldig)"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/reports.html:42
+msgid "Maak verslag ongeldig"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/reports.html:56
+msgid "Geen verslag geselecteerd"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/search.html:24
+#: apps/healthperson/patient/templates/patient/search.html:60
+#: apps/healthperson/patient/templates/patient/search.html:69
+msgid "Zoek patiënt"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/search.html:60
+msgid "en stuur bericht"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/search.html:79
+msgid "Naam"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/search.html:80
+msgid "ZKH Nr."
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/search_index.html:45
+msgid "Bericht/Vragenlijst"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/search_index.html:46
+msgid "Bekijken"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/search_index.html:52
+msgid "Bericht ontvangen op "
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/search_index.html:52
+msgid "vragenlijst ingevuld op "
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/search_index.html:58
+#: apps/healthperson/patient/templates/patient/search_index.html:60
+#: apps/healthperson/patient/templates/patient/search_index.html:62
+msgid "Bekijk vragenlijst"
+msgstr ""
+
+#: apps/healthperson/patient/templates/patient/search_index.html:76
+msgid "Geen berichten of vragenlijsten gevonden."
+msgstr ""
+
+#: apps/healthperson/secretariat/models.py:29
+msgid "Medewerker"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/add.html:58
+msgid "Voeg nieuwe secretariaat medewerker toe"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/index.html:18
+msgid "In te plannen afspraken"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/index.html:26
+msgid "Voorlet."
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/index.html:28
+msgid "Tel nr"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/index.html:29
+msgid "Termijn afspraak"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/index.html:88
+msgid "Patiënt wijzigingen"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/index.html:110
+msgid "Berichten versturen"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/index.html:121
+#: apps/rcmessages/templates/messages/overview.html:9
+msgid "Verstuurde berichten"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/remove_confirmation.html:36
+msgid "Verwijder secretariaat medewerker"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/remove_confirmation.html:41
+msgid "Weet u zeker dat uw deze medewerker wilt verwijderen? "
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/remove_confirmation.html:42
+msgid ""
+"Na verwijdering kan de medewerker niet meer inloggen maar zijn gegevens "
+"blijven wel in Remote Care staan."
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/remove_confirmation.html:47
+msgid "Verwijder medewerker"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/search.html:24
+msgid "Zoek medewerker"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/search.html:60
+#: apps/healthperson/secretariat/templates/secretariat/search.html:69
+msgid "Zoek secretariaat medewerker"
+msgstr ""
+
+#: apps/healthperson/secretariat/templates/secretariat/search_index.html:38
+msgid "Zoek resultaten"
+msgstr ""
+
+#: apps/information/forms.py:10
+msgid "Feedback"
+msgstr ""
+
+#: apps/information/templates/information/behandeling.html:9
+#: apps/information/templates/information/information_context.html:39
+#: apps/information/templates/information/overview.html:39
+msgid "Behandeling"
+msgstr ""
+
+#: apps/information/templates/information/diagnose.html:9
+msgid "Diagnose en onderzoek"
+msgstr ""
+
+#: apps/information/templates/information/e-consult.html:17
+msgid "e-consult"
+msgstr ""
+
+#: apps/information/templates/information/e-consult.html:25
+msgid "De eConsult module is voor deze zorginstelling nog niet beschikbaar."
+msgstr ""
+
+#: apps/information/templates/information/faq.html:9
+#: apps/information/templates/information/help_context.html:28
+msgid "Veel gestelde vragen"
+msgstr ""
+
+#: apps/information/templates/information/feedback.html:36
+#: apps/information/templates/information/feedback_sent.html:36
+msgid "Stuur feedback"
+msgstr ""
+
+#: apps/information/templates/information/feedback.html:46
+msgid "Versturen"
+msgstr ""
+
+#: apps/information/templates/information/help_context.html:35
+#: apps/information/templates/information/onderwerpen_lijst.html:40
+msgid "Lijst met onderwerpen"
+msgstr ""
+
+#: apps/information/templates/information/help_context.html:42
+#: apps/information/templates/information/over_remote_care.html:9
+msgid "Over Remote Care"
+msgstr ""
+
+#: apps/information/templates/information/information_context.html:32
+#: apps/information/templates/information/overview.html:32
+msgid "Diagnose en onderzoeken"
+msgstr ""
+
+#: apps/information/templates/information/information_context.html:46
+#: apps/information/templates/information/over_ziekte.html:9
+#: apps/information/templates/information/overview.html:46
+msgid "Ontstaan en werking"
+msgstr ""
+
+#: apps/information/templates/information/information_context.html:53
+#: apps/information/templates/information/overview.html:53
+#: apps/information/templates/information/wetenschappelijknieuws.html:9
+msgid "Wetenschappelijk nieuws"
+msgstr ""
+
+#: apps/information/templates/information/onderwerpen_lijst.html:44
+msgid "Zoek woord"
+msgstr ""
+
+#: apps/information/templates/information/over_beveiliging.html:43
+#: apps/information/templates/information/security.html:43
+#: templates/registration/account_blocked.html:47
+#: templates/registration/blocked.html:48
+#: templates/registration/email_sent.html:56
+#: templates/registration/logged_out.html:47
+#: templates/registration/login.html:81
+#: templates/registration/password_change_request_invalid.html:47
+#: templates/registration/password_reset_form.html:47
+#: templates/registration/request_sms_code_form.html:51
+msgid "Over beveiliging"
+msgstr ""
+
+#: apps/information/templates/information/zoeken.html:9
+msgid "Zoeken in onderwerpen"
+msgstr ""
+
+#: apps/questionnaire/forms.py:161
+msgid ""
+"Let op: voor deze controle moet u bloed laten prikken, voordat u de "
+"vragenlijst kan invullen en versturen!"
+msgstr ""
+
+#: apps/questionnaire/forms.py:916 apps/questionnaire/forms.py:986
+#: apps/questionnaire/models.py:820 apps/questionnaire/models.py:1362
+#: apps/questionnaire/models.py:1420
+msgid "Weet ik niet"
+msgstr ""
+
+#: apps/questionnaire/forms.py:943
+msgid ""
+"Elke digitale controle dient te worden gevolgd door een controle op de "
+"polikliniek, geef hieronder uw voorkeur op."
+msgstr ""
+
+#: apps/questionnaire/forms.py:992
+msgid "Bloedprikken nog niet nodig."
+msgstr ""
+
+#: apps/questionnaire/forms.py:1262 apps/questionnaire/forms.py:1536
+msgid "Geef een getal kleiner dan 1000 op"
+msgstr ""
+
+#: apps/questionnaire/forms.py:1375
+msgid "Geef een gewicht kleiner dan 300kg op"
+msgstr ""
+
+#: apps/questionnaire/forms.py:1378
+msgid "Geef een gewicht groter dan 0.3kg op"
+msgstr ""
+
+#: apps/questionnaire/forms.py:1383
+msgid "Geef een lengte kleiner dan 280cm op"
+msgstr ""
+
+#: apps/questionnaire/forms.py:1386
+msgid "Geef een lengte groter dan 15cm op"
+msgstr ""
+
+#: apps/questionnaire/models.py:19
+msgid "001 Hoe gaat het met u?"
+msgstr ""
+
+#: apps/questionnaire/models.py:21
+msgid "002 Ziekteactiviteit - Ziekte van Chron en Colitis Ulcerosa"
+msgstr ""
+
+#: apps/questionnaire/models.py:23
+msgid "003 Ziekteactiviteit - Rheumatoide artritis - RADAI vragenlijst"
+msgstr ""
+
+#: apps/questionnaire/models.py:25
+msgid ""
+"004 Kwaliteit van het leven - Ziekte van Chron en Colitis Ulcerosa (deel "
+"lastmeter)"
+msgstr ""
+
+#: apps/questionnaire/models.py:28
+msgid "005 Kwaliteit van het leven - Dunnedarmtransplantatie (lastmeter)"
+msgstr ""
+
+#: apps/questionnaire/models.py:30
+msgid "006 Kwaliteit van het leven - SF36 Reumatoide artritis"
+msgstr ""
+
+#: apps/questionnaire/models.py:33
+msgid "007 Kwaliteit van zorg vragenlijst"
+msgstr ""
+
+#: apps/questionnaire/models.py:34
+msgid "008 Afspraak, bloedprikken en afsluiting"
+msgstr ""
+
+#: apps/questionnaire/models.py:35
+msgid "009 Direct een afspraak"
+msgstr ""
+
+#: apps/questionnaire/models.py:36
+msgid "010 Omschrijving problemen"
+msgstr ""
+
+#: apps/questionnaire/models.py:115
+msgid "Deadline"
+msgstr ""
+
+#: apps/questionnaire/models.py:305
+msgid " bij voorkeur op: "
+msgstr ""
+
+#: apps/questionnaire/models.py:318
+msgid "Kies vragenlijst"
+msgstr ""
+
+#: apps/questionnaire/models.py:385
+msgid "Ja, op de spoedopvang"
+msgstr ""
+
+#: apps/questionnaire/models.py:387 apps/questionnaire/models.py:1349
+msgid "Ja, op de polikliniek Maag-darm-leverziekten"
+msgstr ""
+
+#: apps/questionnaire/models.py:388 apps/questionnaire/models.py:1350
+msgid "Ja, bij een andere medisch specialist"
+msgstr ""
+
+#: apps/questionnaire/models.py:392 apps/questionnaire/models.py:751
+#: apps/questionnaire/models.py:1325 apps/questionnaire/models.py:1430
+msgid "Goed"
+msgstr ""
+
+#: apps/questionnaire/models.py:393 apps/questionnaire/models.py:1326
+msgid "Iets minder goed"
+msgstr ""
+
+#: apps/questionnaire/models.py:394 apps/questionnaire/models.py:753
+#: apps/questionnaire/models.py:1327 apps/questionnaire/models.py:1432
+msgid "Slecht"
+msgstr ""
+
+#: apps/questionnaire/models.py:395 apps/questionnaire/models.py:1328
+msgid "Erg slecht"
+msgstr ""
+
+#: apps/questionnaire/models.py:396 apps/questionnaire/models.py:1329
+msgid "Afschuwelijk"
+msgstr ""
+
+#: apps/questionnaire/models.py:404 apps/questionnaire/models.py:423
+#: apps/questionnaire/templates/questionnaire/details/StartQuestionnare.html:6
+msgid "Hoe gaat het met u?"
+msgstr ""
+
+#: apps/questionnaire/models.py:406 apps/questionnaire/models.py:477
+#: apps/questionnaire/templates/questionnaire/details/StartQuestionnare.html:8
+msgid ""
+"Kunt u hieronder beschrijven hoe het met u gaat en waar u op dit moment het "
+"meeste last van heeft?"
+msgstr ""
+
+#: apps/questionnaire/models.py:411 apps/questionnaire/models.py:483
+msgid ""
+"Hoe veel last heeft u van problemen, klachten of zorgen? Dit gaat zowel om "
+"de lichamelijke klachten die u ondervindt van uw ziekte als emotionele, "
+"sociale of praktische problemen. (1=geen klachten of problemen,10=heel veel "
+"klachten of problemen)"
+msgstr ""
+
+#: apps/questionnaire/models.py:420
+#: apps/questionnaire/templates/questionnaire/details/StartQuestionnare.html:16
+msgid "Bent u sinds de vorige controle nog in het ziekenhuis geweest?"
+msgstr ""
+
+#: apps/questionnaire/models.py:432
+msgid "1"
+msgstr ""
+
+#: apps/questionnaire/models.py:433
+msgid "2"
+msgstr ""
+
+#: apps/questionnaire/models.py:434
+msgid "3"
+msgstr ""
+
+#: apps/questionnaire/models.py:435
+msgid "4"
+msgstr ""
+
+#: apps/questionnaire/models.py:436
+msgid "5"
+msgstr ""
+
+#: apps/questionnaire/models.py:440
+msgid "Morgen"
+msgstr ""
+
+#: apps/questionnaire/models.py:441
+msgid "Binnen 3 dagen"
+msgstr ""
+
+#: apps/questionnaire/models.py:442 apps/questionnaire/models.py:1082
+msgid "Deze week"
+msgstr ""
+
+#: apps/questionnaire/models.py:450 apps/questionnaire/models.py:1111
+#: apps/questionnaire/templates/questionnaire/details/FinishQuestionnaire.html:8
+#: apps/questionnaire/templates/questionnaire/details/StartUrgentQuestionnare.html:11
+msgid "Op welke termijn zou u deze afspraak willen?"
+msgstr ""
+
+#: apps/questionnaire/models.py:453
+msgid "Direct een afspraak"
+msgstr ""
+
+#: apps/questionnaire/models.py:489
+msgid "Omschrijving problemen"
+msgstr ""
+
+#: apps/questionnaire/models.py:512
+msgid "Nee, totaal niet"
+msgstr ""
+
+#: apps/questionnaire/models.py:513
+msgid "Een beetje"
+msgstr ""
+
+#: apps/questionnaire/models.py:514
+msgid "Grotendeels"
+msgstr ""
+
+#: apps/questionnaire/models.py:515
+msgid "Ja, zeer"
+msgstr ""
+
+#: apps/questionnaire/models.py:519
+msgid "Ja, ik vul het in"
+msgstr ""
+
+#: apps/questionnaire/models.py:520
+msgid "Nee, ik vul het nu niet in"
+msgstr ""
+
+#: apps/questionnaire/models.py:531
+msgid "Wilt u de vragen over kwaliteit van de zorg invullen?"
+msgstr ""
+
+#: apps/questionnaire/models.py:537
+#: apps/questionnaire/templates/questionnaire/QOHCQuestionnaire.html:7
+#: apps/questionnaire/templates/questionnaire/details/QOHCQuestionnaire.html:8
+msgid "Hoe tevreden bent u over onze totale zorg voor u?"
+msgstr ""
+
+#: apps/questionnaire/models.py:544
+#: apps/questionnaire/templates/questionnaire/QOHCQuestionnaire.html:8
+#: apps/questionnaire/templates/questionnaire/details/QOHCQuestionnaire.html:9
+msgid "Voelt u zich serieus genomen?"
+msgstr ""
+
+#: apps/questionnaire/models.py:550
+#: apps/questionnaire/templates/questionnaire/QOHCQuestionnaire.html:9
+#: apps/questionnaire/templates/questionnaire/details/QOHCQuestionnaire.html:10
+msgid "Voelt u zich vriendelijk en netjes behandeld?"
+msgstr ""
+
+#: apps/questionnaire/models.py:556
+#: apps/questionnaire/templates/questionnaire/QOHCQuestionnaire.html:10
+#: apps/questionnaire/templates/questionnaire/details/QOHCQuestionnaire.html:11
+msgid "Is de informatie die u krijgt over uw ziekte goed begrijpelijk?"
+msgstr ""
+
+#: apps/questionnaire/models.py:564
+#: apps/questionnaire/templates/questionnaire/QOHCQuestionnaire.html:11
+#: apps/questionnaire/templates/questionnaire/details/QOHCQuestionnaire.html:12
+msgid "Hoe tevreden bent u over de App Remote Care?"
+msgstr ""
+
+#: apps/questionnaire/models.py:591
+msgid "Kwaliteit zorg"
+msgstr ""
+
+#: apps/questionnaire/models.py:600
+msgid "Niet"
+msgstr ""
+
+#: apps/questionnaire/models.py:601
+msgid "Bijna onmerkbaar"
+msgstr ""
+
+#: apps/questionnaire/models.py:602
+msgid "Minimaal tot mild"
+msgstr ""
+
+#: apps/questionnaire/models.py:603 apps/questionnaire/models.py:625
+msgid "Mild"
+msgstr ""
+
+#: apps/questionnaire/models.py:604
+msgid "Mild tot matig"
+msgstr ""
+
+#: apps/questionnaire/models.py:605 apps/questionnaire/models.py:626
+#: apps/questionnaire/models.py:752 apps/questionnaire/models.py:1431
+msgid "Matig"
+msgstr ""
+
+#: apps/questionnaire/models.py:606
+msgid "Matig tot hevig"
+msgstr ""
+
+#: apps/questionnaire/models.py:607 apps/questionnaire/models.py:627
+msgid "Hevig"
+msgstr ""
+
+#: apps/questionnaire/models.py:608
+msgid "Hevig tot extreem"
+msgstr ""
+
+#: apps/questionnaire/models.py:609
+msgid "Extreem"
+msgstr ""
+
+#: apps/questionnaire/models.py:614 apps/questionnaire/models.py:624
+#: apps/questionnaire/models.py:784
+msgid "Geen"
+msgstr ""
+
+#: apps/questionnaire/models.py:615
+msgid "< 30 min"
+msgstr ""
+
+#: apps/questionnaire/models.py:616
+msgid "30-60 min"
+msgstr ""
+
+#: apps/questionnaire/models.py:617
+msgid "1-2 uur"
+msgstr ""
+
+#: apps/questionnaire/models.py:618
+msgid "2-4 uur"
+msgstr ""
+
+#: apps/questionnaire/models.py:619
+msgid "> 4 uur maar niet de hele dag"
+msgstr ""
+
+#: apps/questionnaire/models.py:620
+msgid "Hele dag"
+msgstr ""
+
+#: apps/questionnaire/models.py:637
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:4
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:8
+msgid "Hoe actief is de artritis geweest de afgelopen 6 maanden?"
+msgstr ""
+
+#: apps/questionnaire/models.py:642
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:5
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:9
+msgid ""
+"Hoe actief is de artritis vandaag in termen van gewrichtsgevoeligheid en "
+"zwelling?"
+msgstr ""
+
+#: apps/questionnaire/models.py:647
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:6
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:10
+msgid "Hoeveel artritis pijn ervaart u vandaag?"
+msgstr ""
+
+#: apps/questionnaire/models.py:652
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:7
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:11
+msgid "Hoe lang voelde u stijfheid van de gewrichten vandaag?"
+msgstr ""
+
+#: apps/questionnaire/models.py:658
+msgid "Linker schouder"
+msgstr ""
+
+#: apps/questionnaire/models.py:662
+msgid "Linker elleboog"
+msgstr ""
+
+#: apps/questionnaire/models.py:666
+msgid "Linker pols"
+msgstr ""
+
+#: apps/questionnaire/models.py:670
+msgid "Linker vingers"
+msgstr ""
+
+#: apps/questionnaire/models.py:674
+msgid "Linker heup"
+msgstr ""
+
+#: apps/questionnaire/models.py:678
+msgid "Linker knie"
+msgstr ""
+
+#: apps/questionnaire/models.py:682
+msgid "Linker enkel"
+msgstr ""
+
+#: apps/questionnaire/models.py:686
+msgid "Linker tenen"
+msgstr ""
+
+#: apps/questionnaire/models.py:692
+msgid "Rechter schouder"
+msgstr ""
+
+#: apps/questionnaire/models.py:696
+msgid "Rechter elleboog"
+msgstr ""
+
+#: apps/questionnaire/models.py:700
+msgid "Rechter pols"
+msgstr ""
+
+#: apps/questionnaire/models.py:704
+msgid "Rechter vingers"
+msgstr ""
+
+#: apps/questionnaire/models.py:708
+msgid "Rechter heup"
+msgstr ""
+
+#: apps/questionnaire/models.py:712
+msgid "Rechter knie"
+msgstr ""
+
+#: apps/questionnaire/models.py:716
+msgid "Rechter enkel"
+msgstr ""
+
+#: apps/questionnaire/models.py:720
+msgid "Rechter tenen"
+msgstr ""
+
+#: apps/questionnaire/models.py:742
+msgid "Pijnlijke gewrichten"
+msgstr ""
+
+#: apps/questionnaire/models.py:749
+msgid "Uitstekend"
+msgstr ""
+
+#: apps/questionnaire/models.py:750
+msgid "Zeer goed"
+msgstr ""
+
+#: apps/questionnaire/models.py:757
+msgid "Veel beter dan een jaar geleden"
+msgstr ""
+
+#: apps/questionnaire/models.py:758
+msgid "Iets beter dan een jaar geleden"
+msgstr ""
+
+#: apps/questionnaire/models.py:759
+msgid "Ongeveer hetzelfde als een jaar geleden"
+msgstr ""
+
+#: apps/questionnaire/models.py:760
+msgid "Iets slechter dan een jaar geleden"
+msgstr ""
+
+#: apps/questionnaire/models.py:761
+msgid "Veel slechter dan een jaar geleden"
+msgstr ""
+
+#: apps/questionnaire/models.py:765
+msgid "Ja, ernstig beperkt"
+msgstr ""
+
+#: apps/questionnaire/models.py:766
+msgid "Ja, een beetje beperkt"
+msgstr ""
+
+#: apps/questionnaire/models.py:767
+msgid "Nee, helemaal niet beperkt"
+msgstr ""
+
+#: apps/questionnaire/models.py:776 apps/questionnaire/models.py:793
+msgid "Helemaal niet"
+msgstr ""
+
+#: apps/questionnaire/models.py:777
+msgid "Enigzins"
+msgstr ""
+
+#: apps/questionnaire/models.py:778 apps/questionnaire/models.py:787
+#: apps/questionnaire/models.py:795
+msgid "Nogal"
+msgstr ""
+
+#: apps/questionnaire/models.py:779 apps/questionnaire/models.py:796
+msgid "Veel"
+msgstr ""
+
+#: apps/questionnaire/models.py:780 apps/questionnaire/models.py:797
+msgid "Heel erg veel"
+msgstr ""
+
+#: apps/questionnaire/models.py:785
+msgid "Heel licht"
+msgstr ""
+
+#: apps/questionnaire/models.py:786
+msgid "Licht"
+msgstr ""
+
+#: apps/questionnaire/models.py:788
+msgid "Ernstig"
+msgstr ""
+
+#: apps/questionnaire/models.py:789
+msgid "Heel ernstig"
+msgstr ""
+
+#: apps/questionnaire/models.py:794
+msgid "Een klein beetje"
+msgstr ""
+
+#: apps/questionnaire/models.py:801 apps/questionnaire/models.py:810
+msgid "Voortdurend"
+msgstr ""
+
+#: apps/questionnaire/models.py:802 apps/questionnaire/models.py:811
+msgid "Meestal"
+msgstr ""
+
+#: apps/questionnaire/models.py:803
+msgid "Vaak"
+msgstr ""
+
+#: apps/questionnaire/models.py:804 apps/questionnaire/models.py:812
+#: apps/questionnaire/models.py:1387 apps/questionnaire/models.py:1393
+msgid "Soms"
+msgstr ""
+
+#: apps/questionnaire/models.py:805 apps/questionnaire/models.py:813
+msgid "Zelden"
+msgstr ""
+
+#: apps/questionnaire/models.py:806 apps/questionnaire/models.py:814
+msgid "Nooit"
+msgstr ""
+
+#: apps/questionnaire/models.py:818
+msgid "Volkomen juist"
+msgstr ""
+
+#: apps/questionnaire/models.py:819
+msgid "Grotendeels juist"
+msgstr ""
+
+#: apps/questionnaire/models.py:821
+msgid "Grotendeels onjuist"
+msgstr ""
+
+#: apps/questionnaire/models.py:822
+msgid "Volkomen onjuist"
+msgstr ""
+
+#: apps/questionnaire/models.py:831
+msgid "Wat vindt u, over het algemeen genomen, van uw gezondheid?"
+msgstr ""
+
+#: apps/questionnaire/models.py:836
+msgid ""
+"In vergelijking met een jaar geleden, hoe zou u nu uwgezondheid in het "
+"algemeen beoordelen?"
+msgstr ""
+
+#: apps/questionnaire/models.py:844
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:12
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:11
+msgid ""
+"Forse inspanning zoals hardlopen, zware voorwerpen tillen, inspannend sporten"
+msgstr ""
+
+#: apps/questionnaire/models.py:847
+msgid ""
+"De volgende vragen gaan over uw dagelijkse bezigheden. Wordt u door uw "
+"gezondheid op dit moment beperkt bijdeze bezigheden? Zo ja, in welke mate?"
+msgstr ""
+
+#: apps/questionnaire/models.py:854
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:13
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:12
+msgid ""
+"Matige inspanning zoals het verplaatsen van een tafel, stofzuigen, fietsen"
+msgstr ""
+
+#: apps/questionnaire/models.py:859
+msgid "Tillen of boodschappen dragen"
+msgstr ""
+
+#: apps/questionnaire/models.py:863
+msgid "Een paar trappen oplopen"
+msgstr ""
+
+#: apps/questionnaire/models.py:867
+msgid "Eén trap oplopen"
+msgstr ""
+
+#: apps/questionnaire/models.py:871
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:17
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:16
+msgid "Buigen, knielen of bukken"
+msgstr ""
+
+#: apps/questionnaire/models.py:875
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:18
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:17
+msgid "Meer dan een kilometer lopen"
+msgstr ""
+
+#: apps/questionnaire/models.py:879
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:19
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:18
+msgid "Een halve kilometer lopen"
+msgstr ""
+
+#: apps/questionnaire/models.py:883
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:20
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:19
+msgid "Honderd meter lopen"
+msgstr ""
+
+#: apps/questionnaire/models.py:887
+msgid "Uzelf wassen of aankleden"
+msgstr ""
+
+#: apps/questionnaire/models.py:894 apps/questionnaire/models.py:921
+msgid "U heeft minder tijd kunnen besteden aan werk of andere bezigheden"
+msgstr ""
+
+#: apps/questionnaire/models.py:897
+msgid ""
+"Had u, ten gevolge van uw lichamelijke gezondheid, de afgelopen 4 weken één "
+"van de volgende problemen bij uw werk of andere dagelijkse bezigheden?"
+msgstr ""
+
+#: apps/questionnaire/models.py:903 apps/questionnaire/models.py:931
+msgid "U heeft minder bereikt dan u zou willen"
+msgstr ""
+
+#: apps/questionnaire/models.py:908
+msgid "U was beperkt in het soort werk of het soort bezigheden"
+msgstr ""
+
+#: apps/questionnaire/models.py:913
+msgid ""
+"U had moeite met het werk of andere bezigheden (het kostte u bijvoorbeeld "
+"extra inspanning)"
+msgstr ""
+
+#: apps/questionnaire/models.py:924
+msgid ""
+"Had u, ten gevolge van een emotioneel probleem (bijvoorbeeld doordat u zich "
+"depressief of angstig voelde) de afgelopen 4 weken één van de volgende "
+"problemen bij uw werk of andere dagelijkse bezigheden?"
+msgstr ""
+
+#: apps/questionnaire/models.py:936
+msgid ""
+"U heeft het werk of andere bezigheden niet zo zorgvuldig gedaan als u gewend "
+"bent"
+msgstr ""
+
+#: apps/questionnaire/models.py:944
+msgid ""
+"In hoeverre heeft uw lichamelijke gezondheid of hebben uw emotionele "
+"problemen u de afgelopen 4 weken belemmerd in uw normale sociale bezigheden "
+"met gezin, vrienden, buren of anderen?"
+msgstr ""
+
+#: apps/questionnaire/models.py:953
+msgid "Hoeveel pijn had u de afgelopen 4 weken?"
+msgstr ""
+
+#: apps/questionnaire/models.py:960
+msgid ""
+"In welke mate heeft pijn u de afgelopen 4 weken belemmerd bij uw normale "
+"werkzaamheden (zowel werk, buitenhuis als huishoudelijk werk)?"
+msgstr ""
+
+#: apps/questionnaire/models.py:968
+msgid "Voelde u zich levenslustig?"
+msgstr ""
+
+#: apps/questionnaire/models.py:969
+msgid "Hoe vaak gedurende de afgelopen 4 weken:"
+msgstr ""
+
+#: apps/questionnaire/models.py:973
+msgid "Voelde u zich erg zenuwachtig?"
+msgstr ""
+
+#: apps/questionnaire/models.py:977
+msgid "Zat u zo in de put dat niets u kon opvrolijken?"
+msgstr ""
+
+#: apps/questionnaire/models.py:981
+msgid "Voelde u zich kalm en rustig?"
+msgstr ""
+
+#: apps/questionnaire/models.py:985
+msgid "Voelde u zich energiek?"
+msgstr ""
+
+#: apps/questionnaire/models.py:989
+msgid "Voelde u zich neerslachtig en somber?"
+msgstr ""
+
+#: apps/questionnaire/models.py:993
+msgid "Voelde u zich uitgeblust?"
+msgstr ""
+
+#: apps/questionnaire/models.py:997
+msgid "Voelde u zich gelukkig?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1001
+msgid "Voelde u zich moe?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1008
+msgid ""
+"Hoe vaak hebben uw lichamelijke gezondheid of uw emotionele problemen "
+"gedurende de afgelopen 4 weken uw sociale activiteiten (zoals bezoek aan "
+"vrienden of naaste familieleden) belemmerd?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1018
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:48
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:47
+msgid "Ik lijk gemakkelijker ziek te worden dan andere mensen"
+msgstr ""
+
+#: apps/questionnaire/models.py:1020
+msgid ""
+"Wilt u het antwoord kiezen dat het beste weergeeft hoe juist of onjuist u "
+"elk van de volgende uitspraken voor uzelf vindt?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1026
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:49
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:48
+msgid "Ik ben net zo gezond als andere mensen die ik ken"
+msgstr ""
+
+#: apps/questionnaire/models.py:1030
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:50
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:49
+msgid "Ik verwacht dat mijn gezondheid achteruit zal gaan"
+msgstr ""
+
+#: apps/questionnaire/models.py:1034
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:51
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:50
+msgid "Mijn gezondheid is uitstekend"
+msgstr ""
+
+#: apps/questionnaire/models.py:1059
+msgid "Algemene gezondheid"
+msgstr ""
+
+#: apps/questionnaire/models.py:1067
+msgid "Nee, dat hoeft niet"
+msgstr ""
+
+#: apps/questionnaire/models.py:1069
+msgid ""
+"Ja, graag een telefonische afspraak met de gespecialiseerd verpleegkundige"
+msgstr ""
+
+#: apps/questionnaire/models.py:1072
+msgid "Ja, graag een telefonisch afspraak met de arts"
+msgstr ""
+
+#: apps/questionnaire/models.py:1074
+msgid ""
+"Ja, graag een afspraak op de polikliniek met de gespecialiseerd "
+"verpleegkundige"
+msgstr ""
+
+#: apps/questionnaire/models.py:1076
+msgid "Ja, graag een afspraak op de polikliniek met de arts"
+msgstr ""
+
+#: apps/questionnaire/models.py:1080
+msgid "Binnen 4 weken"
+msgstr ""
+
+#: apps/questionnaire/models.py:1081
+msgid "Binnen 2 weken"
+msgstr ""
+
+#: apps/questionnaire/models.py:1086
+msgid "Maakt niet uit"
+msgstr ""
+
+#: apps/questionnaire/models.py:1087
+msgid "Ja, dat wil ik graag aangegeven"
+msgstr ""
+
+#: apps/questionnaire/models.py:1092
+msgid "UMCG"
+msgstr ""
+
+#: apps/questionnaire/models.py:1093
+msgid "Martini Ziekenhuis"
+msgstr ""
+
+#: apps/questionnaire/models.py:1094
+msgid "Lab Noord"
+msgstr ""
+
+#: apps/questionnaire/models.py:1095
+msgid "Anders"
+msgstr ""
+
+#: apps/questionnaire/models.py:1105
+#: apps/questionnaire/templates/questionnaire/details/FinishQuestionnaire.html:6
+msgid "Wilt u, naast deze digitale conrole, graag een afspraak?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1117
+#: apps/questionnaire/templates/questionnaire/details/FinishQuestionnaire.html:9
+msgid "Heeft u voorkeur voor een dag, periode of tijdstip?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1123
+#: apps/questionnaire/templates/questionnaire/details/FinishQuestionnaire.html:12
+msgid "Waar heeft u bloed laten prikken?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1125
+msgid ""
+"Indien u dit nog niet heeft gedaan, wilt u dan de controle opslaan en pas "
+"afronden nadat u bloed heeft geprikt?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1135
+#: apps/questionnaire/templates/questionnaire/details/FinishQuestionnaire.html:13
+msgid "Wanneer heeft u bloed laten prikken?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1138
+msgid "Afspraken, Bloedprikken"
+msgstr ""
+
+#: apps/questionnaire/models.py:1166
+msgid "Misschien"
+msgstr ""
+
+#: apps/questionnaire/models.py:1170
+msgid "Ik vul het in"
+msgstr ""
+
+#: apps/questionnaire/models.py:1171
+msgid "Dit vul ik liever niet in"
+msgstr ""
+
+#: apps/questionnaire/models.py:1224
+msgid ""
+"Hieronder en in de volgende stappen kunt u aangeven of u last heeft van "
+"praktische, sociale, emotionele of spirituele problemen. Als u dit liever "
+"niet invult , kunt u dat hier aangeven."
+msgstr ""
+
+#: apps/questionnaire/models.py:1232
+#: apps/questionnaire/templates/questionnaire/IBDQuestionnaire.html:9
+#: apps/questionnaire/templates/questionnaire/QOLQuestionnaire.html:9
+#: apps/questionnaire/templates/questionnaire/details/QOLChronCUQuestionnaire.html:6
+#: apps/questionnaire/templates/questionnaire/details/QOLQuestionnaire.html:6
+msgid "Praktische problemen"
+msgstr ""
+
+#: apps/questionnaire/models.py:1238
+#: apps/questionnaire/templates/questionnaire/IBDQuestionnaire.html:10
+#: apps/questionnaire/templates/questionnaire/QOLQuestionnaire.html:10
+#: apps/questionnaire/templates/questionnaire/details/QOLChronCUQuestionnaire.html:7
+#: apps/questionnaire/templates/questionnaire/details/QOLQuestionnaire.html:7
+msgid "Gezins-/sociale problemen"
+msgstr ""
+
+#: apps/questionnaire/models.py:1244
+#: apps/questionnaire/templates/questionnaire/IBDQuestionnaire.html:11
+#: apps/questionnaire/templates/questionnaire/QOLQuestionnaire.html:11
+#: apps/questionnaire/templates/questionnaire/details/QOLChronCUQuestionnaire.html:8
+#: apps/questionnaire/templates/questionnaire/details/QOLQuestionnaire.html:8
+msgid "Emotionele problemen"
+msgstr ""
+
+#: apps/questionnaire/models.py:1250
+#: apps/questionnaire/templates/questionnaire/IBDQuestionnaire.html:12
+#: apps/questionnaire/templates/questionnaire/QOLQuestionnaire.html:12
+#: apps/questionnaire/templates/questionnaire/details/QOLChronCUQuestionnaire.html:9
+#: apps/questionnaire/templates/questionnaire/details/QOLQuestionnaire.html:9
+msgid "Religieuze/spirituele problemen"
+msgstr ""
+
+#: apps/questionnaire/models.py:1255
+#: apps/questionnaire/templates/questionnaire/IBDQuestionnaire.html:14
+#: apps/questionnaire/templates/questionnaire/QOLQuestionnaire.html:14
+#: apps/questionnaire/templates/questionnaire/details/QOLChronCUQuestionnaire.html:10
+#: apps/questionnaire/templates/questionnaire/details/QOLQuestionnaire.html:11
+msgid "Andere problemen"
+msgstr ""
+
+#: apps/questionnaire/models.py:1264
+#: apps/questionnaire/templates/questionnaire/details/QOLChronCUQuestionnaire.html:11
+#: apps/questionnaire/templates/questionnaire/details/QOLQuestionnaire.html:12
+msgid ""
+"Zou u over deze problemen met een deskundige willen praten? (bijvoorbeeld "
+"een psycholoog of een maatschappelijk werker)"
+msgstr ""
+
+#: apps/questionnaire/models.py:1304
+msgid "Problemen, klachten of zorgen"
+msgstr ""
+
+#: apps/questionnaire/models.py:1315
+#: apps/questionnaire/templates/questionnaire/IBDQuestionnaire.html:13
+#: apps/questionnaire/templates/questionnaire/QOLQuestionnaire.html:13
+#: apps/questionnaire/templates/questionnaire/details/QOLQuestionnaire.html:10
+msgid "Lichamelijke problemen"
+msgstr ""
+
+#: apps/questionnaire/models.py:1347
+msgid "Ja, op de Spoedopvang"
+msgstr ""
+
+#: apps/questionnaire/models.py:1365
+msgid "1-3 maal"
+msgstr ""
+
+#: apps/questionnaire/models.py:1366
+msgid "4-6 maal"
+msgstr ""
+
+#: apps/questionnaire/models.py:1367
+msgid "7-9 maal"
+msgstr ""
+
+#: apps/questionnaire/models.py:1368
+msgid "Meer dan 9 maal"
+msgstr ""
+
+#: apps/questionnaire/models.py:1372
+msgid "Hard"
+msgstr ""
+
+#: apps/questionnaire/models.py:1373
+msgid "Normaal"
+msgstr ""
+
+#: apps/questionnaire/models.py:1374
+msgid "Brijig"
+msgstr ""
+
+#: apps/questionnaire/models.py:1375
+msgid "Vloeibaar of Waterdun"
+msgstr ""
+
+#: apps/questionnaire/models.py:1379
+msgid "< 1 maal per dag"
+msgstr ""
+
+#: apps/questionnaire/models.py:1380
+msgid "1-2 maal per dag"
+msgstr ""
+
+#: apps/questionnaire/models.py:1381
+msgid "3-6 maal per dag"
+msgstr ""
+
+#: apps/questionnaire/models.py:1382
+msgid "Meer dan 6 maal per dag"
+msgstr ""
+
+#: apps/questionnaire/models.py:1388 apps/questionnaire/models.py:1394
+msgid "Vaak of zelfs dagelijks"
+msgstr ""
+
+#: apps/questionnaire/models.py:1399
+msgid "Ja, soms"
+msgstr ""
+
+#: apps/questionnaire/models.py:1400 apps/questionnaire/models.py:1426
+msgid "Ja, ernstig"
+msgstr ""
+
+#: apps/questionnaire/models.py:1404 apps/questionnaire/models.py:1411
+msgid "Nee, nooit"
+msgstr ""
+
+#: apps/questionnaire/models.py:1405 apps/questionnaire/models.py:1412
+msgid "Ja, soms wel"
+msgstr ""
+
+#: apps/questionnaire/models.py:1406
+msgid "Ja, meestal wel"
+msgstr ""
+
+#: apps/questionnaire/models.py:1407
+msgid "Ja, altijd"
+msgstr ""
+
+#: apps/questionnaire/models.py:1413
+msgid "Ja, regelmatig"
+msgstr ""
+
+#: apps/questionnaire/models.py:1418
+msgid "Een stoma voor de dikke darm: Colostoma"
+msgstr ""
+
+#: apps/questionnaire/models.py:1419
+msgid "Een stoma van de dunne darm: Ileostoma"
+msgstr ""
+
+#: apps/questionnaire/models.py:1425
+msgid "Ja, mild"
+msgstr ""
+
+#: apps/questionnaire/models.py:1437
+msgid "Ja, soms mild"
+msgstr ""
+
+#: apps/questionnaire/models.py:1438
+msgid "Ja, soms heftig"
+msgstr ""
+
+#: apps/questionnaire/models.py:1439
+msgid "Ja, continu mild"
+msgstr ""
+
+#: apps/questionnaire/models.py:1440
+msgid "Ja, continu heftig"
+msgstr ""
+
+#: apps/questionnaire/models.py:1457
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:5
+msgid "Heeft u nu een stoma?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1459
+msgid ""
+"Om de juiste vragen te kunnen stellen over uw stoelgang en ontlasting, "
+"willen we graag weten of u een stoma of een pouch heeft."
+msgstr ""
+
+#: apps/questionnaire/models.py:1466
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:6
+msgid ""
+"Heeft u een pouch? (Een pouch is een chirurgisch aangelegd reservoir voor de "
+"ontlasting)"
+msgstr ""
+
+#: apps/questionnaire/models.py:1473
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:9
+msgid "Heeft u klachten van uw pouch?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1478
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:13
+msgid "Kunt u vertellen welke klachten u heeft van uw pouch?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1487
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:17
+msgid "Hoeveel keer heeft u gemiddeld per dag ontlasting?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1493
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:18
+msgid "Hoe dik is de ontlasting?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1499
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:21
+msgid "Hoe veel keer per dag is de ontlasting waterdun?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1506
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:24
+msgid "Heeft u 's nachts diarree?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1512
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:25
+msgid "Zit er bloed bij de ontlasting?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1518
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:26
+msgid "Zit er slijm bij de ontlasting?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1527
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:28
+msgid "Heeft u last van pijnlijke aandrang?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1533
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:29
+msgid "Kunt u de stoelgang uitstellen als dat moet?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1539
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:30
+msgid "Verliest u wel eens ongewild wat ontlasting?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1548
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:32
+msgid "Wat voor stoma heeft u?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1552
+msgid "Hoe vaak moet u uw stomazakje legen? (aantal x per 24 uur)"
+msgstr ""
+
+#: apps/questionnaire/models.py:1559
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:34
+msgid "Zijn er momenteel problemen met uw stoma?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1563
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:36
+msgid "Welke problemen heeft u met het stoma?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1569
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:40
+msgid "Heeft u last van misselijkheid of braken?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1574
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:42
+msgid "Wanneer heeft u last van misselijkheid of braken?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1578
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:45
+msgid "Heeft u nu fistels?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1582
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:47
+msgid "Kunt u aangeven waar de fistels zich bevinden?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1586
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:50
+msgid "Heeft u last van anale pijn?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1590
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:51
+msgid "Heeft u een of meer anale fissuren, anale fistels of anale abcessen?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1597
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:53
+msgid "Hoe is uw eetlust?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1599
+msgid "Hoeveel weegt u op dit moment? (in kg)"
+msgstr ""
+
+#: apps/questionnaire/models.py:1602
+msgid "kg"
+msgstr ""
+
+#: apps/questionnaire/models.py:1604
+msgid "Hoe lang bent u? (in cm)"
+msgstr ""
+
+#: apps/questionnaire/models.py:1607
+msgid "cm"
+msgstr ""
+
+#: apps/questionnaire/models.py:1611
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:58
+msgid "Heeft u last van buikpijn?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1615
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:59
+msgid "Heeft u last van moeheid?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1619
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:60
+msgid "Heeft u sinds de laatste controle koorts gehad?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1623
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:62
+msgid "Kunt u vertellen wanneer u koorts had en hoe hoog uw koorts was?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1630
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:65
+msgid "Heeft u last van gewrichtspijn?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1634 apps/questionnaire/models.py:1642
+#: apps/questionnaire/models.py:1650
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:67
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:72
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:77
+msgid "Welke klachten heeft u hiervan?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1638
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:70
+msgid "Heeft u last van oogonstekingen?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1646
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:75
+msgid "Heeft u last van huidafwijkingen?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1663
+msgid "Rookt u?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1668
+msgid "Hoeveel sigaretten (of sigaren) rookt u per dag?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1672
+msgid "Heeft u verder nog vragen of opmerkingen voor uw arts?"
+msgstr ""
+
+#: apps/questionnaire/models.py:1712
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:56
+msgid "BMI"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/DefaultQuestionnarreFieldset.html:23
+msgid "(meerdere mogelijkheden)"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/IBDQuestionnaire.html:6
+#: apps/questionnaire/templates/questionnaire/QOLQuestionnaire.html:6
+msgid ""
+"Hoe veel last heeft u van problemen, klachten of zorgen? Dit gaat zowel om "
+"de lichamelijke klachten die u ondervindt van uw ziekte als emotionele, "
+"sociale of praktische problemen."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/IBDQuestionnaire.html:15
+#: apps/questionnaire/templates/questionnaire/QOLQuestionnaire.html:15
+msgid ""
+"Zou u over deze problemen met een deskundige willen praten? (bijvoorbeeld "
+"een psycholoog of een maatschappelijk werker"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/QOHCQuestionnaire.html:15
+#: apps/questionnaire/templates/questionnaire/details/FinishQuestionnaire.html:15
+#: apps/questionnaire/templates/questionnaire/details/QOHCQuestionnaire.html:15
+msgid "U heeft er voor gekozen om dit onderdeel niet in te vullen."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/QOLChronCUForm0.html:18
+msgid "In het begin van deze controle heeft u aangegeven dat het"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/QOLChronCUForm0.html:18
+msgid ""
+"met u gaat. U heeft uw problemen van 1 (geen klachten of problemen) tot 10 "
+"(heel veel klachten of problemen) gescored op een"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/QOLChronCUForm0.html:21
+msgid "Wilt u dit nog wijzigen? Klik dan op de knop hieronder."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/QOLChronCUForm0.html:25
+msgid "Ja,"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/QOLChronCUForm0.html:25
+msgid "ik wil dit graag wijzigen."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:10
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:15
+msgid "Pijn links"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:10
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:15
+msgid "Pijn rechts"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:12
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:17
+msgid "Schouder"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:13
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:18
+msgid "Elleboog"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:14
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:19
+msgid "Pols"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:15
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:20
+msgid "Vingers"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:16
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:21
+msgid "Heup"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:17
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:22
+msgid "Knie"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:18
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:23
+msgid "Enkel"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RADAIQuestionnaire.html:19
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:24
+msgid "Tenen"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:7
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:6
+msgid "Beoordeling algemene gezondheid"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:8
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:7
+msgid "Beoordeling algemene gezondheid in vergelijking met vorig jaar"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:14
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:13
+msgid "Tillen of boodschappen doen"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:15
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:14
+msgid "Een paar trappen lopen"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:16
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:15
+msgid "Een trap lopen"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:21
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:20
+msgid "Wassen of aankleden"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:23
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:28
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:22
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:27
+msgid "Minder tijd kunnen besteden aan werk of andere bezigheden"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:24
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:29
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:23
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:28
+msgid "Minder bereikt dan u zou willen"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:25
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:24
+msgid "Beperkt in het soort werk of het soort bezigheden"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:26
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:25
+msgid "Moeite met het werk of andere bezigheden"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:30
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:29
+msgid ""
+"Het werk of andere bezigheden niet zo zorgvuldig gedaan als u gewend bent"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:32
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:31
+msgid ""
+"Heeft u lichamelijke of hebben uw emotionele problemen u de afgelopen 4 "
+"weken belemmerd in uw normale sociale bezigheden met gezin, vrienden, buren "
+"of anderen"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:33
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:32
+msgid "Hoeveel pijn had u de afgelopen 4 weken"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:34
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:33
+msgid ""
+"Heeft pijn u in de afgelopen 4 weken belemmerd bij uw normale werkzaamheden"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:36
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:35
+msgid "Voelde u zich levenslustig"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:37
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:36
+msgid "Voelde u zich zenuwachtig"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:38
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:37
+msgid "Zat u zo in de put dat niets u kon opvrolijken"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:39
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:38
+msgid "Voelde u zich kalm en rustig"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:40
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:39
+msgid "Voelde u zich energiek"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:41
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:40
+msgid "Voelde u zich neerslachtig en somber"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:42
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:41
+msgid "Voelde u zich uitgeblust"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:43
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:42
+msgid "Voelde u zich gelukkig"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:44
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:43
+msgid "Voelde u zich moe"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/RheumatismSF36.html:46
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:45
+msgid ""
+"Hoe vaak uw lichamelijke gezondheid of uw emotionele problemen gedurende de "
+"afgelopen 4 weken uw sociale activiteiten (bijv. bezoek vrienden, familie) "
+"belemmerd"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/UrgentStartQuestionnaireForm.html:18
+msgid "Beste "
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/UrgentStartQuestionnaireForm.html:20
+msgid ""
+"Vervelend dat het niet goed gaat op het moment. Hieronder kun u direct een "
+"afspraak inplannen."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/UrgentStartQuestionnaireForm.html:47
+msgid ""
+"U wordt z.s.m. gebeld door het secretariaat voor een afspraak. Op de "
+"volgende pagina kunt u aangeven wat de belangrijkste problemen zijn op dit "
+"moment."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/already_filled_in.html:47
+msgid "Controle niet volledig afgerond"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/already_filled_in.html:47
+msgid "Spoedafspraak niet volledig afgerond"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/already_filled_in.html:55
+msgid ""
+"U heeft uw controle de vorige keer niet volledig afgerond, wilt u deze nu "
+"afmaken of wilt u deze verwijderen?"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/already_filled_in.html:57
+msgid ""
+"U heeft uw spoedafspraak de vorige keer niet volledig afgerond, wilt u deze "
+"nu afmaken of wilt u deze verwijderen?"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/already_filled_in.html:67
+msgid "Verwijder controle"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/already_filled_in.html:67
+msgid "Verwijder spoedafspraak"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/already_filled_in.html:70
+msgid "Maak controle af"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/already_filled_in.html:70
+msgid "Maak spoedafspraak af"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/detail.html:28
+msgid "Back to questionnaire overview"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/disease_activity.html:69
+msgid "Ziekteactiviteit grafiek"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/disease_activity.html:158
+msgid "Ziekteactiviteit antwoorden"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/disease_activity.html:169
+msgid ""
+"Er is geen ziekteactiviteit score gekoppeld aan deze controle of \"het gaat "
+"niet goed\""
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/fillin.html:13
+#: apps/questionnaire/templates/questionnaire/fillin2.html:13
+msgid ""
+"Weet u zeker dat u de vragenlijst wilt annuleren en de vragenlijst wilt "
+"verwijderen?"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/fillin.html:178
+#: apps/questionnaire/templates/questionnaire/fillin2.html:160
+#: apps/questionnaire/templates/questionnaire/finish.html:48
+msgid "Stap"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/fillin.html:227
+#: apps/questionnaire/templates/questionnaire/fillin2.html:206
+msgid "Vragen met een * zijn verplicht."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/fillin.html:248
+#: apps/questionnaire/templates/questionnaire/fillin2.html:221
+msgid "Vorige"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/fillin.html:255
+#: apps/questionnaire/templates/questionnaire/fillin2.html:226
+msgid "Volgende"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/fillin.html:257
+#: apps/questionnaire/templates/questionnaire/fillin2.html:228
+msgid "Sla vragenlijst op"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/fillin.html:265
+#: apps/questionnaire/templates/questionnaire/fillin2.html:235
+msgid "Opslaan en later verder gaan"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/finish.html:100
+msgid ""
+"Uw spoedafspraak is opgeslagen, klik op \"terug naar hoofdmenu\" om terug te "
+"keren."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/finish.html:102
+msgid "Er volgt zo spoedig mogelijk een reactie op uw spoedafspraak"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/finish.html:104
+msgid "Er volgt binnen 3 dagen een reactie op uw spoedafspraak"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/finish.html:107
+msgid ""
+"Uw vragenlijst is opgeslagen, klik op \"terug naar hoofdmenu\" om terug te "
+"keren."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/finish.html:109
+msgid "Uw controle wordt zo spoedig mogelijk bekeken door een arts"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/finish.html:111
+msgid "Uw controle wordt binnen 3 weken bekeken door een arts"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/finish.html:124
+#: apps/questionnaire/templates/questionnaire/unhandled_urgent.html:63
+#: apps/questionnaire/templates/questionnaire/wait_till_next_questionnaire.html:66
+msgid "Terug naar hoofdmenu"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/healthcare_quality.html:164
+msgid ""
+"Er is geen kwaliteit van zorg score gekoppeld aan deze controle of \"het "
+"gaat niet goed\""
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/overview.html:13
+msgid "Created on"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/overview.html:13
+msgid "Fill in"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/overview.html:18
+msgid "Filled in"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/overview.html:41
+msgid "QOL vragenlijst overzicht"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/quality_of_life.html:69
+msgid "Kwaliteit van leven grafiek"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/quality_of_life.html:156
+msgid "Kwaliteit van leven antwoorden"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/quality_of_life.html:165
+msgid ""
+"Er is geen kwaliteit van leven score gekoppeld aan deze controle of \"het "
+"gaat niet goed\""
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/unhandled_urgent.html:47
+msgid "Spoedafspraak al aangevraagd."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/unhandled_urgent.html:55
+msgid ""
+"U heeft al een spoedafspraak aangevraagd, deze zal zo spoedig mogelijk "
+"worden behandeld. Klik hieronder op terug om naar het hoofdmenu terug te "
+"keren"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/wait_till_next_questionnaire.html:47
+msgid "Geen openstaande controle"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/wait_till_next_questionnaire.html:54
+msgid "Op dit moment is er geen openstaande controle."
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/wait_till_next_questionnaire.html:55
+msgid "De volgende controle vindt plaats op:"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/FinishQuestionnaire.html:4
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:3
+#: apps/questionnaire/templates/questionnaire/details/QOHCQuestionnaire.html:5
+#: apps/questionnaire/templates/questionnaire/details/QOLChronCUQuestionnaire.html:4
+#: apps/questionnaire/templates/questionnaire/details/QOLQuestionnaire.html:4
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:4
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:3
+#: apps/questionnaire/templates/questionnaire/details/StartQuestionnare.html:3
+#: apps/questionnaire/templates/questionnaire/details/StartUrgentQuestionnare.html:7
+#: apps/questionnaire/templates/questionnaire/details/UrgentProblemQuestionnaire.html:6
+msgid "Vraag"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/FinishQuestionnaire.html:4
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:3
+#: apps/questionnaire/templates/questionnaire/details/QOHCQuestionnaire.html:5
+#: apps/questionnaire/templates/questionnaire/details/QOLChronCUQuestionnaire.html:4
+#: apps/questionnaire/templates/questionnaire/details/QOLQuestionnaire.html:4
+#: apps/questionnaire/templates/questionnaire/details/RADAIQuestionnaire.html:4
+#: apps/questionnaire/templates/questionnaire/details/RheumatismSF36.html:3
+#: apps/questionnaire/templates/questionnaire/details/StartQuestionnare.html:3
+#: apps/questionnaire/templates/questionnaire/details/StartUrgentQuestionnare.html:7
+#: apps/questionnaire/templates/questionnaire/details/UrgentProblemQuestionnaire.html:6
+msgid "Antwoord"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/FinishQuestionnaire.html:11
+msgid "Bloedprikken"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:33
+msgid "Hoe vaak moet u uw stomazakje legen?"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:54
+msgid "Hoeveel weegt u op dit moment?"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/IBDQuestionnaire.html:55
+msgid "Hoe lang bent u?"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/QOHCQuestionnaire.html:7
+msgid "Kwaliteit van zorg scores"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/QOLChronCUQuestionnaire.html:15
+#: apps/questionnaire/templates/questionnaire/details/QOLQuestionnaire.html:16
+msgid "U heeft er voor gekozen dit onderdeel niet in te voeren"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/StartQuestionnare.html:5
+msgid "Hoe gaat het"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/StartQuestionnare.html:7
+msgid "Problemen"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/StartQuestionnare.html:11
+#: apps/questionnaire/templates/questionnaire/details/UrgentProblemQuestionnaire.html:11
+msgid "Problemen score"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/StartQuestionnare.html:12
+#: apps/questionnaire/templates/questionnaire/details/UrgentProblemQuestionnaire.html:13
+msgid ""
+"Hoe veel last heeft u van problemen, klachten of zorgen? Dit gaat zowel om "
+"de lichamelijke klachten die u ondervindt van uw ziekte als emotionele, "
+"sociale of praktische problemen. (1=geen klachten,10=heel veel klachten of "
+"problemen)"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/StartQuestionnare.html:15
+msgid "Ziekenhuis bezoek"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/UrgentProblemQuestionnaire.html:8
+msgid "Belangrijkste klachten"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/details/UrgentProblemQuestionnaire.html:9
+msgid ""
+"Kunt u hier onder beschrijven hoe het met u gaat en waar u op dit moment het "
+"meeste last van heeft?"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/forms/StartQuestionnarreFieldset.html:51
+msgid "Bij de vorige controle op"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/forms/StartQuestionnarreFieldset.html:51
+msgid "gaf u het cijfer:"
+msgstr ""
+
+#: apps/questionnaire/templates/questionnaire/forms/StartQuestionnarreFieldset.html:55
+msgid "Er is nog geen vorige score bekend."
+msgstr ""
+
+#: apps/rcmessages/templates/messages/add.html:43
+msgid "Stuur bericht naar"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/add.html:51
+msgid "Verstuur"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/detail.html:10
+#: apps/rcmessages/templates/messages/message_context.html:53
+msgid "Reactie"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/detail.html:10
+#: apps/rcmessages/templates/messages/message_context.html:45
+#: apps/rcmessages/templates/messages/message_context.html:53
+msgid "controle"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/detail.html:10
+#: apps/rcmessages/templates/messages/message_context.html:45
+#: apps/rcmessages/templates/messages/message_context.html:53
+msgid "spoedafspraak"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/detail.html:10
+#: apps/rcmessages/templates/messages/message_context.html:53
+msgid "Bericht"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/message_context.html:45
+msgid "reactie"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/message_context.html:45
+msgid "bericht"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/message_context.html:45
+#: apps/rcmessages/templates/messages/message_context.html:53
+msgid " "
+msgstr ""
+
+#: apps/rcmessages/templates/messages/message_sent.html:41
+msgid "Bericht verstuurd"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/message_sent.html:46
+msgid "Het bericht is verstuurd naar"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/message_sent.html:52
+msgid "Terug naar zoekresultaten"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/overview.html:9
+msgid "Berichten overzicht"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/overview.html:20
+msgid "U heeft nog geen verstuurde berichten."
+msgstr ""
+
+#: apps/rcmessages/templates/messages/overview.html:22
+msgid "U heeft nog geen berichten."
+msgstr ""
+
+#: apps/rcmessages/templates/messages/search.html:13
+msgid "Terug naar home"
+msgstr ""
+
+#: apps/rcmessages/templates/messages/search.html:42
+msgid "Ontvanger"
+msgstr ""
+
+#: apps/report/forms.py:41 apps/report/forms.py:64 apps/report/forms.py:102
+msgid "\""
+msgstr ""
+
+#: apps/report/models.py:28
+msgid "Na opslaan naar huisarts sturen"
+msgstr ""
+
+#: apps/report/models.py:33
+msgid "Patient alsnog oproepen voor afspraak polikliniek"
+msgstr ""
+
+#: apps/report/models.py:35
+msgid ""
+"De patient heeft aangegeven zelf geen polikliniek afspraak nodig te vinden. "
+"Wilt u op basis van de antwoorden en eventuele laboratoriumuitslagen de "
+"patient alsnog oproepen?"
+msgstr ""
+
+#: apps/report/models.py:41
+msgid "Nb. selecteer eerst de optie(s) hierboven voordat u de tekst wijzigt."
+msgstr ""
+
+#: apps/report/views.py:269
+msgid "Voor dit ziektebeeld is nog geen template gedefineerd."
+msgstr ""
+
+#: apps/report/templates/report/finish.html:9
+#: apps/report/templates/report/finish.html:27
+#: apps/report/templates/report/report_context.html:68
+msgid "Afronden"
+msgstr ""
+
+#: apps/report/templates/report/finish.html:16
+msgid ""
+"Klik op \"afronden\" om het medisch verslag definitief te maken en het "
+"bericht naar de patiënt te sturen. Als er een afspraak nodig is dan zal deze "
+"worden ingepland door een secretariaat medewerker."
+msgstr ""
+
+#: apps/report/templates/report/finish.html:20
+msgid ""
+"Als er een afspraak gewenst is door de patiënt of door u dan zal er een "
+"verzoek voor het maken van een afspraak richting een secretariaat medewerker "
+"worden verstuurd."
+msgstr ""
+
+#: apps/report/templates/report/finish.html:32
+msgid "Er is nog geen medisch verslag aangemaakt en opgeslagen."
+msgstr ""
+
+#: apps/report/templates/report/finish.html:35
+msgid "Er is nog geen bericht naar de patiënt aangemaakt en opgeslagen."
+msgstr ""
+
+#: apps/report/templates/report/message_edit.html:10
+#: apps/report/templates/report/message_view.html:9
+#: apps/report/templates/report/report_context.html:59
+msgid "Bericht naar patiënt"
+msgstr ""
+
+#: apps/report/templates/report/message_edit.html:15
+msgid "Het onderstaande bericht is automatisch gegenereerd."
+msgstr ""
+
+#: apps/report/templates/report/message_edit.html:16
+msgid "U kunt dit bericht handmatig aanpassen."
+msgstr ""
+
+#: apps/report/templates/report/message_edit.html:23
+msgid "Bericht opslaan"
+msgstr ""
+
+#: apps/report/templates/report/message_view.html:11
+#: apps/report/templates/report/report_view.html:19
+msgid "Wijzigen"
+msgstr ""
+
+#: apps/report/templates/report/message_view.html:11
+#: apps/report/templates/report/report_view.html:19
+msgid "Aanmaken"
+msgstr ""
+
+#: apps/report/templates/report/message_view.html:27
+msgid ""
+"Er is nog geen bericht voor naar de patiënt, klik op \"aanmaken\" om deze "
+"aan te maken"
+msgstr ""
+
+#: apps/report/templates/report/message_view.html:30
+msgid ""
+"Er moet eerst een medisch verslag worden gemaakt voordat er een bericht naar "
+"de patiënt kan worden gestuurd"
+msgstr ""
+
+#: apps/report/templates/report/questionnaire_view.html:23
+msgid "Voor deze vragenlijst is nog geen weergave aanwezig"
+msgstr ""
+
+#: apps/report/templates/report/report_context.html:30
+msgid "Ingevulde vragenlijst"
+msgstr ""
+
+#: apps/report/templates/report/report_context.html:52
+#: apps/report/templates/report/report_edit.html:73
+#: apps/report/templates/report/report_view.html:10
+msgid "Medisch verslag"
+msgstr ""
+
+#: apps/report/templates/report/report_edit.html:73
+msgid "Medisch verslag, Poli-oproep & HA-Brief"
+msgstr ""
+
+#: apps/report/templates/report/report_edit.html:78
+msgid ""
+"Het onderstaande Verslag is automatisch gegenereerd m.b.v. de antwoorden van "
+"de patiënt."
+msgstr ""
+
+#: apps/report/templates/report/report_edit.html:79
+msgid "U kunt dit verslag handmatig aanpassen."
+msgstr ""
+
+#: apps/report/templates/report/report_edit.html:86
+msgid "Medisch verslag opslaan"
+msgstr ""
+
+#: apps/report/templates/report/report_view.html:14
+msgid "PDF"
+msgstr ""
+
+#: apps/report/templates/report/report_view.html:16
+msgid "DocX"
+msgstr ""
+
+#: apps/report/templates/report/report_view.html:35
+msgid ""
+"Er is nog geen medisch verslag, klik op \"aanmaken\" om deze aan te maken"
+msgstr ""
+
+#: core/forms.py:321
+msgid "Datum mag niet in de toekomst liggen."
+msgstr ""
+
+#: core/forms.py:325
+msgid "Alleen toekomstige datum is geldig."
+msgstr ""
+
+#: templates/404.html:43
+msgid "Pagina kon niet worden gevonden"
+msgstr ""
+
+#: templates/agree_with_rules.html:11
+msgid "Rules"
+msgstr ""
+
+#: templates/agree_with_rules.html:18
+msgid "Agree once with the user rules to gain access."
+msgstr ""
+
+#: templates/base.html:7
+#: templates/emails/link_to_change_password_email.html:32
+#: templates/registration/account_blocked.html:7
+#: templates/registration/blocked.html:8
+#: templates/registration/email_sent.html:16
+#: templates/registration/logged_out.html:7
+#: templates/registration/login.html:36
+#: templates/registration/password_change_request_invalid.html:7
+#: templates/registration/password_reset_form.html:7
+#: templates/registration/request_sms_code_form.html:7
+msgid "Remote Care"
+msgstr ""
+
+#: templates/emails/email_base.html:6
+msgid "Remote Care e-mail"
+msgstr ""
+
+#: templates/emails/link_to_change_password_email.html:6
+msgid "Beste Remote Care gebruiker,"
+msgstr ""
+
+#: templates/emails/link_to_change_password_email.html:11
+msgid "Er is voor u een account aangemaakt in Remote Care."
+msgstr ""
+
+#: templates/emails/link_to_change_password_email.html:16
+msgid "Uw wachtwoord voor Remote Care is vervallen."
+msgstr ""
+
+#: templates/emails/link_to_change_password_email.html:20
+msgid ""
+"Hieronder vindt u de link waarmee u uw wachtwoord voor Remote Care kunt "
+"instellen."
+msgstr ""
+
+#: templates/emails/link_to_change_password_email.html:22
+msgid "Deze link is geldig tot en met:"
+msgstr ""
+
+#: templates/emails/link_to_change_password_email.html:25
+msgid "Stappen:"
+msgstr ""
+
+#: templates/emails/link_to_change_password_email.html:26
+msgid "1. Klik op de link."
+msgstr ""
+
+#: templates/emails/link_to_change_password_email.html:27
+msgid "2. Voer op de website uw gegevens in."
+msgstr ""
+
+#: templates/emails/link_to_change_password_email.html:28
+msgid "3. Voer de sms-code in."
+msgstr ""
+
+#: templates/emails/link_to_change_password_email.html:31
+msgid "Met vriendelijke groet,"
+msgstr ""
+
+#: templates/registration/account_blocked.html:31
+#: templates/registration/blocked.html:32
+#: templates/registration/email_sent.html:40
+#: templates/registration/logged_out.html:31
+#: templates/registration/login.html:63
+#: templates/registration/password_change_request_invalid.html:31
+#: templates/registration/password_reset_form.html:31
+msgid "Code via sms"
+msgstr ""
+
+#: templates/registration/account_blocked.html:49
+#: templates/registration/blocked.html:50
+msgid "Login geblokkeerd"
+msgstr ""
+
+#: templates/registration/account_blocked.html:54
+#: templates/registration/blocked.html:55
+msgid "Er zijn"
+msgstr ""
+
+#: templates/registration/account_blocked.html:54
+#: templates/registration/blocked.html:55
+msgid "onsucessvolle inlogpogingen gedetecteerd."
+msgstr ""
+
+#: templates/registration/account_blocked.html:57
+#: templates/registration/blocked.html:58
+msgid "Inloggen is geblokkeerd voor"
+msgstr ""
+
+#: templates/registration/account_blocked.html:57
+#: templates/registration/blocked.html:58
+msgid "minuten."
+msgstr ""
+
+#: templates/registration/account_blocked.html:61
+#: templates/registration/blocked.html:62
+#: templates/registration/logged_out.html:61
+msgid "Klik hier om in te loggen."
+msgstr ""
+
+#: templates/registration/email_sent.html:58
+msgid "E-mail verzonden"
+msgstr ""
+
+#: templates/registration/email_sent.html:62
+msgid ""
+"De e-mail is verzonden. Volg de instructies in de e-mail voor het resetten "
+"van uw wachtwoord."
+msgstr ""
+
+#: templates/registration/email_sent.html:66
+#: templates/registration/password_change_request_invalid.html:61
+msgid "Naar login pagina"
+msgstr ""
+
+#: templates/registration/logged_out.html:49
+msgid "Uitgelogd"
+msgstr ""
+
+#: templates/registration/logged_out.html:54
+msgid "U bent uitgelogd uit Remote Care."
+msgstr ""
+
+#: templates/registration/logged_out.html:57
+msgid "Klik op onderstaande knop om weer in te loggen."
+msgstr ""
+
+#: templates/registration/login.html:83 templates/registration/login.html:94
+msgid "Login"
+msgstr ""
+
+#: templates/registration/login.html:91
+msgid "Wachtwoord vergeten?"
+msgstr ""
+
+#: templates/registration/login.html:94
+msgid "SMS code"
+msgstr ""
+
+#: templates/registration/password_change_request_invalid.html:49
+msgid "Email link fout"
+msgstr ""
+
+#: templates/registration/password_change_request_invalid.html:57
+msgid "Klik op onderstaande knop om een nieuwe e-mail met link aan te vragen."
+msgstr ""
+
+#: templates/registration/password_change_request_invalid.html:62
+msgid "Wachtwoord vergeten"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:49
+#: templates/registration/request_sms_code_form.html:53
+msgid "Nieuw wachtwoord"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:50
+msgid ""
+"Vul hieronder uw e-mail adres om instructies te krijgen voor het resetten "
+"van het wachtwoord"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:55
+msgid "Terug naar login pagina"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:55
+msgid "E-mail instructies"
+msgstr ""
+
+#: templates/registration/request_sms_code_form.html:55
+msgid "Vul hieronder uw e-mail adres en geboortedatum in."
+msgstr ""
+
+#: templates/registration/request_sms_code_form.html:59
+msgid "Controleer gegevens"
+msgstr ""
+
+#: templates/registration/request_sms_code_form.html:59
+msgid "Verander wachtwoord"
+msgstr ""

@@ -1,0 +1,22 @@
+/*
+@@@@@@@@@@@@@@@@@@@@@@
+OPTIONBAR
+@@@@@@@@@@@@@@@@@@@@@@
+
+	about				Small bits of code used in a webpage
+	
+	syntax
+
+*/
+
+	/*///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	optionbar
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+	
+		.optionbar{position:relative; z-index:100; }
+		.optionbar.noMargin{margin:0px 0px 0px 0px; }
+
+		.optionbar .divider{display:inline-block; padding:0px 10px;}
+		
+		.optionbar .button i{margin-right:5px; position:relative; top:-1px; }
+

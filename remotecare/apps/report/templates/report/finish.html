@@ -1,0 +1,38 @@
+{% extends 'report/report_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }} 
+{% endblock %}
+
+{% block title %}
+ <h2 class="title"><span class="icoKwaliteitBlue"></span> {% trans 'Afronden' %} </h2>
+{% endblock %}
+
+
+{% block contents %}
+    {% if report %}
+        {% if rc_message %}
+        <p>{% trans 'Klik op "afronden" om het medisch verslag definitief te maken en het bericht naar de patiënt te sturen. Als er een afspraak nodig is dan zal deze worden ingepland door een secretariaat medewerker.' %}</p>
+
+        {% if not questionnaire_request.urgent %}
+        <p>
+           {% trans 'Als er een afspraak gewenst is door de patiënt of door u dan zal er een verzoek voor het maken van een afspraak richting een secretariaat medewerker worden verstuurd.' %}
+        </p>
+        {% endif %}
+        <form id="finishform" class='reportform'  action='.' method='post'>              
+
+        {% csrf_token %}
+        <div class='submitbuttons'>
+            <input type='submit' class='button' value="{% trans 'Afronden' %}">
+        </div> 
+        </form>
+        
+        {% else %}        
+            {% trans 'Er is nog geen medisch verslag aangemaakt en opgeslagen.' %}
+        {% endif %}
+    {% else %}
+        {% trans 'Er is nog geen bericht naar de patiënt aangemaakt en opgeslagen.' %}
+    {% endif %}
+
+{% endblock %}

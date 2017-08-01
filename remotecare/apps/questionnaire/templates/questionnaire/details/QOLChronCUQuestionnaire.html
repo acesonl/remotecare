@@ -1,0 +1,17 @@
+{% load i18n %}
+{% if questionnaire.hasproblems == 'yes' %}
+<table class="tabledisplay">   
+    <tbody><tr><th>{% trans 'Vraag' %}</th><th>{% trans 'Antwoord' %}</th></tr>
+
+    <tr><td>{% trans 'Praktische problemen' %}</td><td>{% for item in questionnaire.practical_problems.all %} {{ item }}{% if not forloop.last %},{% endif %}{% endfor %}</td></tr>
+    <tr><td>{% trans 'Gezins-/sociale problemen' %}</td><td>{% for item in questionnaire.social_problems.all %} {{ item }}{% if not forloop.last %},{% endif %}{% endfor %}</td></tr>
+    <tr><td>{% trans 'Emotionele problemen' %}</td><td>{% for item in questionnaire.emotional_problems.all %} {{ item }}{% if not forloop.last %},{% endif %}{% endfor %}</td></tr>
+    <tr><td>{% trans 'Religieuze/spirituele problemen' %}</td><td>{% for item in questionnaire.spiritual_problems.all %} {{ item }}{% if not forloop.last %},{% endif %}{% endfor %}</td></tr>
+    <tr><td>{% trans 'Andere problemen' %}</td><td>{{ questionnaire.other_problems|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Zou u over deze problemen met een deskundige willen praten? (bijvoorbeeld een psycholoog of een maatschappelijk werker)' %}</td><td>{{ questionnaire.get_need_contact_display|default:"-" }}</td></tr>
+ 
+</tbody></table>
+{% else %}
+ {% trans 'U heeft er voor gekozen dit onderdeel niet in te voeren' %}  
+
+{% endif %}

@@ -1,0 +1,94 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>       
+                        {% if request.user|checkgroup:"healthprofessionals" %}
+                        <a href='{% url "index" %}'>
+                        {% else %}
+                        <a href='{% url "healthprofessional_search" %}?back=True'>
+                        {% endif %}             
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Terug' %}</h4>                        
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'personalia' %}class='active'{% endif %}>                    
+                        <a href="{% url "healthprofessional_view_personalia" healthprofessional.health_person_id|get_random_session_key:request %}">
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Personalia & Account'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'notification' %}class='active'{% endif %}>                    
+                        <a href="{% url "healthprofessional_view_notification" healthprofessional.health_person_id|get_random_session_key:request %}">
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Notificatie instellingen' %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if submenu == 'out_of_office' %}class='active'{% endif %}>                    
+                        <a href="{% url "healthprofessional_view_out_of_office" healthprofessional.health_person_id|get_random_session_key:request %}">
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Afwezigheid' %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+
+                    <li {% if submenu == 'photo' %}class='active'{% endif %}>                    
+                        <a href="{% url "healthprofessional_view_photo" healthprofessional.health_person_id|get_random_session_key:request %}">
+                        <div class="box">                        
+                            <h4 class="title"></span>{% trans 'Pasfoto' %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>
+                </ul>
+                            
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        {% block section_title %} {% endblock %}                
+                	</header>
+                    
+                    <div class="content">
+                        {% block section_content %} {% endblock %}                       
+                    </div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

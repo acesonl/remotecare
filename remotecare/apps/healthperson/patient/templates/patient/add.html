@@ -1,0 +1,166 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+     {{ block.super }} 
+    {% if add_diagnose_script %}
+    <script type='text/javascript'>
+    
+    var DiagnoseSelector = {
+        init: function(content) {
+            $(content).find('select.choice_display_diagnose').change(function() {
+                DiagnoseSelector.changed(content, $(this), true);
+            });  
+
+            $(content).find('select.choice_display_diagnose').each(function() {
+                DiagnoseSelector.changed(content, $(this), false);
+            });
+         
+        },
+        changed: function(content, control, changed) {
+            if ($(control).val() != '')                
+            {
+                //get list
+                $.ajax({
+                    url: '{% url "get_questionnaires_for_diagnose" %}?questionnaire=' + $(control).val(),
+                    success: function(data) { 
+
+                        var ul = $('.diagnose .field ul');
+                        ul.empty();
+                        data = eval(data);
+                        for (var i = 0; i < data.length; i++) {  
+                            var checked = 'checked=True';
+                            {% if excluded_questionnaire_posted %}
+
+                            if (!changed)
+                            {
+                                var excluded_questionnaire_posted = {{ excluded_questionnaire_posted|safe }};
+                                if (excluded_questionnaire_posted.indexOf(data[i][0]) == -1)
+                                {
+                                    checked = '';
+                                }
+                            }
+                            {% else %}                           
+                            if (data[i][2])
+                            {
+                                checked = '';
+                            }
+                            {% endif %}
+
+                            var li = $('<li><label for="id_exclude_questionnaires_' + i + '"><input type="checkbox" name="exclude_questionnaires" id="id_exclude_questionnaires_' + i + '" ' + checked + ' value="' + data[i][0] + '"></input>' + data[i][1] + '</label></li>');                               
+                            ul.append(li);                               
+                        }   
+                    },
+                    type: 'GET',
+                    async: false
+                });
+                var fieldset = $('.hi-light.diagnose', content).show();
+            }
+            else 
+            {
+                var fieldset = $('.hi-light.diagnose', content).hide();
+            }
+        }
+    }
+
+
+    $(document).ready(function() {
+        DiagnoseSelector.init();
+    });
+
+    </script>
+    {% endif %}
+{% endblock %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li>
+                    
+                        <a onclick="document.forms['patient_add_form'].submit();return false;" href="#">
+                        <div class="box">
+                        
+                            <h4 class="title"></span> {% trans 'Opslaan' %}</h4>
+                           
+                        </div>
+                        </a>
+                        
+                    </li>
+                    <li>
+                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">
+                        
+                            <h4 class="title"></span> {% trans 'Annuleren' %}</h4>
+                        
+                        </div>
+                        </a>
+                        
+                    </li>
+
+                </ul>
+                <a  class="button white alignBottomLeftAbsolute" href='{% url "index" %}'>
+                    <i class="icoBack"></i>  {% blocktrans %}Terug{% endblocktrans %}
+                </a>                
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                
+                	<header class="line">
+                    
+                        <h2 class="title"><span class="rc_ico17"></span> {% trans 'Voeg nieuwe patiënt toe' %}</h2>
+                
+                	</header>
+                    
+                    <div class="content">
+                         <b></b>
+                        <form id="patient_add_form" class='defaultform' action='.{{ extra_params }}' method='post'>
+                            {% include 'form.html' %}
+                            <div class='submitbuttons'>
+                                <a class='button' href="{% url "index" %}">{% trans 'Annuleren'  %}</h4></a> 
+                                <input type='submit' class='button' value="{% trans 'Sla op' %}">
+                            </div>
+                        </form>
+                    	
+                    
+                    </div>
+                    
+                    <footer class="buttonBar">
+
+
+                    
+                    	<div class="floatRight">
+                      
+                        </div>
+                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

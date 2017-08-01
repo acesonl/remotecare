@@ -1,0 +1,135 @@
+{% extends 'information/help_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+     {{ block.super }} 
+{% endblock %}
+
+{% block section_title %} 
+    <h2 class="title"><span class="rc_ico100"></span> {% trans 'Veel gestelde vragen' %}</h2>  
+{% endblock %}        
+
+
+{% block section_content %} 
+
+{% if user|checkgroup:"patients" %}
+    <p>
+    <b>1. Hoe kan ik een vragenlijst invoeren?</b><br/>
+    Door op de knop vragenlijst te klikken in het hoofdmenu en vervolgens de vragenlijsten en stappen verder te doorlopen.
+    </p>
+
+    <p>
+    <b>2. Wat gebeurt er met een ingevoerde vragenlijst?</b><br/>
+    Een ingevoerde vragenlijst wordt eerst verstuurd naar uw Behandelaar.
+    </p>
+
+    <p>
+    <b>
+    3. Hoe kan ik mijn wachtwoord veranderen?</b><br/>
+    Klik op het vlak “Mijn Gegevens.” Dit is het vlak waar uw naam, e-mailadres en telefoonnummer staan weergegeven. Vervolgens kunt u op de knop “Wijzig” drukken om uw gegevens te wijzigen.
+    </p>
+
+    <p>
+    <b>
+    4. Hoe kan ik mijn e-mailadres veranderen?</b><br/>
+    Klik op het vlak “Mijn Gegevens.” Dit is het vlak waar uw naam, e-mailadres en telefoonnummer staan weergegeven. Vervolgens kunt u op de knop “Wijzig” drukken om uw gegevens te wijzigen.
+    </p>
+
+    <p>
+    <b>
+    5. Waar kan ik zelf de antwoorden op de door mij ingestuurde vragenlijsten terugzien?</b><br/>
+    De verschillende onderdelen van de vragenlijsten kunt u terug zien in de onderdelen: Mijn Ziekteactiviteit, Mijn Kwaliteit van Leven en Mijn Kwaliteit van Zorg.
+    </p>
+
+
+{% elif user|checkgroup:"managers" %}
+    <p>
+    <b>
+1. Wat zijn mijn rechten?</b><br/>
+Als Functioneel Beheerder kun je Behandelaars, Patiënten en Secretariaatmedewerkers toevoegen, wijzigen en verwijderen.
+  </p>
+
+    <p>
+    <b>
+2. Kan ik medische gegevens van patiënten inzien?</b><br/>
+Nee, dat kan niet. Alleen Behandelaars kunnen medische patiëntgegevens inzien.
+  </p>
+
+    <p>
+    <b>
+3. Welke type gebruikers kent Remote Care?</b><br/>
+Remote kent 4 typen gebruikers:<br/>
+Patiënten<br/>
+Behandelaars <br/>
+Secretariaatmedewerkers<br/>
+Functioneel Beheerders<br/>
+  </p>
+
+   <p>
+    <b>
+4. Hoe kan ik Behandelaars toevoegen, wijzigen of verwijderen?</b><br/>
+Door respectievelijk op de knoppen Behandelaar toevoegen, wijzigen of verwijderen te klikken.
+  </p>
+
+   <p>
+    <b>
+5. Hoe kan ik Patiënten toevoegen, wijzigen of verwijderen?</b><br/>
+Door respectievelijk op de knoppen Patiënt toevoegen, wijzigen of verwijderen te klikken.
+  </p>
+
+   <p>
+    <b>
+6. Hoe kan ik Secretariaatmedewerkers toevoegen, wijzigen of verwijderen?</b><br/>
+Door respectievelijk op de knoppen Secretariaatmedewerkers toevoegen, wijzigen of verwijderen te klikken.
+  </p>
+{% elif user|checkgroup:"secretariat" %}
+   <p>
+    <b>
+1. Hoe kan ik een afspraak afhandelen?</b><br/>
+Door in de tabel In te plannen afspraken naast een patiënt op het vink-icoontje te klikken en de stappen te doorlopen. 
+  </p>
+   <p>
+    <b>
+2. Kan ik medische gegevens van patiënten inzien?</b><br/>
+Nee, dat kan niet. Alleen Behandelaars kunnen medische gegevens inzien.
+  </p>
+   <p>
+    <b>
+3. Hoe kan ik een Patiënt toevoegen?</b><br/>
+Door op de knop Patiënt toevoegen te klikken en de gegevens in te vullen.
+  </p>
+   <p>
+    <b>
+4. Waar kan ik de Controle-frequentie van een patiënt wijzigen?</b><br/>
+Door een patiënt te zoeken en vervolgens de gegevens op te vragen. Bij Diagnose en Freq. Controle kan de controle-frequentie worden gewijzigd.
+  </p>
+
+{% elif user|checkgroup:"healthprofessionals" %}
+   <p>
+    <b>
+1. Hoe kan ik een Controle afhandelen?</b><br/>
+Door in de tabel Afhandelen Controles te klikken op het vink-icoontje. Hierna moeten een aantal stappen worden doorlopen. In de eerste stap kunnen de vragenlijsten worden bekeken. Vervolgens kunnen er een medisch verslag, brief en afspraken worden gemaakt, afhankelijk van de wensen en uitkomsten van de vragenlijsten.
+  </p>
+
+   <p>
+    <b>
+2. Hoe kan ik een Spoedafspraak afhandelen?</b><br/>
+Voor het afhandelen van een Urgente afspraak of Spoedafspraak moet op het vink-icoontje naast de naam worden geklikt. Vervolgens worden een aantal stappen doorlopen. 
+  </p>
+
+   <p>
+    <b>
+3. Hoe kan ik een Patiënt toevoegen?</b><br/>
+Door op de knop Patiënt toevoegen te klikken en de gegevens in te vullen.
+  </p>
+
+   <p>
+    <b>
+4. Waar kan ik de Controle-frequentie van een patiënt wijzigen?</b><br/>
+Door een patiënt te zoeken en vervolgens de gegevens op te vragen. Bij Diagnose en Freq. Controle kan de controle-frequentie worden gewijzigd.
+  </p>
+
+{% endif %}
+{% endblock %} 
+
+

@@ -1,0 +1,37 @@
+@import "default.css";
+
+.subtitle {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #f2f2f2;
+    font-weight: normal;
+    color: #20435c;
+    border-bottom: 1px solid #ccc;
+    margin: 20px -20px 10px -20px;
+    padding: 3px 0 3px 10px;
+    font-size: 160%;
+    display:block;
+    line-height: 130%;
+}
+
+.choices {
+    color: gray;
+    font-style:italic;
+    font-size:80%;
+}
+
+.class, .function {
+    border-bottom: 1px solid #ccc;
+}
+
+div.body dl p {
+    width:85%;
+    text-align:left;
+}
+
+div.body li {
+    text-align:left;
+}
+
+div.body p.graphviz {
+    text-align:center;
+}

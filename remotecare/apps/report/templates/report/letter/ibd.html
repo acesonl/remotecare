@@ -1,0 +1,128 @@
+{% load i18n %}
+<b style='font-size:14px'>Remote care - Digitale Controle - {{ patient.get_diagnose_display }}</b>
+
+<span class='doctorheaders' style='display:none;'><p>Geachte collega,</p></span>
+<p>
+<u><i>Digitale Controle</i></u><br/>
+Op {{ questionnaire_request.finished_on }} voerde {%if is_male%}Dhr.{%else%}Mw.{%endif%} {{ patient.user.first_name }} {{ patient.user.prefix|default:"" }} {{ patient.user.last_name }},
+geboren {{ patient.user.date_of_birth }} een digitale controle uit voor {{ patient.get_diagnose_display }}. Deze digitale controle heb ik op
+{{ current_date }} beoordeeld.
+</p>
+
+<p>
+<u><i>Hoofdklacht en Algemeen welbevinden</i></u><br/>
+Patiënt gaf aan dat het {{ startquestionnaire.get_current_status_display|lower }} met {%if is_male%}hem{%else%}haar{%endif%} ging. De belangrijkste
+klachten zijn op dit moment: {{ startquestionnaire.problems }} Patiënt geeft de ernst van al {%if is_male%}zijn{%else%}haar{%endif%} klachten het cijfer
+{{ startquestionnaire.get_problem_severity_display }} op een schaal van 1 (weinig last van de klachten) tot 10 (zeer veel last van de klachten).
+</p>
+
+<p>
+<u><i>Anamnese</i></u><br/>
+{% if ibd_questionnaire.has_stoma == 'yes' %}
+Patiënt heeft een stoma, type {{ ibd_questionnaire.get_stoma_version_display|lower }}. Het stomazakje wordt {{ ibd_questionnaire.stoma_empty_freq }} maal per 24 uur geleegd.
+{%if is_male%}Hij{%else%}Zij{%endif%} ondervindt momenteel{% if ibd_questionnaire.stoma_has_problems == 'no' %} geen{% endif %} klachten van het stoma.{% if ibd_questionnaire.stoma_has_problems == 'yes' %}De klachten worden door de patiënt omschreven als {{ ibd_questionnaire.stoma_problems }}.{% endif %}
+<br/><br/>
+{% endif %}
+
+{% if ibd_questionnaire.has_pouch == 'yes' %}
+Patiënt heeft een pouch. {%if is_male%}Hij{%else%}Zij{%endif%} ondervindt hiervan {% if ibd_questionnaire.has_pouch_problems == 'yes' %}klachten te weten {{ ibd_questionnaire.pouch_problems }}.{% else %}geen klachten.{% endif %}<br/>
+<br/><br/>
+{% endif %}
+
+{% if ibd_questionnaire.has_stoma == 'no' %}
+Patiënt heeft gemiddeld {{ ibd_questionnaire.get_stool_freq_display|lower }} maal per dag ontlasting. De consistentie is {{ ibd_questionnaire.get_stool_thickness_display|lower }}. Er is {% if ibd_questionnaire.stool_has_blood == 'no' %}geen{% else %}{{ ibd_questionnaire.get_stool_has_blood_display|lower }}{% endif %} sprake van bloedbijmenging. Er zit {% if ibd_questionnaire.stool_has_slime == 'no' %}geen{% else %}{{ ibd_questionnaire.get_stool_has_slime_display|lower }}{% endif %} slijm bij de ontlasting. ‘s Nachts heeft patiënt{% if not ibd_questionnaire.diarrhea_at_night %} geen{% endif %} diarree. 
+Patiënt heeft {% if ibd_questionnaire.stool_urgency == 'no' %}geen{% elif ibd_questionnaire.stool_urgency == 'yes_sometimes' %}soms{% else %}ernstig{% endif %} pijnlijke aandrang. {%if is_male%}Hij{%else%}Zij{%endif%} kan {% if ibd_questionnaire.stool_planning == 'no_never' %}nooit{% elif ibd_questionnaire.stool_planning == 'yes_sometimes' %}soms{% elif ibd_questionnaire.stool_planning == 'yes_mostly' %}meestal{% else %}altijd{% endif %} de stoelgang uitstellen. {%if is_male%}Hij{%else%}Zij{%endif%} verliest {% if ibd_questionnaire.stool_continence == 'no_never' %}nooit{% elif ibd_questionnaire.stool_continence == 'yes_sometimes' %}soms{% else %}regelmatig{% endif %} ongewild ontlasting.
+<br/><br/>
+{% endif %}
+
+Patiënt heeft{% if ibd_questionnaire.nausea_vomit == 'no' %} geen{% endif %} last van misselijkheid of braken{% if ibd_questionnaire.nausea_vomit == 'yes'%}{% for item in ibd_questionnaire.nausea_vomit_time.all %} {{ item }}{% if not forloop.last %},{% endif %}{% endfor %}{% endif %}.
+<br/><br/>
+Patiënt heeft{% if ibd_questionnaire.has_fistel == 'no' %} geen{% elif ibd_questionnaire.has_fistel != 'yes' %} misschien{% endif %} fistels.{% if ibd_questionnaire.has_fistel == 'yes' %} De fistels zitten op de plekken {{ ibd_questionnaire.fistel_location }}.{% endif %} Patiënt heeft{% if ibd_questionnaire.anal_pain == 'no' %} geen{% endif %} anale pijn. Er zijn{% if ibd_questionnaire.anal_problems == 'no' %} geen{% endif %} anale fissuren, anale fistels of anale abcessen.
+<br/><br/>
+Patiënt heeft een {{ ibd_questionnaire.get_appetite_display|lower }}e eetlust. {%if is_male%}Hij{%else%}Zij{%endif%} heeft {% if ibd_questionnaire.stomach_ache == 'no' %}geen{% elif ibd_questionnaire.stomach_ache == 'yes_sometimes_mild' %}soms milde{% elif ibd_questionnaire.stomach_ache == 'yes_sometimes_severe' %}soms heftige{% elif ibd_questionnaire.stomach_ache == 'yes_always_mild' %}continue milde{% else %}continue heftige{% endif %} buikpijn.
+Patiënt is{% if ibd_questionnaire.fatigue %} niet{% endif %} moe. {%if is_male%}Hij{%else%}Zij{%endif%} heeft {% if ibd_questionnaire.fever == 'yes' %}koorts gehad sinds de laatste controle{% else %}geen koorts gehad sinds de laatste controle.{% endif %}
+Patiënt heeft{% if ibd_questionnaire.joint_pain == 'no' %} geen{% endif %} gewrichtspijn{% if ibd_questionnaire.joint_pain == 'yes' %} {{ ibd_questionnaire.joint_pain_complaints }}{% endif %}. Patiënt heeft{% if ibd_questionnaire.eye_inflammation %} geen{% endif %} last van oogontstekingen{% if ibd_questionnaire.eye_inflammation == 'yes' %} {{ ibd_questionnaire.eye_inflammation_complaints }}{% endif %}. Patiënt heeft{% if ibd_questionnaire.skin_disorder == 'no' %} geen{% endif %} last van huidafwijkingen{% if ibd_questionnaire.skin_disorder == 'yes' %} {{ ibd_questionnaire.skin_disorder_complaints }}{% endif %}.
+</p>
+
+
+<p>
+<u><i>Kwaliteit van leven</i></u><br>
+{% if qol_chron_cu_questionnaire.hasproblems == 'yes' %}
+Patiënt heeft aangegeven last te hebben van de volgende psychische, sociale en/of praktische problemen:<br/>
+{% if  qol_chron_cu_questionnaire.practical_problems.all|length > 0 %}
+    Praktische problemen: {% for item in  qol_chron_cu_questionnaire.practical_problems.all %} {{ item }}{% if not forloop.last %},{% endif %}{% endfor %}<br/>
+{% endif %}
+{% if  qol_chron_cu_questionnaire.social_problems.all|length > 0 %}
+    Gezins-/sociale problemen: {% for item in  qol_chron_cu_questionnaire.social_problems.all %} {{ item }}{% if not forloop.last %},{% endif %}{% endfor %}<br/>
+{% endif %}
+{% if  qol_chron_cu_questionnaire.emotional_problems.all|length > 0 %}
+    Emotionele problemen: {% for item in  qol_chron_cu_questionnaire.emotional_problems.all %} {{ item }}{% if not forloop.last %},{% endif %}{% endfor %}<br/>
+{% endif %}
+{% if  qol_chron_cu_questionnaire.spiritual_problems.all|length > 0 %}
+    Religieuze/spirituele problemen: {% for item in  qol_chron_cu_questionnaire.spiritual_problems.all %} {{ item }}{% if not forloop.last %},{% endif %}{% endfor %}
+{% endif %}
+{% else %}
+De patiënt heeft aangegeven dit liever niet te willen invullen.
+{% endif %}
+</p>
+
+<p>
+<u><i>Intoxicaties</i></u><br>
+Patiënt rookt {% if ibd_questionnaire.does_smoke == 'yes' %}{{ ibd_questionnaire.does_smoke.smoke_freq }}{% else %}niet{% endif %}.
+</p>
+
+
+<p>
+<u><i>Overige opmerkingen patiënt</i></u><br>
+{{ ibd_questionnaire.question_remarks|default:"-" }}
+</p>
+
+
+<p>
+<u><i>Lichamelijk onderzoek door de patiënt</i></u><br>
+Lengte: {{ ibd_questionnaire.patient_length }} m<br/>
+Gewicht: {{ ibd_questionnaire.patient_weight }} kg<br/>
+BMI: {{ ibd_questionnaire.BMI }}
+</p>
+
+<p>
+<u><i>Aanvullend Onderzoek: Laboratorium</i></u><br>
+CRP: &nbsp;<b><i>--Vul crp waarde in--</i></b><br/>
+Fecaal calprotectine: &nbsp;<b><i>--Vul fecaal calprotectine in--</i></b> 
+</p>
+
+<p>
+<u><i>Conclusie</i></u><br/>
+&nbsp;<b><i>--Vul conclusie in--</i></b>
+</p>
+
+<p>
+<u><i>Beleid</i></u><br/>
+&nbsp;<b><i>--Vul beleid in--</i></b>
+</p>
+
+<p>
+<u><i>Vervolgafspraak</i></u><br/>
+{% if finishquestionnaire.appointment == 'no' %}
+Ik zie momenteel naar aanleiding van de antwoorden op de vragen en de laboratoriumuitslagen<span class='no_appointment'>
+ook geen aanleiding {%if is_male%}hem{%else%}haar{%endif%} alsnog op te roepen.</span><span class='appointment' style='display:none;'> echter reden om {%if is_male%}hem{%else%}haar{%endif%} alsnog op te roepen. Daarom zal ik {%if is_male%}hem{%else%}haar{%endif%} verzoeken een afspraak te maken.</span>
+{% else %}
+Patiënt heeft aangegeven dat {%if is_male%}hij{%else%}zij{%endif%} naast de digitale controle een afspraak op de
+polikliniek wil. <br/>{%if is_male%}Hij{%else%}Zij{%endif%} zal daarom binnenkort worden gezien.
+{% endif %}
+</p>
+
+<span class='doctorheaders' style='display:none;' >
+<p>
+Hopende u hierbij voldoende te hebben geïnformeerd,<br/><br/>
+Met vriendelijke groet,</p></span>
+<br/>
+<p>
+{{ healthprofessional.user.first_name }} {{ healthprofessional.user.prefix|default:"" }} {{ healthprofessional.user.last_name }}<br/>
+{{ healthprofessional.get_function_display }} {{ healthprofessional.get_specialism_display }}<br/>
+{{ healthprofessional.user.hospital }}<br/>
+<i>Dit Verslag is automatisch gegenereerd door Remote Care.</i>
+</p>
+
+
+

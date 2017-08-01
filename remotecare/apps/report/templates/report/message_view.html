@@ -1,0 +1,35 @@
+{% extends 'report/report_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }} 
+{% endblock %}
+
+{% block title %}
+ <h2 class="title"><span class="rc_ico86"></span> {% trans 'Bericht naar patiënt' %}   
+ {% if report and not questionnaire_request.handled_on %}
+ <a href='{% url "message_edit" questionnaire_request.patient.health_person_id|get_random_session_key:request questionnaire_request.id %}' class='button change_button'> {% if rc_message %}{% trans 'Wijzigen' %}{% else %}{% trans 'Aanmaken' %}{% endif %}</a>
+ {% endif %}
+
+</h2>     
+{% endblock %}
+
+
+{% block contents %}
+    <div class="scrollbar_container reportscroll canvas1">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport patinf">	
+        	<div class="content overview">
+                {% if report %}
+                    {% if rc_message %}
+                        {% autoescape off %}{{ rc_message.internal_message }}{% endautoescape %}
+                    {% else %}
+                        {% trans 'Er is nog geen bericht voor naar de patiënt, klik op "aanmaken" om deze aan te maken' %}
+                    {% endif %}
+                {% else %}
+                    {% trans 'Er moet eerst een medisch verslag worden gemaakt voordat er een bericht naar de patiënt kan worden gestuurd' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

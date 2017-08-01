@@ -1,0 +1,365 @@
+{% load staticfiles %}
+
+<div id='helplist'>
+    <ul>
+        <li><a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Berichten</b></a>
+            <ul>
+                <li><b>Berichten versturen</b><br>
+                    Het is als patient helaas niet mogelijk om via remote care berichten te versturen.
+                </li>
+                <li><b>Ontvangen berichten</b><br>
+                    <p>Hier worden alle berichten getoond welke aan u zijn verstuurd. Deze berichten kunnen zijn verstuurd door behandelaars en medewerkers van het secretariaat.</p><p>U opent uw berichten door op het blok met de titel berichten aan de rechterkant van het beginscherm te klikken. Het in dit blok weergegeven getal geeft het aantal 		ongelezen berichten aan. Daarnaast worden uw laatste twee ontvangen berichten getoond.</p>
+                    <p>U kunt een wisselen tussen verschillende berichten door op een blok met onderwerp en datum aan de linkerzijde van uw scherm te klikken. </p>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Controle</b></a>
+            <ul>
+                <li><b>Algemeen</b><br>
+                    Het blok Controle in het beginscherm toont u het aantal dagen sinds de laatste controle, en daarnaast de datum tot uw volgende controle.
+                </li>
+                <li><b>Starten van een controle</b><br>
+                    <span>Indien u een controle wil starten, dan kunt u dit doen via het </span><span>Controle</span><span> blok in het beginscherm. U klikt
+                    dan op de </span><span>Start Controle</span><span> knop.
+                    U krijgt vervolgens een van de volgende twee schermen te zien:<br>
+                    <br>
+                    1. Een scherm met de tekst “</span><span>Op dit moment is er
+                    geen openstaande controle. De volgende controle vindt plaats op:
+                    dd-dd-dddd.” <br>
+                    <br>
+                    Dit
+                    betekent dat er op dit moment geen openstaande controles voor u
+                    beschikbaar zijn. Indien het niet goed met u gaan kunt u een
+                    spoedafspraak maken via de knop </span><span>Spoedafspraak</span><span> in het blok </span><span>Het gaat niet
+                    goed</span><span> op het beginscherm.<br>
+                    <br>
+                    2. Een scherm met het begin van de vragenlijst “Hoe gaat het met u?”. <br>
+                    <br>
+                    U
+                    kunt de controle nu afronden door de vragenlijsten geheel te doorlopen.
+                    Het donker gekleurde blok in de linkerkant van uw scherm geven aan welk
+                    onderdeel van de vragenlijst u op dit moment aan het invullen bent.</span>
+                </li>
+                <li><b>Invullen van een controle</b><br>
+                    <span>Tijdens het invullen van een controle loopt u aan de hand van de
+                    applicatie door een aantal vragenlijsten heen. Deze vragenlijst zijn
+                    aangepast aan het voor u ingevulde ziektebeeld. Door middel van het
+                    invullen van deze vragenlijsten kan uw arts een beeld van uw
+                    lichamelijke en geestelijke toestand. <br>
+                    <br>
+                    U kunt tijdens het
+                    invullen van een vragenlijst worden geconfronteerd met een aantal typen
+                    vragen. Dezen worden hieronder uitgelegd:<br>
+                    <br>
+                    1. Vragen met meerdere
+                    antwoordmogelijkheden waar u er 1 van dient te selecteren. Selecteer
+                    hier uw antwoord door er op te klikken.</span><span><br>
+                    <br>
+                    </span><img src='{% static "images/help00.png" %}' height="48" width="490"><span><br>
+                    <br>
+                    2. Vragen waar u kunt antwoorden door middel van een vrij tekstveld.<br>
+                    <br>
+                    </span><img src='{% static "images/help01.png" %}' height="164" width="480"><span><br>
+                    3. Vragen waar u kunt antwoorden door het combineren van meerdere
+                    antwoordmogelijkheden en een vrij tekstveld. <br>
+                    </span><img src='{% static "images/help02.png" %}' height="101" width="409">
+                </li>
+                <li><b>Controle opslaan en later verder gaan</b><br>
+                    <span>Remote Care biedt de mogelijkheid om een controle op te slaan, en
+                    deze op een later moment af te ronden. Dit doet u door tijdens de
+                    controle te klikken op de knop opslaan en later verder gaan. <br>
+                    <br>
+                    Let op! De controle wordt op dit moment nog niet verstuurd naar uw
+                    behandelaar.</span>
+                </li>
+                <li><b>Controle annuleren</b><br>
+                    <span>Indien u er voor kiest om een controle te annuleren dan zullen
+                    alle antwoorden die u tot dat moment hebt gegeven worden verwijderd en
+                    zal uw controle worden gestopt. <br>
+                    <br>
+                    Let op! De tot op dat moment gegeven antwoorden worden definitief
+                    verwijderd!</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>eConsult</b></a>
+            <ul>
+                <li>De eConsult module is nog niet beschikbaar in de huidige versie van Remote Care. Dit zal in de toekomst worden toegevoegd.</li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Feedback</b></a>
+            <ul>
+                <li>
+                    <span>Via de knop feedback in het menu kunt u terugkoppeling geven over
+                    het gebruik van Remote Care. U kunt uw feedback invullen in het
+                    tekstveld en vervolgens de feedback versturen door op de knop versturen
+                    te klikken.<br>
+                    <br>
+                    Uw feedback wordt verstuurd naar de ontwikkelaars van Remote Care, deze
+                    zal worden meegenomen in de volgende versies.</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Het gaat niet goed</b></a>
+            <ul>
+                <li><b>Algemeen</b><br>
+                    <span>Het blok </span><span>Het gaat niet goed</span><span> in
+                    het beginscherm biedt u de mogelijkheid om een spoedafspraak aan te
+                    vragen bij uw arts. U zal een korte vragenlijst invullen welke sterk
+                    lijkt op een reguliere controle. Vervolgens wordt u de mogelijkheid
+                    geboden om een afspraak te maken via het secretariaat.</span>
+                </li>
+                <li><b>Het maken van een spoedafspraak</b><br>
+                    <span>Indien u een spoedafspraak wilt maken, dan kunt u dit doen via
+                    het </span><span>Het gaat niet goed</span><span> blok
+                    in het beginscherm. U klikt dan op de </span><span>Spoedafspraak</span><span> knop.
+                    U krijgt vervolgens het volgende scherm te zien:<br>
+                    </span><span><br>
+                    Een scherm met het begin van de vragenlijst “Direct een afspraak”. <br>
+                    <br>
+                    U
+                    kunt de spoedafspraak maken door de vragenlijsten geheel te doorlopen.
+                    Het donker gekleurde blok in de linkerkant van uw scherm geven aan welk
+                    onderdeel van de vragenlijst u op dit moment aan het invullen bent.</span>
+                </li>
+                <li><b>Invullen van de vragenlijsten</b><br>
+                    <span>Tijdens het invullen van de vragenlijsten voor de spoedafspraak
+                    loopt u aan de hand van de applicatie door een aantal vragenlijsten
+                    heen. Deze vragenlijst zijn aangepast aan het voor u ingevulde
+                    ziektebeeld. Door middel van het invullen van deze vragenlijsten kan uw
+                    arts een beeld van uw lichamelijke en geestelijke toestand. <br>
+                    <br>
+                    U
+                    kunt tijdens het invullen van een vragenlijst worden geconfronteerd met
+                    een aantal typen vragen. Dezen worden hieronder uitgelegd:<br>
+                    <br>
+                    1.
+                    Vragen met meerdere antwoordmogelijkheden waar u er 1 van dient te
+                    selecteren. Selecteer hier uw antwoord door er op te klikken.</span><span><br>
+                    <br>
+                    </span><img src='{% static "images/help00.png" %}' height="48" width="490"><span><br>
+                    <br>
+                    2. Vragen waar u kunt antwoorden door middel van een vrij tekstveld.<br>
+                    <br>
+                    </span><img src='{% static "images/help01.png" %}' height="164" width="480"><span><br>
+                    3. Vragen waar u kunt antwoorden door het combineren van meerdere
+                    antwoordmogelijkheden en een vrij tekstveld. <br>
+                    </span><img src='{% static "images/help02.png" %}' height="101" width="409">
+                </li>
+                <li><b>Spoedafspraak opslaan en later verder gaan</b><br>
+                    <span>Remote Care biedt de mogelijkheid om een spoedafspraak op te
+                    slaan, en deze op een later moment af te ronden. Dit doet u door
+                    tijdens het invullen van de vragenlijsten te klikken op de knop opslaan
+                    en later verder gaan. <br>
+                    <br>
+                    Let op! De vragenlijst wordt op dit moment nog niet verstuurd naar uw
+                    behandelaar.</span>
+                </li>
+                <li><b>Spoedafspraak annuleren</b><br>
+                    <span>Indien u er voor kiest om een spoedafspraak te annuleren dan
+                    zullen alle antwoorden die u tot dat moment hebt gegeven worden
+                    verwijderd en zal uw controle worden gestopt. <br>
+                    <br>
+                    Let op! De tot op dat moment gegeven antwoorden worden definitief
+                    verwijderd!</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Inloggen</b></a>
+            <ul>
+                <li><b>Eerste keer uw wachtwoord instellen</b><br>
+                    <span>Op het moment dat uw patientgegevens zijn geregistreerd in Remote Care krijgt
+                    u een e-mail met daarin het verzoek om een wachtwoord in te stellen
+                    voor Remote Care. <br>
+                    <br>
+                    Dit bericht bevat een hyperlink via welke u
+                    op de pagina van Remote Care terechtkomt waar u een wachtwoord in kunt
+                    stellen. De procedure is als volgt:</span>
+                                        <ol start="1">
+                                            <li><span>U opent de hyperlink uit de e-mail.</span></li>
+                                            <li><span>U voert uw e-mail adres en geboortedatum in
+                    Remote Care in.</span></li>
+                                            <li><span>U ontvangt een SMS bericht met een code op
+                    het bij Remote Care bekende telefoonnummer.</span></li>
+                                            <li><span>U voert de code in het tekstveld </span></li>
+                                        </ol>
+                </li>
+                <li><b>Inlogprocedure</b><br>
+                      <span></span>
+                      <ol>
+                        <li><span>Inloggen met e-mail adres en
+                        wachtwoord<br>
+                        </span><span>De
+                        eerste stap bij het inloggen bij Remote Care betreft het aanmelden met
+                        behulp van uw e-mail adres en wachtwoord. U vult uw e-mail adres en
+                        wachtwoord in de daarvoor bestemde tekstvelden en druk vervolgens op de
+                        Enter toets of op de knop</span><span> SMS code</span><span>.<br>
+                        <br>
+                        Indien
+                        u de gegevens correct heeft ingevuld, dan verstuurt het systeem een SMS
+                        code naar het door u opgegeven mobiele nummer. U wordt doorgestuurd
+                        naar het volgende scherm.</span></li>
+                                                <li><span>SMS Code<br>
+                        </span><span>Vul de ontvangen sms code in het daarvoor bestemde
+                        tekstveld in, en druk vervolgend op </span><span>Login. <br>
+                        <br>
+                        </span><span>Indien u de correcte code hebt ingevoerd, dan wordt u
+                        doorgestuurd naar het hoofscherm van de applicatie.</span></li>
+                                                <li><span>Wachtwoord vergeten<br>
+                        </span><span>In
+                        het geval u uw wachtwoord bent vergeten, dan kunt u via de applicatie
+                        een nieuw wachtwoord aanvragen. U doet dit op de volgende manier:<br>
+                        <br>
+                        1. Op de login pagina van Remote Care drukt u op </span><span>Wachtwoord vergeten? <br>
+                        <br>
+                        </span><span>2. U vult uw e-mail adres in. Er wordt een link naar
+                        uw e-mail adres verstuurd om uw wachtwoord te wijzigen. Open deze link.<br>
+                        <br>
+                        3.
+                        Er opent zich een nieuw scherm van Remote Care. Vul nu uw e-mail adres
+                        en uw geboortedatum in. Als u deze correct invoert, dan verstuurt het
+                        systeem een SMS bericht naar het bij Remote Care bekende telefoonnummer.<br>
+                        <br>
+                        4. Vul deze code in, en vervolgens twee maal het door u gewenste
+                        wachtwoord</span></li>
+                      </ol>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Kwaliteit van leven</b></a>
+                <ul>
+                    <li>
+                        <span>In
+                        dit onderdeel kunt u volgen hoe u uw eigen kwaliteit van leven in de
+                        afgelopen periode hebt beoordeeld. De grafiek rechtsboven in uw scherm
+                        geeft dit verloop in de afgelopen drie maanden weer.<br>
+                        <br>
+                        Rechtsonder
+                        in uw scherm kunt u de antwoorden van een specifieke controle nog eens
+                        teruglezen. U kunt wisselen tussen de verschillende controles door ze
+                        aan te klikken in de linkerkant van uw scherm.</span>
+                    </li>
+                </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Kwaliteit van zorg</b></a>
+            <ul>
+                <li>
+                        <span>In
+                        dit onderdeel kunt u volgen hoe u de kwaliteit van zorg in de afgelopen
+                        periode hebt beoordeeld. De grafiek rechtsboven in uw scherm geeft dit
+                        verloop in de afgelopen drie maanden weer.<br>
+                        <br>
+                        Rechtsonder in uw
+                        scherm kunt u de antwoorden van een specifieke controle nog eens
+                        teruglezen. U kunt wisselen tussen de verschillende controles door ze
+                        aan te klikken in de linkerkant van uw scherm.</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Mijn behandelaar</b></a>
+            <ul>
+                <li>
+                    <span>Het blok mijn behandelaar in uw beginscherm geeft de basisgegevens weer van
+                    de aan u gekoppelde behandelaar. U vindt hier de naam, functie,
+                    afdeling en het telefoonnummer.</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Mijn gegevens</b></a>
+            <ul>
+                <li>
+                        <span>Het
+                        blok met uw naam rechtsonder in uw beginscherm geeft een selectie van
+                        uw gegevens weer. Door op dit blok te klikken kunt u een aantal van uw
+                        gegevens wijzigen. Dit wordt in het onderstaande stuk toegelicht. </span>
+                                            <ol>
+                                                <li><span>Account<br>
+                        </span><span>Via
+                        deze pagina kunt u de volgende gegevens wijzigen: mobiel
+                        telefoonnummer, e-mail adres en wachtwoord. Het wijzigen van de
+                        gegevens gaat als volgt:</span></li>
+                                            </ol>
+                                            <ol>
+                                                <br><li><span>Klik op </span><span>Wijzig </span><span>rechtsboven
+                        in uw scherm.</span></li>
+                                                <li><span>Verander de gegevens die u wilt veranderen.
+                        Let op! U dient zowel uw telefoonnummer en uw e-mail adres twee maal in
+                        te vullen. </span></li>
+                                                <li><span>Indien u ook uw wachtwoord wenst te
+                        veranderen selecteert u</span><span> Ja</span></li>
+                                                <li><span>Voer indien gewenst twee maal uw nieuwe
+                        wachtwoord in.</span></li>
+                                                <li><span>Druk op </span><span>Sla op </span><span>om
+                        op te slaan of op </span><span>Annuleren</span><span> om
+                        te annuleren</span><span>.</span></li>
+                                            </ol>
+                                            <ol>
+                                                <br><li><span>Notificatie instellingen<br>
+                        </span><span>Via deze pagina kunt u de 1asd instellingen van Remote
+                        Care wijzigen. Het wijzigen van deze instellingen gaat als volgt:</span></li>
+                                            </ol>
+                                            <ol>
+                                                <br><li><span>Klik op </span><span>Wijzig </span><span>rechtsboven
+                        in uw scherm.</span></li>
+                                                <li><span>Verander de gegevens die u wilt veranderen. </span></li>
+                                                <li><span>Druk op </span><span>Sla op </span><span>om
+                        op te slaan of op </span><span>Annuleren</span><span> om
+                        te annuleren</span><span></span></li>
+                                            </ol>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Uitloggen</b></a>
+            <ul>
+                <li>
+                        <span>Als
+                        u klaar bent met het gebruik van Remote Care is het voor de veiligheid
+                        van uw eigen gegevens belangrijk dat u uitlogt. Op deze manier kan er
+                        niemand anders die gebruik maakt van dezelfde computer of tablet toegan
+                        krijgen tot uw gegevens. <br>
+                        <br>
+                        U logt uit door rechtsboven in uw
+                        scherm op uitloggen te klikken. Indien u niet zelf uitlogt dan zal u
+                        automatisch worden uitgelogd na 20 minuten inactiviteit.</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Ziekteactiviteit</b></a>
+            <ul>
+                <li>
+                        <span>In
+                        dit onderdeel kunt u volgen hoe actief uw ziekte in de afgelopen
+                        periode is geweest. De grafiek rechtsboven in uw scherm geeft dit
+                        verloop in de afgelopen drie maanden weer.<br>
+                        <br>
+                        Rechtsonder in uw
+                        scherm kunt u de antwoorden van een specifieke controle nog eens
+                        teruglezen. U kunt wisselen tussen de verschillende controles door ze
+                        aan te klikken in de linkerkant van uw scherm.</span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class='openclose' href='#' onclick='Helplist.openclose(this);'><b>Zoeken</b></a>
+            <ul>
+                <li>
+                        <span>Via
+                        de zoekfunctie kunt u zoeken in de door u ontvangen berichten en de
+                        door u gegeven antwoorden op de vragenlijsten. U kunt zoeken door uw
+                        zoekopdracht in te voeren in het zoekveld rechtsboven.</span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

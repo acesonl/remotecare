@@ -1,0 +1,14 @@
+[
+    {
+        "pk": 1, 
+        "model": "lists.hospital", 
+        "fields": {
+            "city": "", 
+            "tags": "", 
+            "created": "2013-06-08 13:29:15", 
+            "modified": "2013-06-08 13:29:15", 
+            "abbreviation": "UMCG", 
+            "full_name": "Universitair Medisch Centrum Groningen"
+        }
+    } 
+]

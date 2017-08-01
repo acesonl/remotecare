@@ -1,0 +1,23 @@
+{% if patient.diagnose == 'rheumatoid_arthritis' %}
+
+<h4>Reumatoïde Artritis</h4>                                
+<p>Bij Reumatoïde Artritis ontstaan er gewrichtsonstekingen. Het is een auto-immuunziekte: het afweersysteem keert zich tegen de eigen gewrichten.</p> 
+
+{% elif patient.diagnose == 'chron' %}
+
+<h4>Ziekte van Crohn</h4>   
+<p>Bij de Ziekte van Crohn valt de eigen afweer de goede darmbacterien aan. Daardoor kunnen er ontstekingen ontstaan in het gehele maag-darmstelsel.</p>
+
+{% elif patient.diagnose == 'colitis_ulcerosa' %}
+
+<h4>Colitis Ulcerosa</h4>
+<p>Bij de Colitis Ulcerosa valt de eigen afweer de goede darmbacterien aan. Daardoor ontstaan er ontstekeningen in de dikke darm. Medicatie kan helpen de ontstekingen af te remmen.</p>
+
+{% elif patient.diagnose == 'intestinal_transplantation' %}
+
+<h4>Dunnedarmtransplantatie</h4>
+<p>Na een dunnedarmtransplantie is het in principe weer mogelijk om te eten. Om afstoting te voorkomen moeten er verschillende geneesmiddelen worden gebruikt.</p>
+
+{% else %}
+
+{% endif %}

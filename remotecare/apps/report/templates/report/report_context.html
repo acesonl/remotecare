@@ -1,0 +1,106 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block extra_head %}
+    {{ block.super }} 
+{% endblock %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+                <ul class="listNavigation">
+                    <li>                    
+                        <a href="{% url "index" %}">
+                        <div class="box">                        
+                            <h4 class="title"></span> {% trans 'Terug' %} </h4>                                         
+                        </div>
+                        </a>                        
+                    </li>
+                    <li onclick="location.href='{% url "questionnaire_view" questionnaire_request.patient.health_person_id|get_random_session_key:request questionnaire_request.id %}'" {% if section == 'questionnaire' %}class='active'{% endif %}>                    
+                       
+                        <div class="box">                                                    
+                            <h4 class="title"> {% trans 'Ingevulde vragenlijst' %}</h4>                                            
+                            {% if questionnaires %}
+                            <ul class="listCheck">
+                            {% for questionnaire in questionnaires %}
+                
+                                <a href="{% url "questionnaire_view" questionnaire_request.patient.health_person_id|get_random_session_key:request questionnaire_request.id %}?questionnaire={{ forloop.counter0 }}">
+                                <li {% if selected_questionnaire == questionnaire %}class="active"{% endif %}>{{questionnaire.display_name}}</li>
+                                </a>
+                            {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        
+                    </li>
+
+
+
+                    <li {% if section == 'report' %}class='active'{% endif %}>                    
+                        <a href="{% url "report_view" questionnaire_request.patient.health_person_id|get_random_session_key:request questionnaire_request.id %}">
+                        <div class="box">                        
+
+                            
+                            <h4 class="title"> {% trans 'Medisch verslag' %}{% if report %}<span class='icoCheck icoCheckRight'></span>{% endif %}</h4>                                            
+                        </div>
+                        </a>                        
+                    </li>
+                    <li {% if section == 'message' %}class='active'{% endif %}>                    
+                        <a href="{% url "message_view" questionnaire_request.patient.health_person_id|get_random_session_key:request questionnaire_request.id %}">
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Bericht naar patiënt' %} {% if rc_message %}<span class='icoCheck icoCheckRight'></span>{% endif %} </h4>                                                                  
+                        </div>
+                        </a>                        
+                    </li>
+
+                    {% if  rc_message and report and not questionnaire_request.handled_on %} 
+                    <li {% if section == 'finish' %}class='active'{% endif %} >                    
+                        <a href="{% url "handling_finish" questionnaire_request.patient.health_person_id|get_random_session_key:request questionnaire_request.id %}">
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Afronden' %} </h4>
+                        </div>
+                        </a>                        
+                    </li>
+                    {% endif %}
+
+                </ul>              
+                
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        {% block title %} {% endblock %}
+                                      
+                	</header>
+                    
+                    <div class="content">
+                        {% block contents %} {% endblock %}
+                    </div>
+                                         
+                </div>
+              
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

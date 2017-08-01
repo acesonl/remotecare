@@ -1,0 +1,79 @@
+{% load i18n %}
+<b style='font-size:14px'>Remote care - Digitale Controle - {{ patient.get_diagnose_display }}</b>
+
+<span class='doctorheaders' style='display:none;'><p>Geachte collega,</p></span>
+<p>
+<u><i>Digitale Controle</i></u><br/>
+Op {{ questionnaire_request.finished_on }} voerde {%if is_male%}Dhr.{%else%}Mw.{%endif%} {{ patient.user.first_name }} {{ patient.user.prefix|default:"" }} {{ patient.user.last_name }},
+geboren {{ patient.user.date_of_birth }} een digitale controle uit voor {{ patient.get_diagnose_display }}. Deze digitale controle heb ik op
+{{ current_date }} beoordeeld.
+</p>
+
+<p>
+<u><i>Hoofdklacht en Algemeen welbevinden</i></u><br/>
+Patiënt gaf aan dat het {{ startquestionnaire.get_current_status_display|lower }} met {%if is_male%}hem{%else%}haar{%endif%} ging. De belangrijkste
+klachten zijn op dit moment: {{ startquestionnaire.problems }} Patiënt geeft de ernst van al {%if is_male%}zijn{%else%}haar{%endif%} klachten het cijfer
+{{ startquestionnaire.get_problem_severity_display }} op een schaal van 1 (weinig last van de klachten) tot 10 (zeer veel last van de klachten).
+</p>
+
+<p>
+<u><i>Anamnese</i></u><br/>
+Patiënt vond dat {%if is_male%}zijn{%else%}haar{%endif%} artritis de laatste 6 maanden {{ radaiquestionnaire.get_activity_six_month_score_display|lower }} actief was. Vandaag
+was de artritis in termen van gewrichtsgevoeligheid en zwelling {{ radaiquestionnaire.get_activity_today_score_display|lower }} actief. De pijn was
+vandaag {{ radaiquestionnaire.get_pain_today_score_display|lower }}. De gewrichten voelde vandaag stijf gedurende: {{ radaiquestionnaire.get_stiffness_today_score_display|lower }}.
+</p>
+
+<p>
+<u><i>Hoeveelheid pijn van de gewrichten</i></u><br/>
+Schouder: Links: {{ radaiquestionnaire.get_left_shoulder_pain_score_display|lower }} ; Rechts: {{ radaiquestionnaire.get_right_shoulder_pain_score_display|lower }}<br/>
+Elleboog: Links: {{ radaiquestionnaire.get_left_elbow_pain_score_display|lower }}; Rechts: {{ radaiquestionnaire.get_right_elbow_pain_score_display|lower }}<br/>
+Pols: Links: {{ radaiquestionnaire.get_left_wrist_pain_score_display|lower }}; Rechts: {{ radaiquestionnaire.get_right_wrist_pain_score_display|lower }}<br/>
+Vingers: Links: {{ radaiquestionnaire.get_left_vingers_pain_score_display|lower }}; Rechts: {{ radaiquestionnaire.get_right_vingers_pain_score_display|lower }}<br/>
+Heup: Links: {{ radaiquestionnaire.get_left_hip_pain_score_display|lower }}; Rechts: {{ radaiquestionnaire.get_right_hip_pain_score_display|lower }}<br/>
+Knie: Links: {{ radaiquestionnaire.get_left_knee_pain_score_display|lower }}; Rechts: {{ radaiquestionnaire.get_right_knee_pain_score_display|lower }}<br/>
+Enkel: Links: {{ radaiquestionnaire.get_left_ankle_pain_score_display|lower }}; Rechts: {{ radaiquestionnaire.get_right_ankle_pain_score_display|lower }}<br/>
+Tenen: Links: {{ radaiquestionnaire.get_left_toes_pain_score_display|lower }}; Rechts: {{ radaiquestionnaire.get_right_toes_pain_score_display|lower }}<br/>
+</p>
+
+<p>
+<u><i>Aanvullend Onderzoek: Laboratorium</i></u><br>
+&nbsp;<b><i>--Vul aanvullend onderzoek in--</i></b>
+</p>
+
+<p>
+<u><i>Conclusie</i></u><br/>
+&nbsp;<b><i>--Vul conclusie in--</i></b>
+</p>
+
+<p>
+<u><i>Beleid</i></u><br/>
+&nbsp;<b><i>--Vul beleid in--</i></b>
+</p>
+
+<p>
+<u><i>Vervolgafspraak</i></u><br/>
+
+
+{% if finishquestionnaire.appointment == 'no' %}
+Ik zie momenteel naar aanleiding van de antwoorden op de vragen en de laboratoriumuitslagen<span class='no_appointment'>
+ook geen aanleiding {%if is_male%}hem{%else%}haar{%endif%} alsnog op te roepen.</span><span class='appointment' style='display:none;'>echter reden om {%if is_male%}hem{%else%}haar{%endif%} alsnog op te roepen. Daarom zal ik {%if is_male%}hem{%else%}haar{%endif%} verzoeken een afspraak te maken.</span>
+{% else %}
+Patiënt heeft aangegeven dat {%if is_male%}hij{%else%}zij{%endif%} naast de digitale controle een afspraak op de
+polikliniek wil. <br/>{%if is_male%}Hij{%else%}Zij{%endif%} zal daarom binnenkort worden gezien.
+{% endif %}
+</p>
+
+<span class='doctorheaders' style='display:none;' >
+<p>
+Hopende u hierbij voldoende te hebben geïnformeerd,<br/><br/>
+Met vriendelijke groet,</p></span>
+<br/>
+<p>
+{{ healthprofessional.user.first_name }} {{ healthprofessional.user.prefix|default:"" }} {{ healthprofessional.user.last_name }}<br/>
+{{ healthprofessional.get_function_display }} {{ healthprofessional.get_specialism_display }}<br/>
+{{ healthprofessional.user.hospital }}<br/>
+<i>Dit Verslag is automatisch gegenereerd door Remote Care.</i>
+</p>
+
+
+

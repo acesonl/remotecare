@@ -1,0 +1,160 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block content_wrapper %}    
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout aab layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<section>
+        	<!--left-->
+                
+                <div class="box shade0" >
+                	<div class="optionbar">{% trans 'Patiënten' %} <span class="tooltip right">{{ controle_list|length }}</span></div>
+					
+                    <h1 class="title"><span class="icoUrgentie"></span> {% trans 'In te plannen afspraken' %} </h1>
+                    <div class="scrollbar_container scroll_controle_secretary canvas1">
+				        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+				        <div class="viewport scindex">	
+				        	<div class="content overview">
+                                <table class="table zebra lesser" >
+                                  <tr class="action">
+                                    <th scope="col">{% trans 'Achternaam' %}</th>
+                                    <th scope="col">{% trans 'Voorlet.' %}</th>
+                                    <th scope="col">{% trans 'Geb. datum' %}</th>
+                                    <th scope="col">{% trans 'Tel nr' %}</th>
+                                    <th scope="col">{% trans 'Termijn afspraak' %}</th>
+                                    <th scope="col"></th>
+                                  </tr>
+                            
+                                  {% for controle in controle_list %}
+                                  <tr>
+                                    <td>{{ controle.patient.user.last_name|default:"-" }}</td>
+                                    <td>{{ controle.patient.user.initials|default:"-" }}</td>
+                                    <td>{{ controle.patient.user.date_of_birth|date:SHORT_DATE_FORMAT  }}</td>
+                                    <td>{{ controle.patient.user.mobile_number|default:"-" }}</td>
+                                    <td>{{ controle.appointment_period|default:"-" }}</td>
+                                    <td class='buttonsrow'><a title="{% trans 'Afhandelen' %}" href='{% url "appointment_edit" controle.patient.health_person_id|get_random_session_key:request controle.id %}' class='button gray ico'><i class='rc_ico67'></i></a></td>
+                                  </tr>
+
+                                  {% endfor %}
+                                </table>
+                        
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+              
+        	<!--left-->
+            </section>
+        	<!--left-->
+            
+        	<!--right-->
+        	<aside>
+        	<!--right-->
+            
+                <ul>
+                    <li>
+                    
+                        <a href="{% url "patient_search" %}">
+                        <div class="box shade6">
+                        
+                            <h4 class="title">{% trans 'Patiënt zoeken' %} <i class="rc_ico14"></i></h4>
+                        
+                        </div>
+                        </a>
+                        
+                    </li>
+                    <li>
+                    
+                        <a href="{% url "patient_add" %}">
+                        <div class="box shade4">
+                        
+                            <h4 class="title">{% trans 'Patiënt toevoegen' %} <i class="rc_ico12"></i></h4>
+                        
+                        </div>
+                        </a>
+                        
+                    </li>
+                    <li>
+                    
+                        <a href="{% url "patient_search" %}?action=edit">
+                        <div class="box shade2">
+                        
+                            <h4 class="title">{% trans 'Patiënt wijzigingen' %} <i class="rc_ico15"></i></h4>
+                        
+                        </div>
+                        </a>
+                        
+                    </li>
+                    <li>
+                    
+                        <a href="{% url "patient_search" %}?action=remove">
+                        <div class="box shade7">
+                        
+                            <h4 class="title">{% trans 'Patiënt verwijderen' %} <i class="rc_ico13"></i></h4>
+                        
+                        </div>
+                        </a>
+                        
+                    </li>
+                    <li>
+                    
+                        <a href="{% url "patient_search" %}?action=message">
+                        <div class="box shade6">
+                        
+                            <h4 class="title">{% trans 'Berichten versturen' %} <i class="icoBerichten2"></i></h4>
+                        
+                        </div>
+                        </a>
+                        
+                    </li>
+                    <li>
+                    
+                        <a href="{% if message %}{% url "sent_message_details" secretary.health_person_id|get_random_session_key:request message.id %}{% else %}{% url "sent_message_overview" secretary.health_person_id|get_random_session_key:request %}{% endif %}">
+                        <div class="box shade4">
+                        
+                            <h4 class="title">{% trans 'Verstuurde berichten' %} <i class="icoBerichten2"></i></h4>
+                        
+                        </div>
+                        </a>
+                        
+                    </li>                 
+
+                </ul>
+                <a href="{% url "secretariat_view_personalia" secretary.health_person_id|get_random_session_key:request %}">
+                <div class="box shade2">
+                
+                	<h4 class="title">{{ secretary.user.professional_name|default:"-" }}<i class="icoProfiel"></i></h4>
+                	
+                    <div class="content">
+                    
+                    	<address>
+                        
+                            <ul class="listColumn">
+                                <li><i class="icoPhone"></i>{{ secretary.user.mobile_number|default:"-" }}</li>
+                                <li><i class="icoEmail"></i>{{ secretary.user.email|default:"-" }}</li>
+                            </ul>
+                        
+                        </address>
+                    
+                    </div>
+                
+                </div>
+                </a>
+              
+            
+        	<!--right-->
+            </aside>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

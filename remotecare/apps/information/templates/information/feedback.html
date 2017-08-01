@@ -1,0 +1,67 @@
+{% extends 'base_context.html' %}
+{% load i18n customfilters %}
+
+{% block content_wrapper %}
+
+	<div class="frameSection">
+    	
+        <!--layoutMainColumn-->
+    	<div class="layout abb layoutMainColumn">
+        <!--layoutMainColumn-->
+        
+        	<!--left-->
+        	<nav>
+        	<!--left-->
+
+                <ul class="listNavigation">
+                    <li >                    
+                        <a href='{% url "index" %}'>
+                        <div class="box">                        
+                            <h4 class="title"> {% trans 'Terug'  %}</h4>                           
+                        </div>
+                        </a>                        
+                    </li>                    
+                </ul>
+        	<!--left-->
+            </nav>
+        	<!--left-->
+            
+        	<!--right-->
+        	<section>
+        	<!--right-->
+            
+				<div class="box shade1">
+                    
+                	<header class="line">
+                        <h2 class="title"><span class="rc_ico81"></span> {% trans 'Stuur feedback' %}</h2>              
+                	</header>
+                    
+                    <div class="content">
+                         <form id="edit_form" class='reportform'  action='.' method='post'>              
+
+                            <p>Typ hieronder uw feedback en druk op versturen</p>
+                            {% include 'report/reportform.html' %}
+                            <div class='submitbuttons'>
+                                <a class='button' href="{% url "index" %}">{% trans 'Annuleren'  %}</h4></a> 
+                                <input type='submit' class='button' value="{% trans 'Versturen' %}">
+                            </div>
+                        </form>                    
+                    </div>
+                        
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+                
+                </div>
+
+        	<!--right-->
+            </section>
+        	<!--right-->
+
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+    
+    </div>
+{% endblock %}

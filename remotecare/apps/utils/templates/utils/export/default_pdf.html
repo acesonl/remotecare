@@ -1,0 +1,36 @@
+{% load i18n %}
+<html>
+    <head>
+        <style> 
+        @page { 
+            margin: 1cm;
+            margin-top: 2.7cm;
+            margin-bottom: 2.0cm;
+            @frame header { 
+                -pdf-frame-content: headercontent;
+                top: 2cm;
+                margin-left: 1cm;
+                margin-right: 1cm;           
+                height: 1cm;
+            }
+	    @frame footer {
+                -pdf-frame-content: footercontent;
+                bottom: 0cm;
+                margin-left: 1cm;
+                margin-right: 1cm;           
+                height: 2cm;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="headercontent">
+            &nbsp;Remote Care
+            &nbsp;&nbsp;Gebruiker: {{username}}
+            &nbsp;&nbsp;Datum: {{date}}        
+        </div>
+        {{body|safe}}
+        <div id="footercontent"><table style="font-size:5pt"><tr><td>Dit document is strikt vertrouwelijk en mag niet door derden worden ingezien of worden verspreid.</td></tr></table></div>
+    </body>
+</html>
+

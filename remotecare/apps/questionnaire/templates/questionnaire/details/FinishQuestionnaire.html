@@ -1,0 +1,19 @@
+{% load i18n %}
+<table class="tabledisplay">
+    {% if questionnaire.not_fill_in != 'no' %}
+    <tbody><tr><th>{% trans 'Vraag' %}</th><th>{% trans 'Antwoord' %}</th></tr>
+    <tr><td colspan="2"><h5><i>{% trans 'Afspraken' %}</i></h5></td></tr>
+    <tr><td>{% trans 'Wilt u, naast deze digitale conrole, graag een afspraak?' %}</td><td>{{ questionnaire.get_appointment_display|default:"-" }}</td></tr>
+    {% if not questionnaire.appointment == 'no' %}
+    <tr><td>{% trans 'Op welke termijn zou u deze afspraak willen?' %}</td><td>{{ questionnaire.get_appointment_period_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Heeft u voorkeur voor een dag, periode of tijdstip?' %}</td><td>{{ questionnaire.get_appointment_preference_display|default:"-" }}</td></tr>
+    {% endif %}
+    <tr><td colspan="2"><h5><i>{% trans 'Bloedprikken' %}</i></h5></td></tr>
+    <tr><td>{% trans 'Waar heeft u bloed laten prikken?' %}</td><td>{{ questionnaire.get_blood_sample_display|default:"-" }}</td></tr>
+    <tr><td>{% trans 'Wanneer heeft u bloed laten prikken?' %}</td><td>{{ questionnaire.blood_sample_date|default:"-" }}</td></tr>
+    {% else %}
+    <tr><td colspan="2">{% trans 'U heeft er voor gekozen om dit onderdeel niet in te vullen.' %}</td></tr>
+    {% endif %}
+</tbody></table>
+
+

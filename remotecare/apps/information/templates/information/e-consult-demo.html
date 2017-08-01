@@ -1,0 +1,43 @@
+{% extends 'base_context.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block extra_head %}
+     {{ block.super }}
+{% endblock %}
+
+{% block content_wrapper %}
+
+
+	<div class="frameSection">    	
+        <!--layoutMainColumn-->
+    	<div class="layout layoutMainColumn">
+        <!--layoutMainColumn-->
+				<div class="box econsult shade1">
+                	<header class="line">
+                        <h2 class="title"><span class="rc_ico78"></span> {% trans 'e-consult' %}</h2>
+                	</header>
+
+                     <div class="scrollbar_container canvas1">
+				        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+				        <div class="viewport inf">	
+				        	<div class="content overview">
+                                <p align="center">
+									<br />{% trans 'De eConsult module is niet opgenomen in de demo omgeving.' %}
+									<br /><br /><br /><img src="{% static "images/lens.png" %}">
+								</p>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="buttonBar">
+                    	<div class="floatRight">
+                        </div>                    	
+                    </footer>
+
+                </div>
+        <!--layoutMainColumn-->
+        </div>
+        <!--layoutMainColumn-->
+
+    </div>
+{% endblock %}
