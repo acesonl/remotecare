@@ -5,8 +5,8 @@ import sys
 import django
 from django.core.management import call_command
 
-HERE = os.path.realpath(os.path.dirname(__file__) + '../')
-sys.path.insert(0, os.path.abspath('../'))
+HERE = os.path.realpath(os.path.dirname(__file__) + '../../')
+sys.path.insert(0, os.path.abspath('../../'))
 # setup Django
 os.environ['DJANGO_SETTINGS_MODULE'] = 'remotecare.settings'
 django.setup()
@@ -255,7 +255,7 @@ def create_app_dict(l_apps):
     return app_dict
 
 
-if __name__ == '__main__':
+def main():
     # Define some variables
 
     settings.DS_ROOT = getattr(settings, "DS_ROOT",
@@ -311,3 +311,7 @@ if __name__ == '__main__':
                  disable_fields=True,
                  inheritance=True,
                  outputfile=settings.DS_ROOT + '/_static/questionnaire.dot')
+
+
+if __name__ == '__main__':
+    main()
