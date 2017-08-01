@@ -234,7 +234,7 @@ INSTALLED_APPS = (
     'apps.information',
     'apps.utils',
     'apps.audit',
-#    'django_extensions',
+    'django_extensions',
     'formtools',
 #    'django_jenkins',
     'pipeline',

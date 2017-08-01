@@ -6,7 +6,7 @@ import json
 from django.conf import settings
 from django.core import mail, serializers
 from django.test import TestCase
-from core.forms import DateField, ChoiceOtherField
+from core.forms import FormDateField, ChoiceOtherField
 
 
 class BaseUnitTest(TestCase):  # pragma: no cover
@@ -117,7 +117,7 @@ class BaseUnitTest(TestCase):  # pragma: no cover
         last_date_field_value = None
 
         for field in fields:
-            if isinstance(field.field, DateField):
+            if isinstance(field.field, FormDateField):
                 date = field.value()
                 if date:
                     post_data.update(

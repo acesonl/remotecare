@@ -35,7 +35,7 @@ from formtools.wizard.views import WizardView
 from django.shortcuts import get_object_or_404
 from django.utils.datastructures import MultiValueDict
 from collections import OrderedDict as SortedDict
-from core.forms import DateField, ChoiceOtherField
+from core.forms import FormDateField, ChoiceOtherField
 
 from apps.healthperson.patient.models import Patient
 from apps.questionnaire.forms import get_forms_for
@@ -298,7 +298,7 @@ class QuestionnaireWizard(WizardView):
                 for l in form.fieldsets():
                     for field in l[1]:
                         field_name = '{0}-{1}'.format(form.prefix, field.name)
-                        if ((isinstance(field.field, DateField) or
+                        if ((isinstance(field.field, FormDateField) or
                              isinstance(field.field, ChoiceOtherField))):
                             field.field.fix_value_from_post(post_dict,
                                                             field_name)

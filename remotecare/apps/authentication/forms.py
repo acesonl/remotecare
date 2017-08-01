@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django import forms
-from core.forms import BaseForm, DateField
+from core.forms import BaseForm, FormDateField
 from django.utils.translation import ugettext_lazy as _
 from datetime import date
 from apps.authentication.password_check import clean_data_password
@@ -135,7 +135,7 @@ class ForgotPasswordValidateForm(BaseForm):
     email = forms.EmailField(
         required=True,
         label=_('E-mail'))
-    date_of_birth = DateField(
+    date_of_birth = FormDateField(
         required=True,
         years=list(range(date.today().year - 100, date.today().year + 1)),
         allow_future_date=False,

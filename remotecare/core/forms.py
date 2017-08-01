@@ -485,7 +485,7 @@ class DateWidget(SelectDateWidgetCustom):
         return mark_safe(output + ' <span class="date_field"></span>')
 
 
-class DateField(forms.DateField):
+class FormDateField(forms.DateField):
     '''
     Django Formfield for dates
     '''
@@ -498,7 +498,7 @@ class DateField(forms.DateField):
         self.allow_after_deceased = kwargs.pop('allow_after_deceased', False)
         self.future = kwargs.pop('future', False)
         self.years = kwargs.pop('years', None)
-        super(DateField, self).__init__(*args, **kwargs)
+        super(FormDateField, self).__init__(*args, **kwargs)
         if self.years:
             self.widget.years = self.years
         self.widget.required = self.required
@@ -548,7 +548,7 @@ class DateField(forms.DateField):
         '''
         Date validation checks
         '''
-        value = super(DateField, self).clean(value)
+        value = super(FormDateField, self).clean(value)
         if not self.allow_future_date and value not in (None, ''):
             if datetime.date.today() < value:
                 raise forms.ValidationError(
@@ -564,7 +564,7 @@ class DateField(forms.DateField):
         '''
         Add datefield CSS class by default
         '''
-        attrs = super(DateField, self).widget_attrs(widget)
+        attrs = super(FormDateField, self).widget_attrs(widget)
         attrs.update({'class': 'datefield', })
         return attrs
 

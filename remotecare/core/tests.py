@@ -12,7 +12,7 @@ import datetime
 from django.forms import TextInput
 from django.test import TestCase
 from core.forms import DisplayWidget, ChoiceOtherField, YesNoChoiceField,\
-    DateField, NONE_YES_NO_CHOICES
+    FormDateField, NONE_YES_NO_CHOICES
 from core.models import YesNoChoiceField as ModelYesNoChoiceField,\
     CheckBoxIntegerField, CheckBoxCharField
 from core.widgets import SelectDateWidget
@@ -51,7 +51,7 @@ class CoreTests(TestCase):
         self.assertIn('testfield', post_data)
         self.assertEqual(post_data['testfield'], 'test')
 
-        date_field = DateField()
+        date_field = FormDateField()
         post_data = {'testfield_day': '1',
                      'testfield_month': '1',
                      'testfield_year': '1970'}

@@ -12,7 +12,7 @@ from datetime import date
 from django.forms.utils import ErrorList
 from django.utils.translation import ugettext_lazy as _
 from core.forms import BaseModelForm, BaseForm,\
-    ChoiceOtherField, DateField, MultipleChoiceField
+        ChoiceOtherField, FormDateField, MultipleChoiceField
 from apps.healthperson.patient.models import Patient,\
     DIAGNOSIS_CHOICES, REGULAR_CONTROL_FREQ,\
     BLOOD_SAMPLE_FREQ, CLINIC_VISIT_CHOICES
@@ -38,7 +38,7 @@ class PatientSearchForm(BaseForm):
     last_name = forms.CharField(
         max_length=128, label=_('Achternaam'), required=False)
     years = list(range(date.today().year - 100, date.today().year + 1))
-    date_of_birth = DateField(
+    date_of_birth = FormDateField(
         label=_('Geboortedatum'), years=years, allow_future_date=False,
         future=False, required=False)
 

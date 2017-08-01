@@ -12,7 +12,7 @@ from core.encryption.symmetric import encrypt, decrypt,\
 from django.conf import settings
 from django import forms
 from django.forms.models import model_to_dict
-from core.forms import DateField as forms_DateField
+from core.forms import FormDateField as forms_DateField
 from core.forms import YesNoChoiceField as forms_YesNoChoiceField,\
     FormRadioSelect as forms_RadioSelect,\
     ChoiceOtherField as forms_ChoiceOtherField,\
