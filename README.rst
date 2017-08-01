@@ -1,5 +1,5 @@
-Main
-====
+Remotecare
+==========
 
 Remotecare is designed with the aim to automate the regular control of a
 patient with a chronic disease. Since such diseases can have long periods
