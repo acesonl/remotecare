@@ -17,7 +17,6 @@ import os
 import inspect
 import django
 from django.utils.encoding import force_unicode
-from generate_autodoc import main as gen_autodoc
 
 sys.path.insert(0, os.path.abspath('../../'))
 # setup Django
@@ -389,6 +388,8 @@ class AutodocProcessor(object):
 
 
 def setup(app):
+    from generate_autodoc import main as gen_autodoc
+
     gen_autodoc()
 
     # Register the docstring processor with sphinx
